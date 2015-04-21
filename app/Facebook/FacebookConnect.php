@@ -78,7 +78,7 @@ class FacebookConnect {
 
         }else{
 
-                return $helper->getReRequestUrl(['email']);
+                return $helper->getReRequestUrl(['email','publish_actions']);
 
         }
     }
