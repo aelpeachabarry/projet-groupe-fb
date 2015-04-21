@@ -35,7 +35,7 @@ class UploadPhoto {
                 // first album in the profile. You can also upload to
                 // a specific album by using /ALBUM_ID as the path
                 $response = (new FacebookRequest(
-                    $this->$session, 'POST', '/me/photos', array(
+                    $this->session, 'POST', '/me/photos', array(
                         'source' => new CURLFile('temp/'.$filename, 'image/png'),
                         'message' => 'User provided message'
                     )
