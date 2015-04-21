@@ -25,14 +25,16 @@ if(is_string($user)){
         <input type="submit" name="submit" value="Envoyer" />
     </form>
     <?
-    if($_POST['submit'] && $_FILES){
-        echo "<pre>";
-        print_r($_FILES);
-        echo "</pre>";
-        $uploaded = new UploadPhoto($connect->getSession());
-        $uploaded->upload($_FILES['mon_fichier']);
-    }else{
-        echo "probleme fichier";
+    if(isset($_POST['submit'])){
+        if($_POST['submit'] && $_FILES){
+            echo "<pre>";
+            print_r($_FILES);
+            echo "</pre>";
+            $uploaded = new UploadPhoto($connect->getSession());
+            $uploaded->upload($_FILES['mon_fichier']);
+        }else{
+            echo "probleme fichier";
+        }
     }
 
 
