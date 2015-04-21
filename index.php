@@ -19,7 +19,22 @@ if(is_string($user)){
     echo '<a href="'.$user.'">Se connecter avec facebook</a>';
 
 }else{
-    $uploaded = new UploadPhoto($connect->getSession());
+    ?>
+    <form method="post" action="reception.php" enctype="multipart/form-data">
+        <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+        <input type="submit" name="submit" value="Envoyer" />
+    </form>
+    <?
+    if($_POST['submit'] && $_FILES){
+        echo "<pre>";
+        print_r($_FILES);
+        echo "</pre>";
+        $uploaded = new UploadPhoto($connect->getSession());
+        $uploaded->upload($_FILES['mon_fichier']);
+    }else{
+        echo "probleme fichier";
+    }
+
 
 }
 

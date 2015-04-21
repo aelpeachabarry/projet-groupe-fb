@@ -24,8 +24,8 @@ class UploadPhoto {
 
     }
 
-    public function upload(){
-
+    public function upload($file){
+        $filename = $file;
         if($this->session) {
 
             try {
@@ -35,7 +35,7 @@ class UploadPhoto {
                 // a specific album by using /ALBUM_ID as the path
                 $response = (new FacebookRequest(
                     $this->$session, 'POST', '/me/photos', array(
-                        'source' => new CURLFile('path/to/file.name', 'image/png'),
+                        'source' => new CURLFile('temp/'.$filename, 'image/png'),
                         'message' => 'User provided message'
                     )
                 ))->execute()->getGraphObject();
