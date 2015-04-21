@@ -72,7 +72,7 @@ switch($page)
 
 }
 
-require 'views/footer';
+require 'views/footer.php';
 ?>
 
 
