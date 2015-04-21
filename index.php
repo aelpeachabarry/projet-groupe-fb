@@ -20,7 +20,7 @@ if(is_string($user)){
 
 }else{
     ?>
-    <form method="post" action=<?php $_SERVER['PHP_SELF'] ?> enctype="multipart/form-data">
+    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
         <input type="submit" name="submit" value="Envoyer" />
     </form>
