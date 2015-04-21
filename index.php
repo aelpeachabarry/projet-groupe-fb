@@ -5,6 +5,7 @@ ini_set("display_errors", 1);
 
 session_start();
 use App\Facebook\FacebookConnect;
+use App\Facebook\UploadPhoto;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
@@ -18,8 +19,7 @@ if(is_string($user)){
     echo '<a href="'.$user.'">Se connecter avec facebook</a>';
 
 }else{
-
-    var_dump($user);
+    $uploaded = new UploadPhoto($connect->getSession());
 
 }
 
