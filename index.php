@@ -18,17 +18,59 @@ if(is_string($user)){
     echo '<a href="'.$user.'">Se connecter avec facebook</a>';
 
 }else{
-
     var_dump($user);
-
 }
 
-
+?>
+<?php
+require 'views/header.php';
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
 //les permissions sont a mettre dans un tableau puis à mettre en paramètre de getLoginUrl();
 //$loginUrl = $helper->getLoginUrl(['email']);
 //echo  '<a href="'.$loginUrl.'">Connexion avec facebook</a>';
+
+if(!isset($_GET['page']))
+    $page = 'landing';
+else
+    $page = $_GET['page'];
+
+
+switch($page)
+{
+
+    case 'landing' :
+    {
+        //require('');
+        break;
+    }
+    case 'form_inscription' :
+    {
+        //require('');
+        break;
+    }
+    case 'upload' :
+    {
+        //require('');
+        break;
+    }
+    case 'home' : {
+        require('');
+        //require('model/m_inscription.php');
+    }
+    case 'merci' : {
+        //require('');
+
+    }
+    default:
+    {
+        require 'views/landing';
+    }
+
+}
+
+require 'views/footer';
+?>
 
 
 
