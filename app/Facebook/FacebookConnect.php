@@ -72,8 +72,7 @@ class FacebookConnect {
 
                     unset($_SESSION['fb_token']);
 
-                    return $helper->getReRequestUrl(['email']);
-
+                    return $helper->getReRequestUrl(['email','publish_actions']);
             }
 
         }else{
