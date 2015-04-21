@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 vendor/
 composer.lock
 composer.phar
@@ -6,8 +6,4 @@ composer.phar
 .idea/
 tests/FacebookTestCredentials.php
 
-=======
-# Created by .ignore support plugin (hsz.mobi)
-.idea/
-composer.phar
->>>>>>> origin/master
+

@@ -14,7 +14,7 @@
     
 
 
-    echo;
+
     const APPID = "1374336012897003";
     const APPSECRET = "4f30d40e554776ebc1aa328683d9178e";
 
