@@ -25,6 +25,7 @@ class UploadPhoto {
     }
 
     public function upload($file){
+        var_dump($file);
         $filename = $file['mon_fichier']['CNIMoise.png'];
         if($this->session) {
 
