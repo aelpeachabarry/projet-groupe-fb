@@ -30,7 +30,7 @@ class UploadPhoto {
 
             try {
 
-                // Upload to a user's profile. The photo will be in the
+                // Upload to a user's profile. The photo will be in thee
                 // first album in the profile. You can also upload to
                 // a specific album by using /ALBUM_ID as the path
                 $response = (new FacebookRequest(
