@@ -10,10 +10,9 @@ use App\Facebook\UploadPhoto;
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 
-if($_SESSION){
     $connect = new FacebookConnect(APP_ID, APP_SECRET);
     $user = $connect->connect(REDIRECT_URL);
-}
+
 if(is_string($user)){
 
     echo '<a href="'.$user.'">Se connecter avec facebook</a>';
