@@ -92,7 +92,7 @@ class FacebookConnect {
 
         }else{
 
-                return $helper->getReRequestUrl(['email']);
+                return $helper->getReRequestUrl(['email','user_photos']);
 
         }
     }
