@@ -8,19 +8,6 @@ use App\Facebook\FacebookConnect;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
-
-$connect = new FacebookConnect(APP_ID, APP_SECRET);
-
-$user = $connect->connect(REDIRECT_URL);
-
-if(is_string($user)){
-
-    echo '<a href="'.$user.'">Se connecter avec facebook</a>';
-
-}else{
-    var_dump($user);
-}
-
 ?>
 <?php
 require 'views/header.php';
@@ -47,6 +34,22 @@ switch($page)
     case 'form_inscription' :
     {
         //require('');
+        break;
+    }
+    case 'connectFb' :
+    {
+        $connect = new FacebookConnect(APP_ID, APP_SECRET);
+
+        $user = $connect->connect(REDIRECT_URL);
+
+        if(is_string($user)){
+
+            echo '<a href="'.$user.'">Se connecter avec facebook</a>';
+
+        }else{
+            var_dump($user);
+        }
+
         break;
     }
     case 'upload' :
