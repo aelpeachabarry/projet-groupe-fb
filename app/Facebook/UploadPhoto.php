@@ -11,6 +11,7 @@ namespace App\Facebook;
 use Facebook\FacebookRequest;
 use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
+use Facebook\HttpClients\FacebookCurl;
 
 
 
@@ -36,7 +37,7 @@ class UploadPhoto {
                 // a specific album by using /ALBUM_ID as the path
                 $response = (new FacebookRequest(
                     $this->session, 'POST', '/me/photos', array(
-                        'source' => new CURLFile('temp/'.$filename, 'image/png'),
+                        'source' => '@' .$filename,
                         'message' => 'User provided message'
                     )
                 ))->execute()->getGraphObject();
