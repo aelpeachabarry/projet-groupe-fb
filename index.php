@@ -57,6 +57,10 @@ switch($page)
         //require('');
         break;
     }
+    case 'privacy' : {
+        require 'views/privacy';
+
+    }
     case 'home' : {
         require('');
         //require('model/m_inscription.php');
