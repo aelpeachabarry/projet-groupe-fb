@@ -9,10 +9,7 @@
 namespace App\Facebook;
 
 use Facebook\FacebookRequest;
-use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
-use Facebook\HttpClients\FacebookCurl;
-
 
 
 class UploadPhoto {
@@ -22,7 +19,6 @@ class UploadPhoto {
     public function __construct($session){
 
         $this->session = $session;
-
     }
 
     public function upload($file){
@@ -38,14 +34,17 @@ class UploadPhoto {
                 $response = (new FacebookRequest(
                     $this->session, 'POST', '/me/photos', array(
                         'source' => new \CURLFile($file['tmp_name'], $file['type']),
-                        'message' => 'User provided message'
+                        'message' => 'Concours Selfie'
                     )
                 ))->execute()->getGraphObject();
 
                 // If you're not using PHP 5.5 or later, change the file reference to:
                 // 'source' => '@/path/to/file.name'
+                if($response->getError()!=null){
+                    echo "Posted with id: " . $response->getProperty('id');
+                }
 
-                echo "Posted with id: " . $response->getProperty('id');
+
 
             } catch(FacebookRequestException $e) {
 

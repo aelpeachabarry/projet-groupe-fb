@@ -15,6 +15,8 @@ use Facebook\FacebookRequest;
 class FacebookConnect {
 
     private $session;
+    private $imgProfile;
+    private $facebookid;
 
     function __construct($appid, $appsecret){
 
@@ -54,34 +56,29 @@ class FacebookConnect {
                 //var_dump($response);
 
                 //facebook id
-                $facebookId = $response->getId();
+                $this->facebookid = $response->getId();
 
                 //image profil du user
                 $imgProfile = '<img src="//graph.facebook.com/'.$facebookId.'/picture">';
-
-
 
                 //si le user a refuser la permission de recupération du mail
                 if($response->getEmail() === null){
                     throw new Exception('l\'email n\'est pas disponible');
                 }
-
                 return $response;
 
             }catch (Exception $e){
-
                     unset($_SESSION['fb_token']);
-
-                    return $helper->getReRequestUrl(['email','publish_actions']);
+                    return $helper->getReRequestUrl(['email']);
             }
-
         }else{
-
-                return $helper->getReRequestUrl(['email','publish_actions']);
-
+                return $helper->getReRequestUrl(['email']);
         }
     }
     public function getSession(){
         return $this->session;
+    }
+    public function getFacebookId(){
+        return $this->facebookid;
     }
 }
