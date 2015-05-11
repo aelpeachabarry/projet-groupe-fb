@@ -35,9 +35,9 @@ if(is_string($user)){
             $uploaded->upload($_FILES['mon_fichier']);
             $db = new DbConnect();
             $result = $db->query('select * from users');
-            echo "<pre>";
-            print_r($result);
-            echo "</pre>";
+            foreach( $result as $row) {
+                print_r($row);
+            }
         }else{
             echo "probleme fichier";
         }
