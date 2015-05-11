@@ -15,6 +15,7 @@ use Facebook\FacebookRequestException;
 class UploadPhoto {
 
     private $session;
+    private $imgId;
 
     public function __construct($session){
 
@@ -40,8 +41,9 @@ class UploadPhoto {
 
                 // If you're not using PHP 5.5 or later, change the file reference to:
                 // 'source' => '@/path/to/file.name'
-                if($response->getError()!=null){
-                    echo "Posted with id: " . $response->getProperty('id');
+                var_dump($response->getProperty('error'));
+                if($response->getProperty('error')!=null){
+                    $this->imgId =  $response->getProperty('id');
                 }
 
 
@@ -52,8 +54,10 @@ class UploadPhoto {
                 echo " with message: " . $e->getMessage();
 
             }
-
         }
+    }
+    public function getImgId(){
+        return $this->imgId;
     }
 
 
