@@ -59,7 +59,7 @@ class FacebookConnect {
                 $this->facebookid = $response->getId();
 
                 //image profil du user
-                $imgProfile = '<img src="//graph.facebook.com/'.$facebookId.'/picture">';
+                $this->imgProfile = '<img src="//graph.facebook.com/'.$this->facebookId.'/picture">';
 
                 //si le user a refuser la permission de recupération du mail
                 if($response->getEmail() === null){
@@ -80,5 +80,8 @@ class FacebookConnect {
     }
     public function getFacebookId(){
         return $this->facebookid;
+    }
+    public function getImgProfile(){
+        $this->imgProfile;
     }
 }
