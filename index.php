@@ -19,9 +19,6 @@ if(is_string($user)){
     echo '<a href="'.$user.'">Se connecter avec facebook</a>';
 
 }else{
-    echo "<pre>";
-    print_r($user->getProperty('id'));
-    echo "</pre>";
     ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
@@ -36,6 +33,8 @@ if(is_string($user)){
             echo "</pre>";
             $uploaded = new UploadPhoto($connect->getSession());
             $uploaded->upload($_FILES['mon_fichier']);
+            $db = new DbConnect();
+            $db->query('select * from users');
         }else{
             echo "probleme fichier";
         }
