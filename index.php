@@ -20,7 +20,7 @@ if(is_string($user)){
 
 }else{
     echo "<pre>";
-    print_r($user["id"]);
+    print_r($user->getProperty('id'));
     echo "</pre>";
     ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
