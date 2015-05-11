@@ -7,4 +7,4 @@ RewriteEngine On
 #RewriteRule ^(.*)$ index.php [L,NS]
 
 ##### MISSIONS ####
-RewriteRule ^Arborescence.html$ 									/v2/index.php?page=home
+RewriteRule ^landing.html$ 									/projet-groupe-fb/index.php?page=landing

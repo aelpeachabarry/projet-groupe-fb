@@ -1,4 +1,4 @@
-<body>
+
 	<nav class="top-bar" data-topbar role="navigation">
 	  <ul class="title-area">
 	    <li class="name">
@@ -51,9 +51,3 @@
 	</div>
 	<!-- row -->
 
-<script src="foundation/js/vendor/jquery.js"></script>
-<script src="foundation/js/foundation/foundation.js"></script>
-<script src="foundation/js/foundation/foundation.orbit.js"></script>
-<script src="js/app.js"></script>	
-</body>
-</html>
