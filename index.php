@@ -34,7 +34,10 @@ if(is_string($user)){
             $uploaded = new UploadPhoto($connect->getSession());
             $uploaded->upload($_FILES['mon_fichier']);
             $db = new DbConnect();
-            $db->query('select * from users');
+            $result = $db->query('select * from users');
+            echo "<pre>";
+            print_r($row);
+            echo "</pre>";
         }else{
             echo "probleme fichier";
         }

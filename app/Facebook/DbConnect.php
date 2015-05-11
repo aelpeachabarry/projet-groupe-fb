@@ -16,9 +16,7 @@ class DbConnect{
 
         try {
             $result = $this->pdo->query($stmt);
-            foreach( $result as $row) {
-                print_r($row);
-            }
+            return $result;
         } catch (PDOException $e) {
             print "Erreur !: " . $e->getMessage() . "<br/>";
             die();
