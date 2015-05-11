@@ -10,7 +10,7 @@ namespace App\Facebook;
 class DbConnect{
     private $pdo;
     public function __construct(){
-        $this->pdo = new PDO('pgsql:host=ec2-54-225-154-5.compute-1.amazonaws.com;port=5432;dbname=dagidi42jnneae', 'xbhzyyoziowdlx', 'ICVHJx9jSI-oRmpxvsT6VM3c-l');
+        $this->pdo = new \PDO('pgsql:host=ec2-54-225-154-5.compute-1.amazonaws.com;port=5432;dbname=dagidi42jnneae', 'xbhzyyoziowdlx', 'ICVHJx9jSI-oRmpxvsT6VM3c-l');
     }
     public function query($stmt){
 
