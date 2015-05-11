@@ -31,7 +31,7 @@ switch($page)
         //require('');
         break;
     }
-    case 'form_inscription' :
+    case 'signup' :
     {
         //require('');
         break;
@@ -66,11 +66,9 @@ switch($page)
         //require('model/m_inscription.php');
     }
     case 'merci' : {
-        //require('');
-
+        require '';
     }
-    default:
-    {
+    default: {
         require 'views/landing';
     }
 
