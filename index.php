@@ -36,7 +36,7 @@ if(is_string($user)){
             $db = new DbConnect();
             $result = $db->query('select * from users');
             echo "<pre>";
-            print_r($row);
+            print_r($result);
             echo "</pre>";
         }else{
             echo "probleme fichier";
