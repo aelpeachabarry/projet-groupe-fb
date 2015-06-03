@@ -1,87 +1,63 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aelpeacha
- * Date: 08/04/15
- * Time: 22:24
- */
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
-namespace App\Facebook;
 
-use Facebook\FacebookRedirectLoginHelper;
-use Facebook\FacebookSession;
-use Facebook\FacebookRequest;
+session_start();
+use App\Facebook\FacebookConnect;
+use App\Facebook\UploadPhoto;
+use App\Facebook\DbConnect;
 
-class FacebookConnect {
+require 'vendor/autoload.php';
+require 'app/Facebook/constants.php';
 
-    private $session;
-    private $imgProfile;
-    private $facebookid;
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
 
-    function __construct($appid, $appsecret){
+if(is_string($user)){
 
-        $this->appId = $appid;
-        $this->appSecret = $appsecret;
+    echo '<a href="'.$user.'">Se connecter avec facebook</a>';
 
-    }
+}else{
+    ?>
+    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
+        <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+        <input type="submit" name="submit" value="Envoyer" />
+    </form>
+    <?
 
-    public  function connect($redirectUrl){
-
-        FacebookSession::setDefaultApplication($this->appId, $this->appSecret);
-        $helper = new FacebookRedirectLoginHelper($redirectUrl);
-
-        //si la var session existe et que l'on un un fb token en session
-        if(isset($_SESSION) && isset($_SESSION['fb_token'])){
-            //on récupère la session active
-            $this->session = new FacebookSession($_SESSION['fb_token']);
-
-        }else{
-
-            //on récupère le token de connexion
-            $this->session = $helper->getSessionFromRedirect();
-
-        }
-
-        //si on a une session
-        if($this->session){
-
-            try{
-                //génération du token
-                $_SESSION['fb_token'] = $this->session->getToken();
-
-                //si on a bien notre token de connexion on peut commencer à faire des requetes avec la classe facebookrequest
-                $request = new FacebookRequest($this->session, 'GET', '/me');
-                //on recupère un objet graph user
-                $response = $request->execute()->getGraphObject('Facebook\GraphUser');
-                //var_dump($response);
-
-                //facebook id
-                $this->facebookid = $response->getId();
-
-                //image profil du user
-                $this->imgProfile = '<img src="//graph.facebook.com/'.$this->facebookid.'/picture">';
-
-                //si le user a refuser la permission de recupération du mail
-                if($response->getEmail() === null){
-                    throw new Exception('l\'email n\'est pas disponible');
-                }
-                return $response;
-
-            }catch (Exception $e){
-                    unset($_SESSION['fb_token']);
-                    return $helper->getReRequestUrl(['email']);
+    if(isset($_POST['submit'])){
+        if($_POST['submit'] && $_FILES){
+            echo "<pre>";
+            print_r($_FILES);
+            echo "</pre>";
+            $uploaded = new UploadPhoto($connect->getSession());
+            $code = $uploaded->upload($_FILES['mon_fichier']);
+            if(empty($code)){
+                echo $code;
             }
+            try{
+                $db = new DbConnect();
+                $result = $db->query('select * from users');
+                /*foreach( $result as $row) {
+                    print_r($row);
+                }*/
+            }catch (Exception $e){
+                echo "BDD error".$e;
+            }
+
         }else{
-                return $helper->getReRequestUrl(['email']);
+            echo "probleme fichier";
         }
-    }
-    public function getSession(){
-        return $this->session;
-    }
-    public function getFacebookId(){
-        return $this->facebookid;
-    }
-    public function getImgProfile(){
-        $this->imgProfile;
     }
 }
+
+//on envoi un lien de connexion
+//l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
+//les permissions sont a mettre dans un tableau puis à mettre en paramètre de getLoginUrl();
+//$loginUrl = $helper->getLoginUrl(['email']);
+//echo  '<a href="'.$loginUrl.'">Connexion avec facebook</a>';
+
+
+
+?>
