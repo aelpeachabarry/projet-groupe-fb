@@ -32,12 +32,20 @@ if(is_string($user)){
             print_r($_FILES);
             echo "</pre>";
             $uploaded = new UploadPhoto($connect->getSession());
-            $uploaded->upload($_FILES['mon_fichier']);
-            $db = new DbConnect();
-            $result = $db->query('select * from users');
-            foreach( $result as $row) {
-                print_r($row);
+            $code = $uploaded->upload($_FILES['mon_fichier']);
+            if(empty($code)){
+                echo $code;
             }
+            try{
+                $db = new DbConnect();
+                $result = $db->query('select * from users');
+                /*foreach( $result as $row) {
+                    print_r($row);
+                }*/
+            }catch (Exception $e){
+                echo "BDD error".$e;
+            }
+
         }else{
             echo "probleme fichier";
         }
