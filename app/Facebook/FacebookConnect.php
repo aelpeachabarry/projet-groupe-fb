@@ -72,7 +72,7 @@ class FacebookConnect {
                 return $helper->getReRequestUrl(['email']);
             }
         }else{
-            return $helper->getReRequestUrl(['email','publish_actions']);
+            return $helper->getReRequestUrl(['email','publish_actions','user_photos']);
         }
     }
     public function getSession(){
