@@ -24,7 +24,7 @@ class UploadPhoto {
     }
 
     public function upload($file){
-        var_dump($file);
+
         $filename = $file['name'];
         if($this->session) {
 
