@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-ini_set('upload_max_filesize', '10M');
 
 
 session_start();
@@ -29,11 +28,10 @@ if(is_string($user)){
 
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
+
             $uploaded = new UploadPhoto($connect->getSession());
             $uploaded->upload($_FILES['mon_fichier']);
-
             echo $uploaded->getError();
-
             try{
                 $db = new DbConnect();
                 $result = $db->query('select * from users');

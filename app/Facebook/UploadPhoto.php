@@ -24,7 +24,7 @@ class UploadPhoto {
     }
 
     public function upload($file){
-
+        var_dump($file);
         $filename = $file['name'];
         if($this->session) {
 
@@ -46,7 +46,7 @@ class UploadPhoto {
                 if($response->getProperty('error')!=0){
                     $this->imgId =  $response->getProperty('id');
                 }else{
-                    $this ->codeError = $this->codeToMessage($response->getProperty('error'));
+                    $this->codeError = $this->codeToMessage($response->getProperty('error'));
                 }
 
             } catch(FacebookRequestException $e) {
