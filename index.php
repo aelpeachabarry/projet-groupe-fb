@@ -8,9 +8,9 @@ use App\Facebook\FacebookConnect;
 use App\Facebook\UploadPhoto;
 use App\Facebook\DbConnect;
 use App\Facebook\imageManager;
-use App\Facebook\constants;
 
 require 'vendor/autoload.php';
+require 'app/Facebook/constants.php';
 
     $connect = new FacebookConnect(APP_ID, APP_SECRET);
     $user = $connect->connect(REDIRECT_URL);
