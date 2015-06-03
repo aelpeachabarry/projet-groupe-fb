@@ -1,12 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Ouistiti
+ * User: Moise
  * Date: 03/06/15
  * Time: 18:23
  */
+namespace App\Facebook;
+use Facebook\FacebookRequest;
 
-class imageManager{
+
+class ImageManager{
     public function __construct($session){
 
         $this->session = $session;
