@@ -27,7 +27,7 @@ if(is_string($user)){
     </form>
     <?
     $test = new ImageManager();
-    $test->getAllAlbum($connect->getSession());
+    $test->getAllAlbum($connect->getSession($connect->getSession()));
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
