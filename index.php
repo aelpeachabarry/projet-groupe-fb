@@ -7,9 +7,10 @@ session_start();
 use App\Facebook\FacebookConnect;
 use App\Facebook\UploadPhoto;
 use App\Facebook\DbConnect;
+use App\Facebook\imageManager;
+use App\Facebook\constants;
 
 require 'vendor/autoload.php';
-require 'app/Facebook/constants.php';
 
     $connect = new FacebookConnect(APP_ID, APP_SECRET);
     $user = $connect->connect(REDIRECT_URL);
@@ -25,7 +26,8 @@ if(is_string($user)){
         <input type="submit" name="submit" value="Envoyer" />
     </form>
     <?
-
+    $test = new ImageManager();
+    $test->getAllAlbum();
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
@@ -46,6 +48,7 @@ if(is_string($user)){
             echo "probleme fichier";
         }
     }
+
 }
 
 //on envoi un lien de connexion
