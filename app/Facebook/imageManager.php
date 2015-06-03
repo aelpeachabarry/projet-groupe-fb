@@ -14,7 +14,7 @@ class imageManager{
     public function getAllAlbum(){
         $response = (new FacebookRequest(
             $this->session, 'POST', '/me/albums'
-            )
+        )
         )->execute()->getGraphObject();
         var_dump($response);
     }
