@@ -7,6 +7,7 @@
  */
 namespace App\Facebook;
 use Facebook\FacebookRequest;
+use Facebook\FacebookRequestException;
 
 
 class ImageManager{
@@ -15,10 +16,16 @@ class ImageManager{
         $this->session = $session;
     }
     public function getAllAlbum(){
-        $response = (new FacebookRequest(
-            $this->session, 'POST', '/me/albums'
-        )
-        )->execute()->getGraphObject();
-        var_dump($response);
+        try {
+            $response = (new FacebookRequest(
+                $this->session, 'POST', '/me/albums'
+            )
+            )->execute()->getGraphObject();
+            var_dump($response);
+        }catch (FacebookRequestException $e) {
+
+            echo "Exception occured, code: " . $e->getCode();
+            echo " with message: " . $e->getMessage();
+        }
     }
 }
