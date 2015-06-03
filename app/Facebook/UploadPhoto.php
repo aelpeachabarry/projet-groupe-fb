@@ -42,7 +42,8 @@ class UploadPhoto {
                 // If you're not using PHP 5.5 or later, change the file reference to:
                 // 'source' => '@/path/to/file.name'
                 /*var_dump($response->getProperty('error'));*/
-                if($response->getProperty('error')!=0){
+                $error = $response->getProperty('error');
+                if($error==0){
                     $this->imgId =  $response->getProperty('id');
                 }else{
                     $this->codeError = $this->codeToMessage($response->getProperty('error'));
