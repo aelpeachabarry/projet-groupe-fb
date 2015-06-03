@@ -33,7 +33,7 @@ if(is_string($user)){
             echo "</pre>";
             $uploaded = new UploadPhoto($connect->getSession());
             $code = $uploaded->upload($_FILES['mon_fichier']);
-            if(empty($code)){
+            if(!empty($code)){
                 echo $code;
             }
             try{
