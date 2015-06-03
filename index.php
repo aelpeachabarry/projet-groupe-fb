@@ -28,14 +28,11 @@ if(is_string($user)){
 
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
-            echo "<pre>";
-            print_r($_FILES);
-            echo "</pre>";
             $uploaded = new UploadPhoto($connect->getSession());
             $code = $uploaded->upload($_FILES['mon_fichier']);
-            if(!empty($code)){
+
                 echo $code;
-            }
+
             try{
                 $db = new DbConnect();
                 $result = $db->query('select * from users');
