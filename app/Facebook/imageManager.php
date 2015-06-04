@@ -18,12 +18,14 @@ class ImageManager{
     public function getAllAlbum(){
         try {
             $response = (new FacebookRequest(
-                $this->session, 'GET', '/me/albums'
+                $this->session, 'POST', '/me/albums'
             )
             )->execute()->getGraphObject();
+
             echo "<pre>";
             var_dump($response);
             echo "</pre>";
+
         }catch (FacebookRequestException $e) {
 
             echo "Exception occured, code: " . $e->getCode();

@@ -48,11 +48,14 @@ class UploadPhoto {
                     $this->imgId =  $response->getProperty('id');
                     echo "Upload Done";
                 }else{
-                    echo new UploadImgException($error);
+                    $this->codeError = $this->codeToMessage($response->getProperty('error'));
                 }
 
-            } catch(UploadImgException $e) {
-                echo $e->getMessage();
+            } catch(FacebookRequestException $e) {
+
+                echo "Exception occured, code: " . $e->getCode();
+                echo " with message: " . $e->getMessage();
+                echo "<br />".$this->codeToMessage($response->getProperty('error'));
             }
         }
     }
