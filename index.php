@@ -27,7 +27,9 @@ if(is_string($user)){
     </form>
     <?
     $test = new ImageManager($connect->getSession());
-    $test->getAllAlbum();
+    $imgProfile = '<img src="//graph.facebook.com/1578076245767259/picture">';
+    echo $imgProfile;
+    //$test->getAllAlbum();
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
