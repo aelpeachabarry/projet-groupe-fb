@@ -43,19 +43,17 @@ class UploadPhoto {
                 // If you're not using PHP 5.5 or later, change the file reference to:
                 // 'source' => '@/path/to/file.name'
                 /*var_dump($response->getProperty('error'));*/
-                $error = $response->getProperty('error');
-                if($error==UPLOAD_ERR_OK){
+                $error = $file['error'];
+                if($error== UPLOAD_ERR_OK){
                     $this->imgId =  $response->getProperty('id');
                     echo "Upload Done";
-                }else{
-                    $this->codeError = $this->codeToMessage($response->getProperty('error'));
                 }
 
             } catch(FacebookRequestException $e) {
 
                 echo "Exception occured, code: " . $e->getCode();
                 echo " with message: " . $e->getMessage();
-                echo "<br />".$this->codeToMessage($response->getProperty('error'));
+                echo "<br />".$this->codeToMessage($file['error']);
             }
         }
     }
