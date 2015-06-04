@@ -33,23 +33,23 @@ class UploadPhoto {
                 // Upload to a user's profile. The photo will be in thee
                 // first album in the profile. You can also upload to
                 // a specific album by using /ALBUM_ID as the path
+                try{
                 $response = (new FacebookRequest(
                     $this->session, 'POST', '/me/photos', array(
                         'source' => new \CURLFile($file['tmp_name'], $file['type']),
                         'message' => 'Concours Selfie'
                     )
                 ))->execute()->getGraphObject();
-
+                $this->imgId =  $response->getProperty('id');
+                echo "Upload Done";
+                }catch (UploadImgException $e){
+                    $error = $response->getProperty('error');
+                    throw new UploadImgException($error);
+                }
                 // If you're not using PHP 5.5 or later, change the file reference to:
                 // 'source' => '@/path/to/file.name'
                 /*var_dump($response->getProperty('error'));*/
-                $error = $response->getProperty('error');
-                if($error==UPLOAD_ERR_OK){
-                    $this->imgId =  $response->getProperty('id');
-                    echo "Upload Done";
-                }else{
-                    throw new UploadImgException($error);
-                }
+
 
             } catch(FacebookRequestException $e) {
 
