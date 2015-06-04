@@ -10,6 +10,7 @@ namespace App\Facebook;
 
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
+use App\Facebook\UploadImgException;
 
 
 class UploadPhoto {
@@ -43,10 +44,11 @@ class UploadPhoto {
                 // 'source' => '@/path/to/file.name'
                 /*var_dump($response->getProperty('error'));*/
                 $error = $response->getProperty('error');
-                if($error==0){
+                if($error==UPLOAD_ERR_OK){
                     $this->imgId =  $response->getProperty('id');
+                    echo "Upload Done";
                 }else{
-                    $this->codeError = $this->codeToMessage($response->getProperty('error'));
+                    throw new UploadImgException($error);
                 }
 
             } catch(FacebookRequestException $e) {
