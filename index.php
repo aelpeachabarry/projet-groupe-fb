@@ -8,6 +8,7 @@ use App\Facebook\FacebookConnect;
 use App\Facebook\UploadPhoto;
 use App\Facebook\DbConnect;
 use App\Facebook\ImageManager;
+use App\Facebook\AlbumManager;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';

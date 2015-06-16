@@ -5,6 +5,9 @@
  * Date: 16/06/2015
  * Time: 22:30
  */
+namespace App\Facebook;
+use Facebook\FacebookRequest;
+use Facebook\FacebookRequestException;
 
 class AlbumManager {
     private $albums;
