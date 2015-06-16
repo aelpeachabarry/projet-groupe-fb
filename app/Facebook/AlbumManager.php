@@ -18,7 +18,7 @@ class AlbumManager {
                 $this->session, 'GET', '/me/albums'
             )
             )->execute()->getGraphObject();
-            $this->albums = $response->getProperty('data');
+            $this->albums = $response->getProperty('data')->asArray();
         }catch (FacebookRequestException $e) {
 
             echo "Exception occured, code: " . $e->getCode();
