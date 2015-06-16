@@ -73,7 +73,7 @@ if(is_string($user)){
 
             foreach($images->getImages() as $image){
                 echo $image->id;
-                echo "<img src='https://graph.facebook.com/".$connect->getFacebookId()."/".$image->id."'>";
+                echo "<img src='".$image->link."'>";
             }
         }
     }
