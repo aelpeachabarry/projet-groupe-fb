@@ -9,16 +9,10 @@ use App\Facebook\FacebookConnect;
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 
+$page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
-if(!isset($_GET['page'])) {
-    $page = 'landing';
-}else {
-    $page = $_GET['page'];
-}
+require 'views/header.php';
 
-if($page != 'landing') {
-    require 'views/header.php';
-}
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
 //les permissions sont a mettre dans un tableau puis à mettre en paramètre de getLoginUrl();
@@ -55,31 +49,44 @@ switch($page)
     }
     case 'upload' :
     {
-        //require('');
+        require('views/upload.php');
         break;
     }
     case 'privacy' : {
         require 'views/privacy.php';
         break;
     }
-    case 'home' : {
-        require('');
-        //require('model/m_inscription.php');
+    case 'regle' : {
+        require('views/regle.php');
         break;
     }
-    case 'merci' : {
+    case 'gallery' : {
+        require('views/gallery.php');
+        break;
+    }
+    case 'sorry' : {
+        require('');
+        require('views/sorry.php');
+        break;
+    }
+    case 'thank' : {
         require '';
         break;
     }
+    case '404' : {
+        require ('views/404.php');
+        break;
+    }
     default: {
-        require 'views/landing.php';
+        require ('views/landing.php');
         break;
     }
 
 }
 
-
-require 'views/footer.php';
+/*if($page != 'landing') {*/
+    require ('views/footer.php');
+//}
 
 ?>
 

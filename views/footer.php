@@ -1,8 +1,25 @@
+<footer>
 <p>footer</p>
-<script src="./assets/foundation/js/vendor/jquery.js"></script>
-<script src="./assets/foundation/js/foundation/foundation.js"></script>
-<script src="./assets/foundation/js/foundation/foundation.orbit.js"></script>
-<script src="./assets/js/app.js"></script>
+</footer>
 
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- Modernizr javascript -->
+<script type="text/javascript" src="assets/plugins/modernizr.js"></script>
+
+<!-- Isotope javascript -->
+<script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
+
+<!-- Backstretch javascript -->
+<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+
+<!-- Appear javascript -->
+<script type="text/javascript" src="assets/plugins/jquery.appear.js"></script>
+
+<!-- Initialization of Plugins -->
+<script type="text/javascript" src="assets/js/template.js"></script>
+
+<!-- Custom Scripts -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
 </html>

@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/foundation/css/foundation.min.css">
-</head>
-<body>
-<nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#">Landing</a></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-</nav>
+<!-- banner start -->
+<!-- ================ -->
+<div id="banner" class="banner">
+    <div class="banner-image"></div>
+    <div class="banner-caption">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-6 object-non-visible" style="background-color: rgba(0,0,0,0.2);" data-animation-effect="fadeIn">
+                    <h2 class="text-center">L'holidays selfies est ouvert</h2>
+                    <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
+                    <a href="#" class="btn btn-primary btn-primary" style="margin-left:25%">Participer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- banner end -->

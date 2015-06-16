@@ -8,3 +8,10 @@ RewriteEngine On
 
 ##### MISSIONS ####
 RewriteRule ^landing.html$ 									/projet-groupe-fb/index.php?page=landing
+RewriteRule ^upload.html$ 									/projet-groupe-fb/index.php?page=upload
+RewriteRule ^politique.html$ 								/projet-groupe-fb/index.php?page=privacy
+RewriteRule ^desole.html$ 									/projet-groupe-fb/index.php?page=sorry
+RewriteRule ^merci.html$ 									/projet-groupe-fb/index.php?page=thank
+RewriteRule ^comment-jouer.html$ 							/projet-groupe-fb/index.php?page=regle
+RewriteRule ^galerie.html$ 									/projet-groupe-fb/index.php?page=gallery
+RewriteRule ^404.html$ 									    /projet-groupe-fb/index.php?page=404
