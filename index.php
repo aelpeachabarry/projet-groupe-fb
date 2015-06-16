@@ -21,7 +21,9 @@ $user = $connect->connect(REDIRECT_URL);
     <meta charset="utf-8" />
     <title>Concours TravelInfo</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
 </head>
 <body>
 <?php
@@ -50,7 +52,9 @@ if(is_string($user)){
                         <option value="default"></option>
                         <?php
                         $albums = new AlbumManager($connect->getSession());
+                        /*var_dump($albums);*/
                         foreach($albums->getAlbums() as $data){
+                            var_dump($data);
                             echo '<option value="'.$data->id.'">'.$data->name.'</option>';
                         }
                         ?>
