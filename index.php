@@ -35,10 +35,34 @@ if(is_string($user)){
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
         <input type="submit" name="submit" value="Envoyer" />
     </form>
-    <?
-    $albums = new AlbumManager($connect->getSession());
+    <form class="form-horizontal">
+        <fieldset>
 
-    var_dump($albums->getAlbums());
+            <!-- Form Name -->
+            <legend>Select Image From your album</legend>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">Albums</label>
+                <div class="col-md-4">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="default"></option>
+                        <?php
+                        $albums = new AlbumManager($connect->getSession());
+                        /*var_dump($albums);*/
+                        foreach($albums->getAlbums() as $data){
+                            var_dump($data);
+                            echo '<option value="'.$data->id.'">'.$data->name.'</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+    <?php
+
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
