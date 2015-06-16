@@ -38,7 +38,7 @@ if(is_string($user)){
     <?
     $albums = new AlbumManager($connect->getSession());
 
-    var_dump($albums->getAlbums());
+    var_dump($albums->getAlbums()->getProperty('BackingData'));
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
