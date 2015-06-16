@@ -12,18 +12,15 @@ use App\Facebook\AlbumManager;
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 
-$connect = new FacebookConnect(APP_ID, APP_SECRET);
-$user = $connect->connect(REDIRECT_URL);
+    $connect = new FacebookConnect(APP_ID, APP_SECRET);
+    $user = $connect->connect(REDIRECT_URL);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Concours TravelInfo</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-
+    <title>Mon blog</title>
+    <link href="vue/blog/style.css" rel="stylesheet" />
 </head>
 <body>
 <?php
@@ -38,33 +35,10 @@ if(is_string($user)){
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
         <input type="submit" name="submit" value="Envoyer" />
     </form>
-    <form class="form-horizontal">
-        <fieldset>
-
-            <!-- Form Name -->
-            <legend>Select Image From your album</legend>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="selectbasic">Albums</label>
-                <div class="col-md-4">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                        <option value="default"></option>
-                        <?php
-                        $albums = new AlbumManager($connect->getSession());
-                        /*var_dump($albums);*/
-                        foreach($albums->getAlbums() as $data){
-                            var_dump($data);
-                            echo '<option value="'.$data->id.'">'.$data->name.'</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-
-        </fieldset>
-    </form>
     <?
+    $albums = new AlbumManager($connect->getSession());
+
+    var_dump($albums->getAlbums());
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
@@ -88,5 +62,3 @@ if(is_string($user)){
 
 
 ?>
-</body>
-</html>
