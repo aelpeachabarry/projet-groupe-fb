@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-
 session_start();
 use App\Facebook\FacebookConnect;
 use App\Facebook\UploadPhoto;
@@ -13,8 +12,19 @@ use App\Facebook\AlbumManager;
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 
-    $connect = new FacebookConnect(APP_ID, APP_SECRET);
-    $user = $connect->connect(REDIRECT_URL);
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Concours TravelInfo</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+</head>
+<body>
+<?php
 
 if(is_string($user)){
 
@@ -36,15 +46,6 @@ if(is_string($user)){
             $uploaded = new UploadPhoto($connect->getSession());
             $uploaded->upload($_FILES['mon_fichier']);
             echo $uploaded->getError();
-            try{
-                $db = new DbConnect();
-                $result = $db->query('select * from users');
-                /*foreach( $result as $row) {
-                    print_r($row);
-                }*/
-            }catch (Exception $e){
-                echo "BDD error".$e;
-            }
 
         }else{
             echo "probleme fichier";
@@ -62,3 +63,5 @@ if(is_string($user)){
 
 
 ?>
+</body>
+</html>
