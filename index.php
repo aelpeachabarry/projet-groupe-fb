@@ -37,7 +37,7 @@ if(is_string($user)){
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
         <input type="submit" name="submit" value="Envoyer" />
     </form>
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="POST">
         <fieldset>
 
             <!-- Form Name -->
@@ -53,10 +53,10 @@ if(is_string($user)){
                         $albums = new AlbumManager($connect->getSession());
                         /*var_dump($albums);*/
                         foreach($albums->getAlbums() as $data){
-                            var_dump($data);
                             echo '<option value="'.$data->id.'">'.$data->name.'</option>';
                         }
                         ?>
+                        <input type="submit" name="findImg" value="rechercher mes Images" />
                     </select>
                 </div>
             </div>
@@ -64,7 +64,17 @@ if(is_string($user)){
         </fieldset>
     </form>
     <?php
+    if(isset($_POST['findImg'])){
+        if($_POST['selectbasic']=="default"){
+            echo "<p>Veuillez Selectionnez un album</p>";
+        }else{
+            $images = new ImageManager($_POST['selectbasic']);
 
+            foreach($images->getImages() as $image){
+                echo $image->id;
+            }
+        }
+    }
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 

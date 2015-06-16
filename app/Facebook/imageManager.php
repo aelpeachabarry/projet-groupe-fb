@@ -19,7 +19,7 @@ class ImageManager{
             )
             )->execute()->getGraphObject();
 
-            $this->images =$response->getProperty('data');
+            $this->images =$response->getProperty('data')->asArray();
         }catch (FacebookRequestException $e) {
             echo "Exception occured, code: " . $e->getCode();
             echo " with message: " . $e->getMessage();
