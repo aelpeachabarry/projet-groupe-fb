@@ -72,8 +72,8 @@ if(is_string($user)){
             $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
 
             foreach($images->getImages() as $image){
-                echo $image->id;
-                echo "<img src='".$image->link."'>";
+                var_dump($image);
+                echo "<img src='".$image->source."'>";
             }
         }
     }
