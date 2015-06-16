@@ -72,7 +72,7 @@ if(is_string($user)){
             $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
 
             foreach($images->getImages() as $image){
-                var_dump($image);
+                /*var_dump($image);*/
                 echo "<img src='".$image->source."'>";
             }
         }
