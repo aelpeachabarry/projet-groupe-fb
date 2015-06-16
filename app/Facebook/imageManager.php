@@ -19,7 +19,7 @@ class ImageManager{
         var_dump($this->session);
         try {
             $response = (new FacebookRequest(
-                $this->session, 'POST', '/me/albums'
+                $this->session, 'GET', '/me/albums', array('name')
             )
             )->execute()->getGraphObject();
 
