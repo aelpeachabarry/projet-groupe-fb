@@ -68,7 +68,7 @@ if(is_string($user)){
         if($_POST['selectbasic']=="default"){
             echo "<p>Veuillez Selectionnez un album</p>";
         }else{
-            $images = new ImageManager($_POST['selectbasic']);
+            $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
 
             foreach($images->getImages() as $image){
                 echo $image->id;
