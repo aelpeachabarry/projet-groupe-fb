@@ -11,26 +11,22 @@ use Facebook\FacebookRequestException;
 
 
 class ImageManager{
-    public function __construct($session){
-
-        $this->session = $session;
-    }
-    public function getAllAlbum(){
+    private $images;
+    public function __construct($albumId){
         try {
             $response = (new FacebookRequest(
-                $this->session, 'GET', '/me/albums'
+                $this->session, 'GET', '/'.$albumId.'/albums'
             )
             )->execute()->getGraphObject();
 
-            echo "<pre>";
-            var_dump($response->getProperty('data'));
-            echo "</pre>";
-
+            $this->images =$response->getProperty('data');
         }catch (FacebookRequestException $e) {
-
             echo "Exception occured, code: " . $e->getCode();
             echo " with message: " . $e->getMessage();
         }
+    }
+    public function getImages(){
+        return $this->images;
     }
 }
 

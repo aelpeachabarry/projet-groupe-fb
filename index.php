@@ -26,8 +26,9 @@ if(is_string($user)){
         <input type="submit" name="submit" value="Envoyer" />
     </form>
     <?
-    $test = new ImageManager($connect->getSession());
-    $test->getAllAlbum();
+    $albums = new AlbumManager($connect->getSession());
+
+    var_dump($albums->getAlbums());
     if(isset($_POST['submit'])){
         if($_POST['submit'] && $_FILES){
 
