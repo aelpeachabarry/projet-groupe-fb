@@ -12,7 +12,8 @@ use Facebook\FacebookRequestException;
 
 class ImageManager{
     private $images;
-    public function __construct($albumId){
+    public function __construct($session,$albumId){
+        $this->session = $session;
         try {
             $response = (new FacebookRequest(
                 $this->session, 'GET', '/'.$albumId.'/albums'
