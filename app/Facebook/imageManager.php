@@ -16,15 +16,12 @@ class ImageManager{
         $this->session = $session;
     }
     public function getAllAlbum(){
+        var_dump($this->session);
         try {
             $response = (new FacebookRequest(
                 $this->session, 'POST', '/me/albums'
             )
             )->execute()->getGraphObject();
-
-            echo "<pre>";
-            var_dump($response);
-            echo "</pre>";
 
         }catch (FacebookRequestException $e) {
 
