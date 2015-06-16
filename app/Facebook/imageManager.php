@@ -23,7 +23,7 @@ class ImageManager{
             )->execute()->getGraphObject();
 
             echo "<pre>";
-            var_dump($response);
+            var_dump($response->getData());
             echo "</pre>";
 
         }catch (FacebookRequestException $e) {
