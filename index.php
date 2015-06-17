@@ -23,6 +23,7 @@ require 'app/Facebook/constants.php';
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/travelinfo.js"></script>
 </head>
 <body>
 <?php
