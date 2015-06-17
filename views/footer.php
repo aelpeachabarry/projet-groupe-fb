@@ -1,6 +1,3 @@
-<footer>
-<p>footer</p>
-</footer>
 
 <script src="./assets/js/jquery.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
