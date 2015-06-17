@@ -8,7 +8,9 @@
 namespace ajaxHandler;
 use App\Facebook\ImageManager;
 
-
+function getImages(){
+    echo "yes";
+}
 if(isset($_POST['action'])){
     var_dump( $_POST['action']);
     if(function_exists($_POST['action'])){
@@ -16,8 +18,5 @@ if(isset($_POST['action'])){
         var_dump($_POST['action']());
     }else{
         echo 'function doesn\'t exist';
-    }
-    function getImages(){
-        echo "yes";
     }
 }
