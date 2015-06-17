@@ -9,7 +9,7 @@ namespace ajaxHandler;
 use App\Facebook\ImageManager;
 
 function getImages(){
-    echo "yes";
+    return "yes";
 }
 if(isset($_POST['action'])){
     var_dump( $_POST['action']);
