@@ -5,6 +5,7 @@ $(document).ready(function(){
     $("#selectbasic").change(function(){
         $.ajax({
             url:"/ajaxHandler/functions.php",
+            type:'POST',
             data : {
                 action : 'getImages'
             },
