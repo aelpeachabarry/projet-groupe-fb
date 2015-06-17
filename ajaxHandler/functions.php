@@ -17,7 +17,7 @@ if(isset($_POST['action'])){
     }else{
         echo 'function doesn\'t exist';
     }
-}
-function getImages(){
-    echo "yes";
+    function getImages(){
+        echo "yes";
+    }
 }
