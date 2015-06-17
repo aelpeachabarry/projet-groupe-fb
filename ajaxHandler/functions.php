@@ -11,7 +11,7 @@ use App\Facebook\ImageManager;
 
 if(isset($_POST['action'])){
     if(function_exists($_POST['action'])){
-        eval($_POST['action']."()");
+        eval($_POST['action']());
     }else{
         echo 'function doesn\'t exist';
     }
