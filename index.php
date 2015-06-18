@@ -21,9 +21,11 @@ require 'app/Facebook/constants.php';
     <meta charset="utf-8" />
     <title>Concours TravelInfo</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/image-picker.css.css" rel="stylesheet" />
     <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/travelinfo.js"></script>
+    <script type="text/javascript" src="assets/js/image-picker.min.js"></script>
 
 </head>
 <body>
