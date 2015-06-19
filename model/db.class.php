@@ -9,11 +9,12 @@
 
 		public function __construct() {
 			try {
-    			$this->db = new PDO("pgsql:host=localhost;dbname=".DB_NAME, USER_DB, PWD_DB);
+    			$this->db = new PDO("pgsql:host=".HOST.";dbname=".DB_NAME, USER_DB, PWD_DB);
 			}
 			catch(PDOException $e) {
 			  	$db = null;
 			  	echo 'ERREUR DB: ' . $e->getMessage();
+                exit();
 			}
 		}
 
