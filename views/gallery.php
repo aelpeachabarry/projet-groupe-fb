@@ -4,7 +4,15 @@
     $id_concours = $concours->getId();
 
     $photos = $db->getPhotos($id_concours);
-
+    $lots = $concours->getLots();
+?>
+    <p>Lots à gagner : </p>
+    <ul>
+    <?php foreach($lots as $lot) : ?>
+        <li><?php echo $lot->getLibelle(); ?></li>
+    <?php endforeach; ?>
+    </ul>
+<?php
     foreach ($photos as $photo) :
         $user = $photo->getUser();
         ?>

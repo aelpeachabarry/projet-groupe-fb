@@ -2,6 +2,7 @@
 	require_once ROOT.'/model/photo.class.php';
 	require_once ROOT.'/model/concours.class.php';
     require_once ROOT.'/model/user.class.php';
+    require_once ROOT.'/model/lot.class.php';
 
 	class Db 
 	{
@@ -94,7 +95,8 @@
 				echo $e->getMessage();
 			}
 		} // function updateUser($user)
-		/**
+
+        /**
 		 * Permet de récuperer le concours actuel. Recherche le concours où la date actuelle est compris entre la date de début et de fin.
 		 * @return classe Concours La classe concours.
 		 */
@@ -130,7 +132,48 @@
 				echo $e->getMessage();
 			}
 		} //getConcoursActuel()
-		/**
+
+        /**
+         * Récupérer le concours à partir de son ID.
+         * @param $id_concours
+         * @return bool|Concours. Le concours si trouvé, FALSE sinon.
+         */
+        public function getConcours($id_concours)
+        {
+            $db = $this->db;
+            $concours = '';
+
+            try
+            {
+                $query = 'SELECT * FROM concours WHERE id_concours = :id_concours';
+                $sth = $db->prepare($query);
+
+                $sth->bindParam(':id_concours', $id_concours, PDO::PARAM_STR);
+
+                if (!$sth->execute()) {
+                    echo 'Erreur à l\'éxecution';
+                    echo '<br>'.$query;
+                    echo '<br>'.$db->errorInfo()[2];
+                    return false;
+                }
+
+                if ($result = $sth->fetch())
+                {
+                    // var_dump($result);
+                    $concours = new Concours($result['id_concours'], $result['description_concours'], $result['date_debut'], $result['date_fin']);
+                    return $concours;
+                }
+                else
+                    return false;
+
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage();
+            }
+        } //getConcoursActuel()
+
+        /**
 		 * Récupère les photos d'un concours
 		 * @param  int $id_concours L'ID du concours
 		 * @return Array class      Tableau de photos
@@ -213,5 +256,51 @@
 				echo $e->getMessage();
 			}
 		}
+
+        public function getLot($id_lot)
+        {
+
+        }
+
+        public function searchLots($id_concours)
+        {
+            $lots = [];
+            $db = $this->db;
+
+            try
+            {
+                $query = 'SELECT * FROM lots
+							WHERE id_concours = :id_concours';
+
+                $sth = $db->prepare($query);
+
+                $sth->bindParam(':id_concours', $id_concours, PDO::PARAM_INT);
+
+                if (!$sth->execute()) {
+                    echo 'Erreur à l\'éxecution';
+                    echo '<br>'.$query;
+                    echo '<br>'.$db->errorInfo()[2];
+                    return false;
+                }
+
+                $result = $sth->fetchAll();
+
+                foreach ($result as $key)
+                {
+                    // var_dump($result);
+                    $lot = new Lot($key['id_lot'], $key['libelle_lot'], $key['id_concours']);
+
+                    $lots[] = $lot;
+                }
+
+                return $lots;
+
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage();
+            }
+
+        }
 	}
 ?>

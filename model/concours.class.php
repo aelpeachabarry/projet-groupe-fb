@@ -33,5 +33,13 @@
 		{
 			return $this->date_fin;
 		}
+
+        public function getLots()
+        {
+            $db = new Db();
+            $lots = $db->searchLots($this->id);
+
+            return $lots;
+        }
 	}
 ?>
