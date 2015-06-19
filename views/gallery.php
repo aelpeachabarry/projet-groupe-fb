@@ -1,3 +1,20 @@
+<?php
+    $db = new Db();
+    $concours = $db->getConcoursActuel();
+    $id_concours = $concours->getId();
+
+    $photos = $db->getPhotos($id_concours);
+
+    foreach ($photos as $photo) :
+        $user = $photo->getUser();
+        ?>
+        <p>
+            Photo ID : <?php echo $photo->getId(); ?><br>
+            Nb Likes : <?php echo $photo->getNbLike(); ?><br>
+            Propriétaire : <?php echo $user->getNom().' '.$user->getPrenom(); ?>
+        </p>
+    <?php endforeach; ?>
+
 
 <div class="row col-lg-offset-2 col-lg-8">
 
