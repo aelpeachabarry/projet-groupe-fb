@@ -10,6 +10,7 @@ $user = $connect->connect(REDIRECT_URL);*/
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
+require 'constants.php';
 
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
@@ -59,6 +60,7 @@ switch($page)
         break;
     }
     case 'gallery' : {
+        require 'model/db.class.php';
         require('views/gallery.php');
         break;
     }
