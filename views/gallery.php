@@ -6,6 +6,7 @@
     $photos = $db->getPhotos($id_concours);
     $lots = $concours->getLots();
 ?>
+    <h3>Bienvenue sur <?php echo $concours->getNom(); ?></h3>
     <p>Lots à gagner : </p>
     <ul>
     <?php foreach($lots as $lot) : ?>

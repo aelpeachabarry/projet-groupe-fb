@@ -47,6 +47,8 @@
 				    echo '<br>'.$db->errorInfo()[2];
 				    return false;
 				}
+
+                $sth->closeCursor();
 				
 				return true;
 			}
@@ -86,8 +88,8 @@
 				    return false;
 				}
 
-				echo $query;
-				
+                $sth->closeCursor();
+
 				return true;
 			}
 			catch (Exception $e)
@@ -120,7 +122,8 @@
 				if ($result = $sth->fetch())
 				{
 					// var_dump($result);
-					$concours = new Concours($result['id_concours'], $result['description_concours'], $result['date_debut'], $result['date_fin']);					
+					$concours = new Concours($result['id_concours'], $result['nom_concours'], $result['description_concours'], $result['date_debut'], $result['date_fin']);
+                    $sth->closeCursor();
 					return $concours;
 				}
 				else
@@ -160,7 +163,8 @@
                 if ($result = $sth->fetch())
                 {
                     // var_dump($result);
-                    $concours = new Concours($result['id_concours'], $result['description_concours'], $result['date_debut'], $result['date_fin']);
+                    $concours = new Concours($result['id_concours'], $result['nom_concours'], $result['description_concours'], $result['date_debut'], $result['date_fin']);
+                    $sth->closeCursor();
                     return $concours;
                 }
                 else
@@ -208,6 +212,7 @@
 					
 					$photos[] = $photo;
 				}
+                $sth->closeCursor();
 				
 				return $photos;
 				
@@ -247,6 +252,8 @@
 				}
 				else
 					return false;
+
+                $sth->closeCursor();
 				
 				return $user;
 				
@@ -292,6 +299,8 @@
 
                     $lots[] = $lot;
                 }
+
+                $sth->closeCursor();
 
                 return $lots;
 
