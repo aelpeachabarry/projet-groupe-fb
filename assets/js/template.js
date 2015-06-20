@@ -1,6 +1,6 @@
 
 (function($){
-    $(document).ready(function(){
+	$(document).ready(function(){
         $('#participer').click(function(e){
             e.preventDefault();
             console.log('here');
@@ -26,8 +26,6 @@
                 });
             }
         });
-	$(document).ready(function(){
-	
 		/*$(".banner-image").backstretch('images/beach-holiday.jpg');*/
 		
 		// Fixed header
