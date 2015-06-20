@@ -219,7 +219,8 @@ blockquote {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 .translucent-bg.blue:after {
-	background-color: rgba(85, 172, 238, 0.7);
+	/*background-color: rgba(85, 172, 238, 0.7);*/
+    background-color: #000;
 }
 .translucent-bg .container {
 	z-index: 3;
@@ -713,3 +714,8 @@ textarea {
 .margin-top{
     margin-top: 3%;
 }
+
+footer{
+    background-color: #000000;
+}
+

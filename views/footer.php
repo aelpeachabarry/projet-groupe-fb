@@ -1,6 +1,3 @@
-<footer>
-<p>footer</p>
-</footer>
 
 <script src="./assets/js/jquery.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
@@ -21,5 +18,6 @@
 
 <!-- Custom Scripts -->
 <script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="assets/js/travelagency.js"></script>
 </body>
 </html>

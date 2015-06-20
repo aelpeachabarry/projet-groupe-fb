@@ -34,17 +34,13 @@ switch($page)
     case 'connectFb' :
     {
         $connect = new FacebookConnect(APP_ID, APP_SECRET);
-
         $user = $connect->connect(REDIRECT_URL);
 
         if(is_string($user)){
-
-            echo '<a href="'.$user.'">Se connecter avec facebook</a>';
-
+            echo $user;
         }else{
             var_dump($user);
         }
-
         break;
     }
     case 'upload' :
