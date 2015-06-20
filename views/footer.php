@@ -7,6 +7,9 @@
 <script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
 
 <!-- Backstretch javascript -->
+<!--imagePicker javascript-->
+<script type="text/javascript" src="assets/plugins/isotope/image-picker.min.js"></script>
+<!--Fin ImagePicker -->
 <!--<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>-->
 
 <!-- Appear javascript -->
