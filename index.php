@@ -4,10 +4,11 @@ ini_set("display_errors", 1);
 
 
 session_start();
-use App\Facebook\FacebookConnect;
+//use App\Facebook\FacebookConnect;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
+require 'constants.php';
 
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
@@ -23,6 +24,7 @@ switch($page)
 
     case 'landing' :
     {
+        require('controller/controller_landing.php');
         require 'views/landing.php';
         break;
     }
@@ -57,11 +59,11 @@ switch($page)
         break;
     }
     case 'gallery' : {
+        require 'model/db.class.php';
         require('views/gallery.php');
         break;
     }
     case 'sorry' : {
-        require('');
         require('views/sorry.php');
         break;
     }
@@ -74,6 +76,7 @@ switch($page)
         break;
     }
     default: {
+        require('controller/controller_landing.php');
         require ('views/landing.php');
         break;
     }

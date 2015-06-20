@@ -1,94 +1,104 @@
+<?php
+    $db = new Db();
+    $concours = $db->getConcoursActuel();
+    $id_concours = $concours->getId();
+
+    $photos = $db->getPhotos($id_concours);
+
+    foreach ($photos as $photo) :
+        $user = $photo->getUser();
+        ?>
+        <p>
+            Photo ID : <?php echo $photo->getId(); ?><br>
+            Nb Likes : <?php echo $photo->getNbLike(); ?><br>
+            Propriétaire : <?php echo $user->getNom().' '.$user->getPrenom(); ?>
+        </p>
+    <?php endforeach; ?>
+
 
 <div class="row col-lg-offset-2 col-lg-8">
 
     <!--caroussel-->
     <div id="myCarousel" class="carousel slide col-lg-12">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="" data-target="#image-gallery">
+                <img class="img-responsive" src="http://lorempixel.com/400/300" alt="">
+            </a>
+        </div>
+
+    </div>    
+</div>
+
+
+<!-- le modal qui sert de lightbox -->
+    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="image-gallery-title"></h4>
                 </div>
-            </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
+                <div class="modal-body">
+                    <img id="image-gallery-image" class="img-responsive" src="">
                 </div>
-            </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
+                <div class="modal-footer">
+
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
+                    </div>
+
+                    <div class="col-md-8 text-justify" id="image-gallery-caption">
+                        This text will be overwritten by jQuery
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
     </div>
 
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-        <a class="thumbnail" href="#">
-            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-        </a>
-    </div>
-</div>
+<script src="./assets/js/gallery.js"></script>
 

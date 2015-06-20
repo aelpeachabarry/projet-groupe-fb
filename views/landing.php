@@ -15,3 +15,4 @@
     </div>
 </div>
 <!-- banner end -->
+<script src="./assets/js/landing.js"></script>

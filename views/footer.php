@@ -1,5 +1,4 @@
 
-<script src="./assets/js/jquery.js"></script>
 <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Modernizr javascript -->
 <script type="text/javascript" src="assets/plugins/modernizr.js"></script>
@@ -8,7 +7,7 @@
 <script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
 
 <!-- Backstretch javascript -->
-<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+<!--<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>-->
 
 <!-- Appear javascript -->
 <script type="text/javascript" src="assets/plugins/jquery.appear.js"></script>
