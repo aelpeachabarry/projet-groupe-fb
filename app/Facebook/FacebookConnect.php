@@ -15,6 +15,8 @@ use Facebook\FacebookRequest;
 class FacebookConnect {
 
     private $session;
+    private $imgProfile;
+    private $facebookid;
 
     function __construct($appid, $appsecret){
 
@@ -46,7 +48,6 @@ class FacebookConnect {
             try{
                 //génération du token
                 $_SESSION['fb_token'] = $this->session->getToken();
-                var_dump($this->session);
 
                 //si on a bien notre token de connexion on peut commencer à faire des requetes avec la classe facebookrequest
                 $request = new FacebookRequest($this->session, 'GET', '/me');
@@ -55,45 +56,32 @@ class FacebookConnect {
                 //var_dump($response);
 
                 //facebook id
-                $facebookId = $response->getId();
+                $this->facebookid = $response->getId();
 
                 //image profil du user
-                $imgProfile = '<img src="//graph.facebook.com/'.$facebookId.'/picture">';
-                echo $imgProfile;
-
+                $this->imgProfile = '<img src="//graph.facebook.com/'.$this->facebookid.'/picture">';
 
                 //si le user a refuser la permission de recupération du mail
                 if($response->getEmail() === null){
                     throw new Exception('l\'email n\'est pas disponible');
                 }
-
                 return $response;
 
             }catch (Exception $e){
-
-                    unset($_SESSION['fb_token']);
-
-                    return $helper->getReRequestUrl(['email']);
-
+                unset($_SESSION['fb_token']);
+                return $helper->getReRequestUrl(['email']);
             }
-
-
-            //facebook id
-            //$facebookId = $response->getId();
-
-            //image profil du user
-            /*$imgProfile = '<img src="//graph.facebook.com/'.$facebookId.'/picture">';
-            echo $imgProfile;*/
-
-            //requete sql
-            //si l'id est en bdd : SELECT * FROM users WHERE fb_id = $facebookId
-            //sinon : INSERT INTO users SET fb_id = $facebookId, fb_firstname = $response->getFirstName()
-
-
         }else{
-
-                return $helper->getReRequestUrl(['email','user_photos']);
-
+            return $helper->getReRequestUrl(['email','publish_actions','user_photos']);
         }
+    }
+    public function getSession(){
+        return $this->session;
+    }
+    public function getFacebookId(){
+        return $this->facebookid;
+    }
+    public function getImgProfile(){
+        $this->imgProfile;
     }
 }
