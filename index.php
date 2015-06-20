@@ -24,7 +24,7 @@ require 'app/Facebook/constants.php';
     <link href="assets/css/image-picker.css" rel="stylesheet" />
     <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/travelinfo.js"></script>
+    <script type="text/javascript" src="../projet-groupe-fb/assets/js/travelinfo.js"></script>
     <script type="text/javascript" src="assets/js/image-picker.min.js"></script>
 
 </head>
@@ -102,6 +102,3 @@ if(is_string($user)){
 //$loginUrl = $helper->getLoginUrl(['email']);
 //echo  '<a href="'.$loginUrl.'">Connexion avec facebook</a>';
 
-
-
-?>
