@@ -5,13 +5,16 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(.*)$ index.php [L,NS]
+#######UNCOMMENT THIS LINE ON YOUR LOCALHOST######
+#RewriteBase /projet-groupe-fb/
+##################################################
 
 ##### MISSIONS ####
-RewriteRule ^landing.html$ 									/projet-groupe-fb/index.php?page=landing
-RewriteRule ^upload.html$ 									/projet-groupe-fb/index.php?page=upload
-RewriteRule ^politique.html$ 								/projet-groupe-fb/index.php?page=privacy
-RewriteRule ^desole.html$ 									/projet-groupe-fb/index.php?page=sorry
-RewriteRule ^merci.html$ 									/projet-groupe-fb/index.php?page=thank
-RewriteRule ^comment-jouer.html$ 							/projet-groupe-fb/index.php?page=regle
-RewriteRule ^galerie.html$ 									/projet-groupe-fb/index.php?page=gallery
-RewriteRule ^404.html$ 									    /projet-groupe-fb/index.php?page=404
+RewriteRule ^landing.html$ 									index.php?page=landing
+RewriteRule ^upload.html$ 									index.php?page=upload
+RewriteRule ^politique.html$ 								index.php?page=privacy
+RewriteRule ^desole.html$ 									index.php?page=sorry
+RewriteRule ^merci.html$ 									index.php?page=thank
+RewriteRule ^comment-jouer.html$ 							index.php?page=regle
+RewriteRule ^galerie.html$ 									index.php?page=gallery
+RewriteRule ^404.html$ 									    index.php?page=404
