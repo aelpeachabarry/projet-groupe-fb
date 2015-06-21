@@ -10,11 +10,11 @@
                     <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
                     <?php
                     $username = $user->getName();
-                    if(isset($username)): ?>
+                    if(empty($username)){ ?>
                     <a href="#" id="participer" class="btn btn-primary btn-primary" style="margin-left:25%">Participer</a>
-                    <?php else: ?>
+                    <?php }else{ ?>
                         <h4>Bienvenue <?php $user->getName(); ?></h4>
-                    <?php endif; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
