@@ -11,7 +11,7 @@
                     <?php if(empty($user)): ?>
                     <a href="#" id="participer" class="btn btn-primary btn-primary" style="margin-left:25%">Participer</a>
                     <?php else: ?>
-                        <h4>Bienvenue <?php $user->getName ?></h4>
+                        <h4>Bienvenue <?php $user->getName() ?></h4>
                     <?php endif; ?>
                 </div>
             </div>
