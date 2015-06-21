@@ -15,11 +15,11 @@
                 </div>
                 <?php
                 }else{
+                    echo '<div class="col-md-4 col-md-offset-8 object-non-visible" style="background-color: rgba(0,0,0,0.2);padding-bottom:10px" data-animation-effect="fadeIn">';
+                    echo '<h4>Bienvenu'.$user->getName().'</h4>';
+                    echo '</div>';
+                }
                 ?>
-                <div class="col-md-4 col-md-offset-8 object-non-visible" style="background-color: rgba(0,0,0,0.2);padding-bottom:10px" data-animation-effect="fadeIn">
-                    <h4>Bienvenu <?php $user->getName()?></h4>
-                <?php}?>
-                </div>
             </div>
         </div>
     </div>
