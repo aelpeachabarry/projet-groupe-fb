@@ -6,4 +6,5 @@
  * Time: 15:38
  */
 
-phpinfo();
+mb_strlen("test");
+    ?>
