@@ -10,9 +10,3 @@ require '../app/Facebook/constants.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
-
-if(is_string($user)){
-    echo $user;
-}else{
-    var_dump($user);
-}
