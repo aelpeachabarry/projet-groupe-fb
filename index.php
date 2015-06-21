@@ -1,5 +1,7 @@
 <?php
-error_reporting(E_ALL);
+
+phpinfo();
+/*error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 
@@ -84,9 +86,5 @@ switch($page)
 }
 
 /*if($page != 'landing') {*/
-    require ('views/footer.php');
+    /*require ('views/footer.php');*/
 //}
-
-?>
-
-
