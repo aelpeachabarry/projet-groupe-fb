@@ -9,6 +9,8 @@
 
 $connect = $_SESSION['fbsession'];
 $user = $_SESSION['user'];
+
+var_dump($_SESSION);
 ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
