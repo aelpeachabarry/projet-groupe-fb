@@ -11,5 +11,9 @@ require '../app/Facebook/constants.php';
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
 
-$_SESSION['user_id'] = $user->getId();
-$_SESSION['fbsession'] = $connect;
+if(is_string($user)){
+    echo $user;
+}else{
+    $_SESSION['user'] = $user;
+    $_SESSION['fbsession'] = $connect;
+}
