@@ -6,11 +6,12 @@
  * Time: 18:10
  */
 
-if(is_string($user)){
+if($_SESSION['fb_token']){
 
     require "landing.php";
 
 }else{
+    var_dump($connect);
     ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
