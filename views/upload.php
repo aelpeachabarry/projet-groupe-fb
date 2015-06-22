@@ -6,13 +6,9 @@
  * Time: 18:10
  */
 
-if($_SESSION['fb_token']){
 
-    require "landing.php";
-
-}else{
-    var_dump($connect);
-    ?>
+var_dump($connect);
+?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
         <input type="submit" name="submit" value="Envoyer" />
@@ -43,31 +39,29 @@ if($_SESSION['fb_token']){
 
         </fieldset>
     </form>
-    <?php
-    if(isset($_POST['findImg'])){
-        if($_POST['selectbasic']=="default"){
-            echo "<p>Veuillez Selectionnez un album</p>";
-        }else{
-            $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-            echo '<select class="image-picker show-labels show-html">';
-            foreach($images->getImages() as $image){
-                /*var_dump($image);*/
-                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
-                /*echo "<img src='".$image->source."'>";*/
-            }
-            echo '</select>';
+<?php
+if(isset($_POST['findImg'])){
+    if($_POST['selectbasic']=="default"){
+        echo "<p>Veuillez Selectionnez un album</p>";
+    }else{
+        $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
+        echo '<select class="image-picker show-labels show-html">';
+        foreach($images->getImages() as $image){
+            /*var_dump($image);*/
+            echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
+            /*echo "<img src='".$image->source."'>";*/
         }
+        echo '</select>';
     }
-    if(isset($_POST['submit'])){
-        if($_POST['submit'] && $_FILES){
+}
+if(isset($_POST['submit'])){
+    if($_POST['submit'] && $_FILES){
 
-            $uploaded = new UploadPhoto($connect->getSession());
-            $uploaded->upload($_FILES['mon_fichier']);
-            echo $uploaded->getError();
+        $uploaded = new UploadPhoto($connect->getSession());
+        $uploaded->upload($_FILES['mon_fichier']);
+        echo $uploaded->getError();
 
-        }else{
-            echo "probleme fichier";
-        }
+    }else{
+        echo "probleme fichier";
     }
-
 }
