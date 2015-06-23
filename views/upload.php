@@ -27,7 +27,7 @@ echo '</pre>';
                         <option value="default"></option>
                         <?php
                         $albums = new AlbumManager($connect->getSession());
-                        /*var_dump($albums);*/
+                        var_dump($albums);
                         foreach($albums->getAlbums() as $data){
                             echo '<option value="'.$data->id.'">'.$data->name.'</option>';
                         }
