@@ -12,6 +12,7 @@ require 'constants.php';
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
 require 'views/header.php';
+require('controller/controller_landing.php');
 
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
@@ -23,7 +24,7 @@ switch($page)
 
     case 'landing' :
     {
-        require('controller/controller_landing.php');
+
         require 'views/landing.php';
         break;
     }
