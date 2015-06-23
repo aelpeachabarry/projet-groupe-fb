@@ -49,7 +49,7 @@ switch($page)
     {
         require 'app/Facebook/AlbumManager.php';
         require 'app/Facebook/UploadPhoto.php';
-        require 'app/Facebook/ImageManager.php';
+        require 'app/Facebook/imageManager.php';
         require('views/upload.php');
         break;
     }
