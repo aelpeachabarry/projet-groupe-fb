@@ -5,12 +5,9 @@
  * Date: 01/06/15
  * Time: 18:10
  */
-
-
-$connect = $_SESSION['fbsession'];
-$user = $_SESSION['user'];
-
-var_dump($_SESSION);
+echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';
 ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
