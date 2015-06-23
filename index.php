@@ -14,9 +14,9 @@ $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
 require 'views/header.php';
 require('controller/controller_landing.php');
-use App\Facebook\AlbumManager;
-use App\Facebook\ImageManager;
-use App\Facebook\UploadPhoto;
+use App\Facebook\AlbumManager as AlbumManager;
+use App\Facebook\ImageManager as ImageManager;
+use App\Facebook\UploadPhoto as UploadPhoto;
 
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
