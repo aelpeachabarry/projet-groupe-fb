@@ -8,6 +8,9 @@ session_start();
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 require 'constants.php';
+require_once 'app/Facebook/AlbumManager.php';
+require_once 'app/Facebook/UploadPhoto.php';
+require_once 'app/Facebook/imageManager.php';
 
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
