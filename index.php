@@ -4,10 +4,6 @@ ini_set("display_errors", 1);
 
 
 session_start();
-use App\Facebook\FacebookConnect;
-$connect = new FacebookConnect(APP_ID, APP_SECRET);
-$user = $connect->connect(REDIRECT_URL);
-
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
