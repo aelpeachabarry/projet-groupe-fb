@@ -5,6 +5,9 @@
  * Date: 01/06/15
  * Time: 18:10
  */
+require_once 'app/Facebook/AlbumManager.php';
+require_once 'app/Facebook/UploadPhoto.php';
+require_once 'app/Facebook/imageManager.php';
 ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
