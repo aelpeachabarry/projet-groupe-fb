@@ -47,9 +47,9 @@ switch($page)
     }
     case 'upload' :
     {
-        use \App\Facebook\UploadPhoto;
-        use \App\Facebook\AlbumManager;
-        use \App\Facebook\ImageManager;
+        require 'App/Facebook/AlbumManager.php';
+        require 'App/Facebook/UploadPhoto.php';
+        require 'App/Facebook/ImageManager.php';
         require('views/upload.php');
         break;
     }
