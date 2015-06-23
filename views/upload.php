@@ -6,7 +6,7 @@
  * Time: 18:10
  */
 echo '<pre>';
-print_r($_SESSION);
+print_r($connect);
 echo '</pre>';
 ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
