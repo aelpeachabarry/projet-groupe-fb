@@ -32,6 +32,18 @@ switch($page)
         //require('');
         break;
     }
+    case 'connectFb' :
+    {
+        $connect = new FacebookConnect(APP_ID, APP_SECRET);
+        $user = $connect->connect(REDIRECT_URL);
+
+        if(is_string($user)){
+            echo $user;
+        }else{
+            var_dump($user);
+        }
+        break;
+    }
     case 'upload' :
     {
         require('views/upload.php');
