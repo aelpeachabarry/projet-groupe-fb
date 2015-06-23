@@ -9,14 +9,10 @@ require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 require 'constants.php';
 
-
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
 require 'views/header.php';
 require('controller/controller_landing.php');
-use App\Facebook\AlbumManager as AlbumManager;
-use App\Facebook\ImageManager as ImageManager;
-use App\Facebook\UploadPhoto as UploadPhoto;
 
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
@@ -51,7 +47,9 @@ switch($page)
     }
     case 'upload' :
     {
-        require('controller/controller_upload.php');
+        require 'app/Facebook/AlbumManager.php';
+        require 'app/Facebook/UploadPhoto.php';
+        require 'app/Facebook/imageManager.php';
         require('views/upload.php');
         break;
     }
