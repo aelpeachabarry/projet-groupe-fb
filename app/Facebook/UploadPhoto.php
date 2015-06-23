@@ -6,8 +6,6 @@
  * Time: 14:48
  */
 
-namespace App\Facebook;
-
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 use App\Facebook\UploadImgException;
