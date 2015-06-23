@@ -48,7 +48,7 @@ switch($page)
     }
     case 'upload' :
     {
-        require('controller_upload.php');
+        require('controller/controller_upload.php');
         require('views/upload.php');
         break;
     }
