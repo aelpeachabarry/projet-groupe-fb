@@ -5,9 +5,9 @@
  * Date: 01/06/15
  * Time: 18:10
  */
-echo '<pre>';
-print_r($connect);
-echo '</pre>';
+require 'app/Facebook/AlbumManager.php';
+require 'app/Facebook/UploadPhoto.php';
+require 'app/Facebook/imageManager.php';
 ?>
     <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
         <input type="file" name="mon_fichier" id="mon_fichier" /><br />
