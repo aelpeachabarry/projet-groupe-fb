@@ -12,21 +12,21 @@ use App\Facebook\AlbumManager;
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
 
-    $connect = new FacebookConnect(APP_ID, APP_SECRET);
-    $user = $connect->connect(REDIRECT_URL);
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Concours TravelInfo</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/image-picker.css" rel="stylesheet" />
-    <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/image-picker.min.js"></script>
-    <script type="text/javascript" src="/assets/js/travelagency.js"></script>
-</head>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Concours TravelInfo</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/image-picker.css" rel="stylesheet" />
+        <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/image-picker.min.js"></script>
+        <script type="text/javascript" src="/assets/js/travelagency.js"></script>
+    </head>
 <body>
 <?php
 
@@ -72,13 +72,16 @@ if(is_string($user)){
             echo "<p>Veuillez Selectionnez un album</p>";
         }else{
             $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-            echo '<select class="image-picker show-labels show-html">';
-            foreach($images->getImages() as $image){
-                /*var_dump($image);*/
-                echo "<option data-img-src='".$image->source."' value='".$image->id."'></option>";
-                /*echo "<img src='".$image->source."'>";*/
+            $tempArrayImg = $images->getImages();
+            if(!empty($tempArrayImg)) {
+                echo '<select class="image-picker show-labels show-html">';
+                foreach ($images->getImages() as $image) {
+                    /*var_dump($image);*/
+                    echo "<option data-img-src='" . $image->source . "' value='" . $image->id . "'></option>";
+                    /*echo "<img src='".$image->source."'>";*/
+                }
+                echo '</select>';
             }
-            echo '</select>';
         }
     }
     if(isset($_POST['submit'])){
