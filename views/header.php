@@ -12,6 +12,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/image-picker.css">
     <script src="./assets/js/jquery.js"></script>
     <!--imagePicker javascript-->
     <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
