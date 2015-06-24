@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="assets/css/image-picker.css">
     <script src="./assets/js/jquery.js"></script>
     <!--imagePicker javascript-->
-    <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
     <!--Fin ImagePicker -->
     <!-- Backstretch javascript -->
     <script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
