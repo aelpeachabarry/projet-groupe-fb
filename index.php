@@ -57,7 +57,7 @@ if(is_string($user)){
                         $albums = new AlbumManager($connect->getSession());
                         /*var_dump($albums);*/
                         foreach($albums->getAlbums() as $data){
-                            echo '<option value="'.$data->id.'">'.$data->name.'</option>';
+                            echo '<option value="'.$data->id.'"></option>';
                         }
                         ?>
                         <input type="submit" name="findImg" value="rechercher mes Images" />
