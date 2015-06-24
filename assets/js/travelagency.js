@@ -23,3 +23,4 @@ $("#selectbasic").change(function(){
         });
     }
 });
+$("image-picker").imagepicker();
