@@ -24,9 +24,8 @@ require 'app/Facebook/constants.php';
     <link href="assets/css/image-picker.css" rel="stylesheet" />
     <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/assets/js/travelagency.js"></script>
     <script type="text/javascript" src="assets/js/image-picker.min.js"></script>
-
+    <script type="text/javascript" src="/assets/js/travelagency.js"></script>
 </head>
 <body>
 <?php
