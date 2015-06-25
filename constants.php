@@ -7,6 +7,8 @@
  */
 
 define('ROOT', dirname(__FILE__));
+
+define('HOST', 'localhost');
 define('USER_DB', 'newwer21');
 define('PWD_DB', '');
 define('DB_NAME', 'concours-fb');
