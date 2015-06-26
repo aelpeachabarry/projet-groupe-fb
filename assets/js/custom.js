@@ -1,3 +1,3 @@
 $('document').ready(function() {
-    $(".image-picker").imagepicker();
+    $(".image-picker").imagepicker({show_label: true});
 });
