@@ -1,9 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: guizmo
- * Date: 21/06/2015
- * Time: 15:37
+ * User: newwer21
+ * Date: 21/06/15
+ * Time: 15:38
  */
 
+mb_strlen("test"); echo 'OK';
 phpinfo();
+    ?>
