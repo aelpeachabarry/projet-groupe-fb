@@ -45,13 +45,16 @@ if(isset($_POST['findImg'])){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
         $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-        echo '<select class="image-picker show-labels show-html">';
-        foreach($images->getImages() as $image){
-            /*var_dump($image);*/
-            echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
-            /*echo "<img src='".$image->source."'>";*/
+        $tempArrayImg = $images->getImages();
+        if(!empty($tempArrayImg)){
+            echo '<select class="image-picker show-labels show-html">';
+            foreach($images->getImages() as $image){
+                /*var_dump($image);*/
+                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
+                /*echo "<img src='".$image->source."'>";*/
+            }
+            echo '</select>';
         }
-        echo '</select>';
     }
 }
 if(isset($_POST['submit'])){
@@ -65,3 +68,5 @@ if(isset($_POST['submit'])){
         echo "probleme fichier";
     }
 }
+?>
+<script type="text/javascript" src="assets/plugins/image-picker.js"></script>
