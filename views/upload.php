@@ -68,4 +68,4 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<script type="text/javascript" src="assets/plugins/image-picker.js"></script>
+<script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
