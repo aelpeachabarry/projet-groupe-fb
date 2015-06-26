@@ -50,7 +50,7 @@ if(isset($_POST['findImg'])){
             echo '<select class="image-picker show-labels show-html">';
             foreach($images->getImages() as $image){
                 /*var_dump($image);*/
-                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
+                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
                 /*echo "<img src='".$image->source."'>";*/
             }
             echo '</select>';
@@ -63,7 +63,6 @@ if(isset($_POST['submit'])){
         $uploaded = new UploadPhoto($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
         echo $uploaded->getError();
-
     }else{
         echo "probleme fichier";
     }
