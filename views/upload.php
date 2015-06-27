@@ -9,7 +9,10 @@ include 'app/Facebook/AlbumManager.php';
 include 'app/Facebook/UploadPhoto.php';
 include 'app/Facebook/imageManager.php';
 ?>
-<form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
+<div class="row col-lg-offset-2 col-lg-8">
+    <div id="upload" class="col-lg-12">
+
+    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
     <input type="file" name="mon_fichier" id="mon_fichier" /><br />
     <input type="submit" name="submit" value="Envoyer" />
 </form>
@@ -57,7 +60,7 @@ if(isset($_POST['findImg'])){
         }
     }
 }
-/*if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
 
         $uploaded = new UploadPhoto($connect->getSession());
@@ -73,6 +76,8 @@ if(isset($_POST['findImg'])){
     }else{
         echo "probleme fichier";
     }
-}*/
+}
 ?>
+    </div>
+</div>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
