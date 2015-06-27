@@ -5,10 +5,10 @@
  * Date: 27/06/15
  * Time: 19:00
  */
-class Model {
-    private $primaryKeyFields;
+class abstractModel {
     private $tableName;
     private $db;
+
 
     public function __construct(){
         try {
@@ -21,7 +21,16 @@ class Model {
         }
 
     }
-    //PERMET DE FAIRE LES INSTERT
+
+    /*
+     * Cette methode accepte un Tableau associatif
+     * exemple :
+     * $monTab = [
+     *      'name' => 'TOTO',
+     *      'libelle' => 'JE SUIS UN TOTO'
+     * ];
+     * ce tableau correspond au champ et valeur a inséré
+     */
     public function create($data){
         $fields = implode(',',array_keys($data));
         $values = array_values($data);
@@ -35,7 +44,13 @@ class Model {
         }
     }
 
-    //PERMET DE LIRE DES ENREGISTREMEMENT
+    /*
+     * Le premier parametre correspond aux champs qu'on souhaite
+     * recupéré, il peut etre soit un string soit un array simple
+     * Le 2eme parametre correspond aux conditions, c'est un tableau
+     * associatif
+     * Cette methode retourne un jeu de donnée
+     */
     public function read($fields = '*',$where = array()){
         if(is_array($fields)){
             $realFields = implode(',',$fields);
@@ -61,7 +76,7 @@ class Model {
     }
 
     //MET A JOUR UN OU PLUSIEURS ENREGISTREMENT
-    public function update($id,$sets,$where){
+    public function update($sets,$where){
         $keysSet = array_keys($sets);
         $valuesSet = array_values($sets);
 
