@@ -1,6 +1,6 @@
 <?php
 
-require 'model/ImageModel.php';
+require 'model/PhotoModel.php';
 
 class ControllerUpload{
     public function __construct(){
