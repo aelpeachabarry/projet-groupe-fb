@@ -44,8 +44,8 @@ if(isset($_POST['findImg'])){
     if($_POST['selectbasic']=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
-        $images = new ImageManager($connect->getSession());
-        $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
+        $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
+        $tempArrayImg = $images->getImages();
         if(!empty($tempArrayImg)){
             echo '<select class="image-picker show-labels show-html">';
             foreach($images->getImages() as $image){
@@ -61,14 +61,7 @@ if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
 
         $uploaded = new UploadPhoto($connect->getSession());
-
         $uploaded->upload($_FILES['mon_fichier']);
-        $error = $uploaded->getError();
-        if(empty($error)){
-            $imgController = new ControllerUpload();
-            $imgController->insertImage($uploaded->getImgId(),$user->getId());
-        }
-
         echo $uploaded->getError();
     }else{
         echo "probleme fichier";
