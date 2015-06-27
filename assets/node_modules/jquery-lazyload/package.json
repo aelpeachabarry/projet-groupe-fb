@@ -1,0 +1,62 @@
+{
+  "name": "jquery-lazyload",
+  "version": "1.9.5",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tuupola/jquery_lazyload.git"
+  },
+  "author": {
+    "name": "Mika Tuupola",
+    "email": "tuupola@appelsiini.net"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "description": "Lazyload images with jQuery",
+  "bugs": {
+    "url": "https://github.com/tuupola/jquery_lazyload/issues"
+  },
+  "homepage": "http://www.appelsiini.net/projects/lazyload",
+  "main": "Gruntfile.js",
+  "files": [
+    "jquery.lazyload.js",
+    "jquery.scrollstop.js"
+  ],
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "license": "MIT",
+  "gitHead": "e54df43adef6ba76cb6f73edf80ec7f6935772d0",
+  "_id": "jquery-lazyload@1.9.5",
+  "_shasum": "68c6ce75bc51e3c7e7b083b8591e4eaaa6f46841",
+  "_from": "jquery-lazyload@",
+  "_npmVersion": "2.6.0",
+  "_nodeVersion": "0.10.18",
+  "_npmUser": {
+    "name": "tuupola",
+    "email": "tuupola@appelsiini.net"
+  },
+  "maintainers": [
+    {
+      "name": "tuupola",
+      "email": "tuupola@appelsiini.net"
+    }
+  ],
+  "dist": {
+    "shasum": "68c6ce75bc51e3c7e7b083b8591e4eaaa6f46841",
+    "tarball": "http://registry.npmjs.org/jquery-lazyload/-/jquery-lazyload-1.9.5.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/jquery-lazyload/-/jquery-lazyload-1.9.5.tgz"
+}

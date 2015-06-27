@@ -4,9 +4,7 @@ ini_set("display_errors", 1);
 
 
 session_start();
-/*use App\Facebook\FacebookConnect;
-$connect = new FacebookConnect(APP_ID, APP_SECRET);
-$user = $connect->connect(REDIRECT_URL);*/
+//use App\Facebook\FacebookConnect;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
@@ -30,6 +28,11 @@ switch($page)
         require 'views/landing.php';
         break;
     }
+    case 'signup' :
+    {
+        //require('');
+        break;
+    }
     case 'connectFb' :
     {
         $connect = new FacebookConnect(APP_ID, APP_SECRET);
@@ -37,9 +40,7 @@ switch($page)
         $user = $connect->connect(REDIRECT_URL);
 
         if(is_string($user)){
-
-            echo '<a href="'.$user.'">Se connecter avec facebook</a>';
-
+            echo $user;
         }else{
             var_dump($user);
         }
@@ -87,7 +88,3 @@ switch($page)
 /*if($page != 'landing') {*/
     require ('views/footer.php');
 //}
-
-?>
-
-

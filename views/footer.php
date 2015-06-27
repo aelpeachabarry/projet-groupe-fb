@@ -7,6 +7,7 @@
 <script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
 
 <!-- Backstretch javascript -->
+
 <!--<script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>-->
 
 <!-- Appear javascript -->
@@ -17,5 +18,6 @@
 
 <!-- Custom Scripts -->
 <script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript" src="assets/js/travelagency.js"></script>
 </body>
 </html>
