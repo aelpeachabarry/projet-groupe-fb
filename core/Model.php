@@ -32,8 +32,10 @@ class abstractModel {
      * ce tableau correspond au champ et valeur a inséré
      */
     public function create($data){
+        var_dump($data);
         $fields = implode(',',array_keys($data));
         $values = implode(',',array_values($data));
+
         if(!empty($fields) && !empty($values)){
             if(count(array_keys($fields)) == count($values)){
                 $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
