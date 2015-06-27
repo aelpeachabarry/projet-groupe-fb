@@ -61,7 +61,14 @@ if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
 
         $uploaded = new UploadPhoto($connect->getSession());
+
         $uploaded->upload($_FILES['mon_fichier']);
+        $error = $uploaded->getError();
+        if(empty($error)){
+            $imgController = new ControllerUpload();
+            $imgController->insertImage($uploaded->getImgId(),$user->getId());
+        }
+
         echo $uploaded->getError();
     }else{
         echo "probleme fichier";
