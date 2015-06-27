@@ -14,7 +14,9 @@ class ControllerUpload{
             'last_update' => strtotime(date('Y-m-d H:i:s')),
             'details' => $detail
         ];
-        $imgManager->create($arrayImg);
+        var_dump($arrayImg);
+        var_dump($imgManager->create($arrayImg));
+
     }
 
 }
