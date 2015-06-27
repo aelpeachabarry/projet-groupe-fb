@@ -13,7 +13,9 @@ require 'constants.php';
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
 require 'views/header.php';
-
+use App\Facebook\FacebookConnect;
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
 
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
