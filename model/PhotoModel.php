@@ -8,6 +8,7 @@
 require 'core/Model.php';
 
 class PhotoModel extends abstractModel{
+    private $tableName = "photos";
     public function __construct(){
         parent::__construct();
     }
