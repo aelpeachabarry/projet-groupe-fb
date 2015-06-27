@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    loadGallery(true, 'a.thumbnail');
+    loadGallery(true, 'a.photo-infos');
 
     //This function disables buttons when needed
     function disableButtons(counter_max, counter_current){
@@ -60,6 +60,10 @@ $(document).ready(function(){
     });
 
 
+    /*ajout du bloc pour l'upload'*/
+    var gallery = $('#galerie-concours');
+    var blocUpload = '<div class="col-lg-4 col-md-4 col-xs-6 thumb"><div class="thumbnail"><a href="#" data-toggle="modal" data-target="#upload-photo"><img class="lazy img-responsive" src="./images/ajout-photo.png" alt=""></a></div></div>';
+    gallery.prepend(blocUpload);
 
 
 
