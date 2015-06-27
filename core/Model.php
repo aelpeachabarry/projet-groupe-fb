@@ -33,15 +33,12 @@ class abstractModel {
      */
     public function create($data){
         $fields = implode(',',array_keys($data));
-        $values = array_values($data);
+        $values = implode(',',array_values($data));
         if(!empty($fields) && !empty($fields)){
             if(count(array_keys($data)) == count($values)){
-                $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (?)";
+                $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$fields.")";
                 echo $query;
-                $sth = $this->db->prepare($query);
-                var_dump($sth);
-                $sth->execute($values);
-                return $this->db->lastInsertId();
+                return $this->db->errorInfo();
             }
         }
     }
