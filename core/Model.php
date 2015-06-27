@@ -43,6 +43,7 @@ class abstractModel {
                 return $this->db->errorInfo();
             }
         }
+        return "error";
     }
 
     /*
