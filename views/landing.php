@@ -12,7 +12,7 @@
                     <h2 class="text-center">L'holidays selfies est ouvert</h2>
                     <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos debitis provident nulla illum minus enim praesentium repellendus ullam cupiditate reiciendis optio voluptatem, recusandae nobis quis aperiam, sapiente libero ut at.</p>
                     <?php
-                        echo '<a href="#" id="participer" class="btn btn-primary btn-primary" style="margin-left:25%">Participer</a>';
+                        echo '<a href="#" id="participer" class="btn btn-primary btn-primary">Je participe</a>';
                     ?>
                 </div>
                 <?php

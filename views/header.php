@@ -36,9 +36,9 @@
                 <div class="header-left clearfix">
 
                     <!-- logo -->
-                    <div class="logo smooth-scroll">
+                    <!--<div class="logo smooth-scroll">
                         <a href="#banner"><img id="logo" src="images/logo.png" alt=""></a>
-                    </div>
+                    </div>-->
 
                     <!-- name-and-slogan -->
                     <div class="site-name-and-slogan smooth-scroll">

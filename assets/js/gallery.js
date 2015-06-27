@@ -53,4 +53,14 @@ $(document).ready(function(){
             updateGallery($(this));
         });
     }
+
+    //lazyload
+    $("img.lazy").lazyload({
+        effect : "fadeIn"
+    });
+
+
+
+
+
 });
