@@ -48,7 +48,7 @@ if(isset($_POST['findImg'])){
         $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
         if(!empty($tempArrayImg)){
             echo '<select class="image-picker show-labels show-html">';
-            foreach($images->getImages() as $image){
+            foreach($tempArrayImg as $image){
                 /*var_dump($image);*/
                 echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
                 /*echo "<img src='".$image->source."'>";*/
