@@ -19,14 +19,14 @@
 <div class="row col-lg-offset-2 col-lg-8">
 
     <!--caroussel-->
-    <div id="myCarousel" class="carousel slide col-lg-12">
+    <div id="galerie-concours" class="carousel slide col-lg-12">
 
         <div class="col-lg-4 col-md-4 col-xs-6 thumb">
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
                     <p>short thumbnail description</p>
-                    <p><a href="#" class="label label-danger" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
+                    <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                         <a href="#" class="label label-default">Like</a></p>
                 </div>
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
@@ -37,7 +37,7 @@
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
                     <p>short thumbnail description</p>
-                    <p><a href="" class="label label-danger">Zoom</a>
+                    <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                         <a href="" class="label label-default">Like</a></p>
                 </div>
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
@@ -48,7 +48,7 @@
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
                     <p>short thumbnail description</p>
-                    <p><a href="" class="label label-danger">Zoom</a>
+                    <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                         <a href="" class="label label-default">Like</a></p>
                 </div>
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
@@ -278,6 +278,24 @@
             </div>
         </div>
     </div>
+
+<!-- le modal pour l'upload d'image -->
+<div class="modal fade" id="upload-photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="image-gallery-title">Uploadez votre photo</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
