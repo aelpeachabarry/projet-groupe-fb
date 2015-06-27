@@ -88,8 +88,27 @@ class Model {
         $this->db->exec($query);
     }
     //SUPPRIME UN ENREGISTREMEMENT
-    public function delete(){
+    public function delete($where = array()){
+        if(empty($where)){
+            $condition = null;
+        }else{
+            $condition = "";
+            $cpt = 0;
+            foreach($where as $key=>$value){
+                if($cpt == 0){
+                    $condition .= " WHERE ".$key." = ".$value;
+                }else{
+                    $condition .= " AND ".$key." = ".$value;
+                }
+                $cpt++;
+            }
+        }
+        $query = "DELETE FROM ".$this->tableName.$condition;
+        return $this->db->query($query);
+    }
 
+    public function getDbCo(){
+        return $this->db;
     }
 
 }
