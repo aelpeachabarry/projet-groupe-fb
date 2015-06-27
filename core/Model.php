@@ -38,7 +38,8 @@ class abstractModel {
             if(count(array_keys($data)) == count($values)){
                 $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
 
-                $this->db->exec($query);
+                var_dump($this->db->exec($query));
+
                 return $query;;
             }
         }

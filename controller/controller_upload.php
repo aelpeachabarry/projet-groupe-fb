@@ -15,9 +15,8 @@ class ControllerUpload{
             'details' => $detail
         ];
         var_dump($arrayImg);
-        echo "<pre>";
-        print_r($imgManager->create($arrayImg));
-        echo "</pre>";
+        var_dump($imgManager->create($arrayImg));
+
     }
 
 }
