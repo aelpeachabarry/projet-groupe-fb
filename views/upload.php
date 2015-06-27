@@ -44,8 +44,8 @@ if(isset($_POST['findImg'])){
     if($_POST['selectbasic']=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
-        $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-        $tempArrayImg = $images->getImages();
+        $images = new ImageManager($connect->getSession());
+        $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
         if(!empty($tempArrayImg)){
             echo '<select class="image-picker show-labels show-html">';
             foreach($images->getImages() as $image){
