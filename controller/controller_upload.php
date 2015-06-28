@@ -15,10 +15,9 @@ class ControllerUpload{
 
         ];
         $escape = [
-            'last_update' => date('Y-m-d H:i:s'),
+            'last_update' => CURRENT_TIMESTAMP,
             'details' => $detail
         ];
-
         $imgManager->create($nonescape,$escape);
 
     }
