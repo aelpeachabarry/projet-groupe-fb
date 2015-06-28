@@ -82,3 +82,4 @@ if(isset($_POST['submit'])){
     </div>
 </div>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
