@@ -270,75 +270,26 @@ include 'controller/controller_upload.php';
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-
                 <h4 class="modal-title" id="image-gallery-title">Uploadez votre photo</h4>
             </div>
             <div class="modal-body">
                 <!--body-->
-                <div id="upload" class="col-lg-12">
-
-                    <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
-                        <input type="file" name="mon_fichier" id="mon_fichier" /><br />
-                        <input type="submit" name="submit" value="Envoyer" />
-                    </form>
-                    <form class="form-horizontal" method="POST">
-                            <!-- Form Name -->
-                            <legend>Select Image From your album</legend>
-                            <!-- Select Basic -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="selectbasic">Albums</label>
-                                <div class="col-md-4">
-                                    <select id="selectbasic" name="selectbasic" class="form-control">
-                                        <option value="default"></option>
-                                        <?php
-                                        /*$albums = new AlbumManager($connect->getSession());
-                                        var_dump($albums);
-                                        foreach($albums->getAlbums() as $data){
-                                            echo '<option value="'.$data->id.'">'.$data->name.'</option>';
-                                        }*/
-                                        ?>
-                                        <input type="submit" name="findImg" value="rechercher mes Images" />
-                                    </select>
-                                </div>
-                            </div>
-                    </form>
-                    <?php
-                    if(isset($_POST['findImg'])){
-                        if($_POST['selectbasic']=="default"){
-                            echo "<p>Veuillez Selectionnez un album</p>";
-                        }else{
-                            $images = new ImageManager($connect->getSession());
-                            $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
-                            if(!empty($tempArrayImg)){
-                                echo '<select class="image-picker show-labels show-html">';
-                                foreach($tempArrayImg as $image){
-                                    /*var_dump($image);*/
-                                    echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
-                                    /*echo "<img src='".$image->source."'>";*/
-                                }
-                                echo '</select>';
-                            }
-                        }
-                    }
-                    if(isset($_POST['submit'])){
-                        if($_POST['submit'] && $_FILES){
-
-                            $uploaded = new UploadPhoto($connect->getSession());
-
-                            $uploaded->upload($_FILES['mon_fichier']);
-                            $error = $uploaded->getError();
-                            if(empty($error)){
-                                $imgController = new ControllerUpload();
-                                $imgController->insertImage($uploaded->getImgId(),$user->getId());
-                            }
-
-                            echo $uploaded->getError();
-                        }else{
-                            echo "probleme fichier";
-                        }
-                    }
-                    ?>
-                </div>
+                <form form method="post" action="#" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" name="mon_fichier" id="mon_fichier">
+                        <p class="help-block"></p>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
+                </form>
+                <form form method="post" action="#" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="selectbasic">Albums</label>
+                        <select id="selectbasic" name="selectbasic" class="form-control">
+                        </select>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
+                </form>
                 <!--end body-->
             </div>
             <div class="modal-footer">
