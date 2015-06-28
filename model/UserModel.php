@@ -1,11 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Ouistiti
+ * User: guizmo
  * Date: 27/06/15
  * Time: 23:04
  */
-require '../core/Model.php';
+require $_SERVER['DOCUMENT_ROOT'].'/core/Model.php';
 
 class UserModel extends abstractModel{
     private $tableName = "users";

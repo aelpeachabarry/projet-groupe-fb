@@ -270,6 +270,7 @@ include 'controller/controller_upload.php';
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+
                 <h4 class="modal-title" id="image-gallery-title">Uploadez votre photo</h4>
             </div>
             <div class="modal-body">
@@ -302,5 +303,6 @@ include 'controller/controller_upload.php';
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
 
 
