@@ -1,6 +1,6 @@
 <?php
 
-require ROOT.'/model/PhotoModel.php';
+require 'model/PhotoModel.php';
 
 class ControllerUpload{
     public function __construct(){
