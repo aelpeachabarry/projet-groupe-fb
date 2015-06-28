@@ -51,7 +51,7 @@ class abstractModel {
             if(!empty($values)){
                 $values .= ',';
             }
-            $values .= '\''.implode('","',array_values($escapeData)).'\'';
+            $values .= '\''.implode('\',\'',array_values($escapeData)).'\'';
         }
 
         if(!empty($fields) && !empty($values)){
