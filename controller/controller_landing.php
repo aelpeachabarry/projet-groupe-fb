@@ -1,6 +1,6 @@
 <?php
 
-require 'model/PhotoModel.php';
+require 'model/UserModel.php';
 
 class ControllerUser{
     public function __construct(){
