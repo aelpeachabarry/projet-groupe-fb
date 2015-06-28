@@ -37,7 +37,7 @@ class abstractModel {
         $values = implode(',',array_values($data));
 
         if(!empty($fields) && !empty($values)){
-            if(count(array_keys($fields)) == count($values)){
+            if(count(array_keys($data)) == count(array_values($data))){
                 $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
                 var_dump($query);
                 var_dump($this->db->exec($query));
