@@ -5,7 +5,7 @@
  * Date: 27/06/15
  * Time: 23:04
  */
-require ROOT.'/core/Model.php';
+require 'core/Model.php';
 
 class UserModel extends abstractModel{
     private $tableName = "users";
