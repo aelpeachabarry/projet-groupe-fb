@@ -11,11 +11,11 @@ class ControllerUpload{
         $nonescape = [
             'id_photo' => $idPhoto,
             'id_facebook' => $idUser,
-            'id_concours' => 4
+            'id_concours' => 4,
+            'last_update' => CURRENT_TIMESTAMP,
 
         ];
         $escape = [
-            'last_update' => CURRENT_TIMESTAMP,
             'details' => $detail
         ];
         $imgManager->create($nonescape,$escape);
