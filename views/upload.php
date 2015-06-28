@@ -82,7 +82,3 @@ if(isset($_POST['submit'])){
     </div>
 </div>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
-INSERT INTO photos(id_photo,id_facebook,id_concours,last_update,details)
-VALUES (1603345933240290
-,1578076245767259,4,
-'2015-06-28 8:34:34','')
