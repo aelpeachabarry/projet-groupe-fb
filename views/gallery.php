@@ -12,7 +12,7 @@ include 'controller/controller_upload.php';
     <!--caroussel-->
     <div id="galerie-concours" class="carousel slide col-lg-12">
 
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -23,7 +23,7 @@ include 'controller/controller_upload.php';
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -34,7 +34,7 @@ include 'controller/controller_upload.php';
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -45,7 +45,7 @@ include 'controller/controller_upload.php';
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -291,6 +291,51 @@ include 'controller/controller_upload.php';
                     </div>
                     <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
                 </form>
+                <!--affichage des images d'un album-->
+                <div class="row">
+                    <div id="galerie-album" class="col-lg-12">
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
+                            <div class="thumbnail">
+                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--end body-->
             </div>
             <div class="modal-footer">
