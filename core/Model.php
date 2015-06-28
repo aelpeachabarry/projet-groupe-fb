@@ -45,7 +45,7 @@ class abstractModel {
         }
 
         if(!empty($fields) && !empty($values)){
-            $query = str_replace('""',"null","INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")");
+            $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
 
             var_dump($query);
             var_dump($this->db->exec($query));
