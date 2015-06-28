@@ -10,7 +10,8 @@ class ControllerUpload{
         $imgManager = new PhotoModel();
         $arrayImg = [
             'id_photo' => $idPhoto,
-            'id_user' => $idUser,
+            'id_facebook' => $idUser,
+            'id_concours' => 4,
             'last_update' => strtotime(date('Y-m-d H:i:s')),
             'details' => $detail
         ];
