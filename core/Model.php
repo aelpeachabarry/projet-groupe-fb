@@ -32,18 +32,24 @@ class abstractModel {
      * ];
      * ce tableau correspond au champ et valeur a inséré
      */
-    public function create($data){
-        $fields = implode(',',array_keys($data));
-        $values = '"'.implode('","',array_values($data)).'"';
+    public function create($nonescapeData,$escapeData){
+        $fields = "";
+        $values = "";
+        if(!empty($nonescapeData)){
+            $fields .= implode(',',array_keys($nonescapeData));
+            $values.= implode(',',array_values($nonescapeData));
+        }
+        if(!empty($escapeData)){
+            $fields .= implode(',',array_keys($nonescapeData));
+            $values = '"'.implode(',',array_values($nonescapeData)).'"';
+        }
 
         if(!empty($fields) && !empty($values)){
-            if(count(array_keys($data)) == count(array_values($data))){
-                $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
-                var_dump($query);
-                var_dump($this->db->exec($query));
+            $query = str_replace('""',null,"INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")");
 
-                return $this->db->errorInfo();
-            }
+            var_dump($query);
+            var_dump($this->db->exec($query));
+            return $this->db->errorInfo();
         }
         return "error";
     }

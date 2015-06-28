@@ -8,14 +8,18 @@ class ControllerUpload{
     }
     public function insertImage($idPhoto = null,$idUser,$detail = null){
         $imgManager = new PhotoModel();
-        $arrayImg = [
+        $nonescape = [
             'id_photo' => $idPhoto,
             'id_facebook' => $idUser,
             'id_concours' => 4,
             'last_update' => strtotime(date('Y-m-d H:i:s')),
+
+        ];
+        $escape = [
             'details' => $detail
         ];
-        $imgManager->create($arrayImg);
+
+        $imgManager->create($nonescape,$escape);
 
     }
 
