@@ -40,8 +40,8 @@ class abstractModel {
             $values.= implode(',',array_values($nonescapeData));
         }
         if(!empty($escapeData)){
-            $fields .= implode(',',array_keys($nonescapeData));
-            $values = '"'.implode(',',array_values($nonescapeData)).'"';
+            $fields .= ",".implode(',',array_keys($escapeData));
+            $values .= ',"'.implode('","',array_values($escapeData)).'"';
         }
 
         if(!empty($fields) && !empty($values)){
