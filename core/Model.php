@@ -10,7 +10,8 @@ class abstractModel {
     private $db;
 
 
-    public function __construct(){
+    public function __construct($tableName){
+        $this->tableName = $tableName;
         try {
             $this->db = new PDO("pgsql:host=".HOST.";dbname=".DB_NAME, USER_DB, PWD_DB);
         }
@@ -32,7 +33,6 @@ class abstractModel {
      * ce tableau correspond au champ et valeur a inséré
      */
     public function create($data){
-        var_dump($data);
         $fields = implode(',',array_keys($data));
         $values = '"'.implode('","',array_values($data)).'"';
 
