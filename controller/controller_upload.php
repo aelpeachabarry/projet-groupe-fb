@@ -6,7 +6,7 @@ class ControllerUpload{
     public function __construct(){
 
     }
-    public function insertImage($idPhoto = null,$idUser,$detail = null){
+    public function insertImage($idPhoto = null,$idUser,$detail = ''){
         $imgManager = new PhotoModel();
         $nonescape = [
             'id_photo' => $idPhoto,
