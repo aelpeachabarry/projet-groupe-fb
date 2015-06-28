@@ -34,7 +34,7 @@ class abstractModel {
     public function create($data){
         var_dump($data);
         $fields = implode(',',array_keys($data));
-        $values = implode(',',array_values($data));
+        $values = '"'.implode('","',array_values($data)).'"';
 
         if(!empty($fields) && !empty($values)){
             if(count(array_keys($data)) == count(array_values($data))){
