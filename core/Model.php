@@ -24,11 +24,15 @@ class abstractModel {
     }
 
     /*
-     * Cette methode accepte un Tableau associatif
+     * Cette methode accepte un Tableau associatif, elle gere les valeur escape et nonescape
      * exemple :
-     * $monTab = [
+     * $monTabescape = [
      *      'name' => 'TOTO',
      *      'libelle' => 'JE SUIS UN TOTO'
+     * ];
+     * $nonescape = [
+     *      'id' => 12323424,
+     *      'prix' => 12
      * ];
      * ce tableau correspond au champ et valeur a inséré
      */
