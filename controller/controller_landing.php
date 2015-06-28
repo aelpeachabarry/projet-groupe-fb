@@ -7,7 +7,8 @@ class ControllerUser{
 
     }
     public function insertUser($user){
-        if(empty($suer)){
+        if(empty($user)){
+            var_dump($user);
             echo 'probleme d\'insertion d\'user';
         }else{
             $userManager = new UserModel();
