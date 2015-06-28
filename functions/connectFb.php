@@ -7,7 +7,7 @@ session_start();
 use \App\Facebook\FacebookConnect;
 require '../vendor/autoload.php';
 require '../app/Facebook/constants.php';
-require 'model/UserModel.php';
+require ROOT.'/model/UserModel.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
