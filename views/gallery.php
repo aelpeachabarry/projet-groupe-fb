@@ -291,11 +291,11 @@ include 'controller/controller_upload.php';
                                     <select id="selectbasic" name="selectbasic" class="form-control">
                                         <option value="default"></option>
                                         <?php
-                                        /*$albums = new AlbumManager($connect->getSession());
+                                        $albums = new AlbumManager($connect->getSession());
                                         var_dump($albums);
                                         foreach($albums->getAlbums() as $data){
                                             echo '<option value="'.$data->id.'">'.$data->name.'</option>';
-                                        }*/
+                                        }
                                         ?>
                                         <input type="submit" name="findImg" value="rechercher mes Images" />
                                     </select>
