@@ -351,5 +351,6 @@ include 'controller/controller_upload.php';
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
+<script type="text/javascript" src="assets/js/custom.js"></script>
 
 
