@@ -5,6 +5,7 @@
  * Date: 27/06/15
  * Time: 23:04
  */
+require '../constants.php';
 require ROOT.'/core/Model.php';
 
 class UserModel extends abstractModel{
