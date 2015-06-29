@@ -13,9 +13,10 @@ $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
 
 if(is_string($user)){
-    echo "You have some probleme";
-}else{
     echo $user;
     $_SESSION['fbsession'] = $connect;
     $_SESSION['user'] = $user;
+}else{
+    echo $user;
+
 }
