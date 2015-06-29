@@ -33,13 +33,14 @@ class FacebookConnect {
         //si la var session existe et que l'on un un fb token en session
         if(isset($_SESSION) && isset($_SESSION['fb_token'])){
             //on récupère la session active
-            $this->session = new FacebookSession($_SESSION['fb_token']);
             var_dump('re');
+            $this->session = new FacebookSession($_SESSION['fb_token']);
+
         }else{
 
             //on récupère le token de connexion
             $this->session = $helper->getSessionFromRedirect();
-
+            var_dump('e');
         }
 
         //si on a une session
