@@ -11,9 +11,3 @@ require '../model/UserModel.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
-
-if(is_string($user)){
-    echo $user;
-}else{
-    echo $user;
-}
