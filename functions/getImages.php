@@ -8,11 +8,11 @@
 require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
 use \App\Facebook\FacebookConnect;
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-
+var_dump($_SESSION);
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
 
-//var_dump($user);
+
 //
 //if($_POST["findImg"]){
 //    $output = "";
