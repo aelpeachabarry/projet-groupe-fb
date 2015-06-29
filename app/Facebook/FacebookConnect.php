@@ -34,7 +34,7 @@ class FacebookConnect {
         if(isset($_SESSION) && isset($_SESSION['fb_token'])){
             //on récupère la session active
             $this->session = new FacebookSession($_SESSION['fb_token']);
-
+            echo $this->session;
         }else{
 
             //on récupère le token de connexion
