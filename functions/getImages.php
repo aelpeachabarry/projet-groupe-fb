@@ -9,10 +9,10 @@ require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/FacebookConnect.php';
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
 
-$connect = new FacebookConnect(APP_ID, APP_SECRET);
-$user = $connect->connect(REDIRECT_URL);
+//$connect = new FacebookConnect(APP_ID, APP_SECRET);
+//$user = $connect->connect(REDIRECT_URL);
 
-var_dump($user);
+//var_dump($user);
 //
 //if($_POST["findImg"]){
 //    $output = "";
