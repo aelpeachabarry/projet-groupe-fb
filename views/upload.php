@@ -97,4 +97,3 @@ if(isset($_POST['submit'])){
         echo '<input type="submit" value="Upload"/><br/>';
         echo '</form>';
 
-    }
