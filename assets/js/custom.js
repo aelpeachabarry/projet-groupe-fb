@@ -1,7 +1,7 @@
 $('document').ready(function() {
     $("#selectbasic").change(function(){
-        console.log($(this));
-        if($(this).val()!=null){
+        console.log($("#selectbasic"));
+        if($("#selectbasic").val()!=null){
             $.ajax({
                 url:"/functions/getImages.php",
                 type:'POST',
