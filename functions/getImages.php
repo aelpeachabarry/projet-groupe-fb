@@ -13,14 +13,13 @@ require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
 
-
-
 if($_POST["findImg"]){
     $output = "";
     if($_POST["findImg"]=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
         var_dump($_SESSION);
+        exit;
         $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
         var_dump($images);
         $output = '<select class="image-picker show-labels show-html">';
