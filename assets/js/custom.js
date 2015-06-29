@@ -1,5 +1,4 @@
 $('document').ready(function() {
-
     $("#selectbasic").change(function(){
         if(this.val()!="" || undefined){
             $.ajax({
