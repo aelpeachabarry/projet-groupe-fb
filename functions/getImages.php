@@ -20,6 +20,7 @@ if(isset($_POST["findImg"])){
         $output .= '</select>';
         echo $output;
     }
+    echo "probleme";
 }else{
     echo 'probleme';
 }

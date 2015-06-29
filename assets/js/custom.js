@@ -9,7 +9,7 @@ $('document').ready(function() {
                     findImg : $("#selectbasic").val()
                 },
                 success:function(data) {
-                    return data;
+                    console.log(data);
                 }
             });
         }
