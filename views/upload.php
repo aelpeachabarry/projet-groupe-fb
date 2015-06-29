@@ -68,10 +68,20 @@ if(isset($_POST['submit'])){
 
     $app_id = "384491318402733";
     $app_secret = "dab4c606e28695176a9d99dcc2a813c8";
-    $post_login_url = "https://projet-groupe-fb.herokuapp.com";
+    $post_login_url = "YOUR_POST_LOGIN_URL";
 
     $code = $_REQUEST["code"];
 
+    //Obtain the access_token with publish_stream permission
+    if(empty($code)){
+        $dialog_url= "http://www.facebook.com/dialog/oauth?"
+            . "client_id=" .  $app_id
+            . "&redirect_uri=" . urlencode( $post_login_url)
+            .  "&scope=publish_stream";
+        echo("<script>top.location.href='" . $dialog_url
+            . "'</script>");
+    }
+    else {
         $token_url="https://graph.facebook.com/oauth/access_token?"
             . "client_id=" . $app_id
             . "&redirect_uri=" . urlencode( $post_login_url)
@@ -85,8 +95,7 @@ if(isset($_POST['submit'])){
         // Show photo upload form to user and post to the Graph URL
         $graph_url= "https://graph.facebook.com/me/photos?"
             . "access_token=" .$access_token;
-
-
+;
         echo '<form enctype="multipart/form-data" action="'
             .$graph_url .' "method="POST">';
         echo 'Please choose a photo: ';
@@ -96,4 +105,4 @@ if(isset($_POST['submit'])){
              type="text" value=""><br/><br/>';
         echo '<input type="submit" value="Upload"/><br/>';
         echo '</form>';
-
+    }
