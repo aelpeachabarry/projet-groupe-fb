@@ -5,6 +5,7 @@
  * Date: 18/06/2015
  * Time: 23:57
  */
+session_start();
 require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
 use \App\Facebook\FacebookConnect;
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
