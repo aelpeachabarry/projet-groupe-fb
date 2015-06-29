@@ -8,6 +8,7 @@ use \App\Facebook\FacebookConnect;
 require '../vendor/autoload.php';
 require '../app/Facebook/constants.php';
 require '../model/UserModel.php';
+require '../constants.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
