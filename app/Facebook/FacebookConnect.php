@@ -26,7 +26,6 @@ class FacebookConnect {
     }
 
     public  function connect($redirectUrl){
-        var_dump('here');
         FacebookSession::setDefaultApplication($this->appId, $this->appSecret);
         $helper = new FacebookRedirectLoginHelper($redirectUrl);
         var_dump('ere');
