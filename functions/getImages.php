@@ -19,5 +19,5 @@ if(isset($_POST['findImg'])){
         }
         $output .= '</select>';
     }
-    return $output;
+    echo $output;
 }
