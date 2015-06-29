@@ -5,6 +5,7 @@
  * Date: 03/06/15
  * Time: 18:23
  */
+namespace App\Facebook;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 
