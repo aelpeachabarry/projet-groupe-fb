@@ -80,6 +80,8 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+        <div id="resultImg" class="col-lg-12">
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>

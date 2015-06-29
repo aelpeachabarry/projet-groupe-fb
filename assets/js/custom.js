@@ -10,7 +10,7 @@ $('document').ready(function() {
                 },
                 success:function(data) {
                     console.log(data);
-                    $("#selectbasic").parent().parent().append(data);
+                    $("#resultImg").append(data);
                     $(".image-picker").imagepicker({show_label: true});
                 }
             });
