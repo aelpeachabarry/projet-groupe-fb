@@ -19,9 +19,8 @@ if($_POST["findImg"]){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
         var_dump($connect->getSession());
-        exit;
-        $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-        var_dump($images);
+        $images = new ImageManager($connect->getSession(),$_POST['findImg']);
+
         $output = '<select class="image-picker show-labels show-html">';
         foreach($images->getImages() as $image){
             /*var_dump($image);*/
