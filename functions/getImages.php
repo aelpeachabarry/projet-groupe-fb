@@ -9,8 +9,7 @@ require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/FacebookConnect.php';
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
 
-echo APP_ID;
-//$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
 //$user = $connect->connect(REDIRECT_URL);
 
 //var_dump($user);
