@@ -5,6 +5,7 @@
  * Date: 27/06/15
  * Time: 19:00
  */
+require '../constants.php';
 class abstractModel {
     private $tableName;
     private $db;
