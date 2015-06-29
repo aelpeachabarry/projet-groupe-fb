@@ -11,7 +11,8 @@ require '../model/UserModel.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
-
+$_SESSION['fbsession'] = $connect;
+$_SESSION['user'] = $user;
 if(is_string($user)){
     echo $user;
 }else{
