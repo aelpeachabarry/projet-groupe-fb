@@ -1,6 +1,6 @@
 $('document').ready(function() {
     $("#selectbasic").change(function(){
-        console.log($("#selectbasic"));
+        console.log($("#selectbasic").val());
         if($("#selectbasic").val()!=null){
             $.ajax({
                 url:"/functions/getImages.php",
