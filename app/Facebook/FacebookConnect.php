@@ -38,7 +38,7 @@ class FacebookConnect {
         }else{
             var_dump('OUPS');
             //on récupère le token de connexion
-            $this->session = $helper->getSessionFromRedirect();
+            //$this->session = $helper->getSessionFromRedirect();
 
         }
 
