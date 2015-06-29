@@ -1,6 +1,7 @@
 $('document').ready(function() {
     $("#selectbasic").change(function(){
-        if(this.val()!="" || undefined){
+        console.log($(this));
+        if($(this).val()!="" || $(this).val()!=undefined){
             $.ajax({
                 url:"/functions/getImages.php",
                 type:'POST',
