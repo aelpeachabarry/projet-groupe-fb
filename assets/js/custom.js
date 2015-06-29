@@ -1,5 +1,5 @@
 $('document').ready(function() {
-    $("#selectbasic").change(function(){
+    $("#upload").on('change',"#selectbasic",function(){
         console.log($("#selectbasic").val());
         if($("#selectbasic").val()!=null){
             $.ajax({
