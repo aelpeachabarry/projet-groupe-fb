@@ -37,10 +37,10 @@ class FacebookConnect {
             $this->session = new FacebookSession($_SESSION['fb_token']);
 
         }else{
-
+            var_dump('e');
             //on récupère le token de connexion
             $this->session = $helper->getSessionFromRedirect();
-            var_dump('e');
+
         }
 
         //si on a une session
