@@ -6,7 +6,7 @@
  * Time: 12:07
  */
 
-define('ROOT', dirname(__FILE__));
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
 //define('HOST', 'localhost');
 //define('USER_DB', 'newwer21');
