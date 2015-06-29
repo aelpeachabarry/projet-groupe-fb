@@ -4,6 +4,9 @@ $('document').ready(function() {
         if($("#selectbasic").val()!=null){
             $.ajax({
                 url:"/functions/getImages.php",
+                xhrFields: {
+                    withCredentials: true
+                },
                 type:'POST',
                 data : {
                     findImg : $("#selectbasic").val()
