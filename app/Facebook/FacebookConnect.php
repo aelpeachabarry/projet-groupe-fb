@@ -26,14 +26,15 @@ class FacebookConnect {
     }
 
     public  function connect($redirectUrl){
-
+        var_dump('here');
         FacebookSession::setDefaultApplication($this->appId, $this->appSecret);
         $helper = new FacebookRedirectLoginHelper($redirectUrl);
-
+        var_dump('ere');
         //si la var session existe et que l'on un un fb token en session
         if(isset($_SESSION) && isset($_SESSION['fb_token'])){
             //on récupère la session active
             $this->session = new FacebookSession($_SESSION['fb_token']);
+            var_dump('re');
         }else{
 
             //on récupère le token de connexion
