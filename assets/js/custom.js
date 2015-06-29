@@ -6,7 +6,7 @@ $('document').ready(function() {
                 url:"/functions/getImages.php",
                 type:'POST',
                 data : {
-                    findImg : this.val()
+                    findImg : $("#selectbasic").val()
                 },
                 success:function(data) {
                     return data;
