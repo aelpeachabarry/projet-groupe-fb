@@ -33,6 +33,16 @@ $(document).ready(function(){
             selfieSlider(); 
         }, 4000);
     }
-
+    $('#participer').click(function(e){
+        e.preventDefault();
+        console.log('here');
+        $.ajax({
+            url : '/functions/connectFb.php', // La ressource ciblée
+            type:'get',
+            success : function(url){
+                document.location.href=url;
+            }
+        });
+    });
 
 });

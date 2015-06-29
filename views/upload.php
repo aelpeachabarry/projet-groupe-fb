@@ -40,23 +40,7 @@ include 'app/Facebook/imageManager.php';
         </fieldset>
     </form>
 <?php
-if(isset($_POST['findImg'])){
-    if($_POST['selectbasic']=="default"){
-        echo "<p>Veuillez Selectionnez un album</p>";
-    }else{
-        $images = new ImageManager($connect->getSession(),$_POST['selectbasic']);
-        $tempArrayImg = $images->getImages();
-        if(!empty($tempArrayImg)){
-            echo '<select class="image-picker show-labels show-html">';
-            foreach($images->getImages() as $image){
-                /*var_dump($image);*/
-                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
-                /*echo "<img src='".$image->source."'>";*/
-            }
-            echo '</select>';
-        }
-    }
-}
+
 if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
 
