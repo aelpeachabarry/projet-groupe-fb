@@ -30,6 +30,7 @@ if($_POST["findImg"]){
             }
             $output .= '</select>';
         }
+        echo $output;
     }
 }else{
     echo 'probleme';
