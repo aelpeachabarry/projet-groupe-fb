@@ -18,6 +18,8 @@ if(isset($_POST['findImg'])){
             /*echo "<img src='".$image->source."'>";*/
         }
         $output .= '</select>';
+        echo $output;
     }
-    echo $output;
+}else{
+    echo 'probleme';
 }
