@@ -26,6 +26,7 @@ class FacebookConnect {
     }
 
     public  function connect($redirectUrl){
+        var_dump($_SESSION);
         FacebookSession::setDefaultApplication($this->appId, $this->appSecret);
         //si la var session existe et que l'on un un fb token en session
         if(isset($_SESSION) && isset($_SESSION['fb_token'])){
