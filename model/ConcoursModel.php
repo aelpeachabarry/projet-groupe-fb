@@ -10,6 +10,6 @@ require ROOT.'core/Model.php';
 
 class ConcoursModel extends abstractModel{
     public function __construct(){
-        parent::__construct();
+        parent::__construct('concours');
     }
 }
