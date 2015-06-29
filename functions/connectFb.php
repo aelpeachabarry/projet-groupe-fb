@@ -14,9 +14,6 @@ $user = $connect->connect(REDIRECT_URL);
 
 if(is_string($user)){
     echo $user;
-    $_SESSION['fbsession'] = $connect;
-    $_SESSION['user'] = $user;
 }else{
     echo $user;
-
 }

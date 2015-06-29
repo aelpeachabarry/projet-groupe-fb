@@ -5,10 +5,13 @@
  * Date: 18/06/2015
  * Time: 23:57
  */
+use \App\Facebook\FacebookConnect;
+require '../vendor/autoload.php';
+require '../app/Facebook/constants.php';
 include 'app/Facebook/imageManager.php';
 
-$connect = $_SESSION['fbsession'];
-$user = $_SESSION['user'];
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
 
 if($_POST["findImg"]){
     $output = "";
