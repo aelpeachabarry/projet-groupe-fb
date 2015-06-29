@@ -6,9 +6,8 @@
  * Time: 23:57
  */
 use \App\Facebook\FacebookConnect;
-require '../vendor/autoload.php';
-require '../app/Facebook/constants.php';
-include 'app/Facebook/imageManager.php';
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
