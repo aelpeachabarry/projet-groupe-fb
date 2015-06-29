@@ -5,11 +5,11 @@ $('document').ready(function() {
             $.ajax({
                 url:"/functions/getImages.php",
                 type:'POST',
-                xhrFields: {
-                    withCredentials: true
-                },
                 data : {
                     findImg : $("#selectbasic").val()
+                },
+                xhrFields: {
+                    withCredentials: true
                 },
                 success:function(data) {
                     console.log(data);
