@@ -96,7 +96,7 @@ if(isset($_POST['submit'])){
         $graph_url= "https://graph.facebook.com/me/photos?"
             . "access_token=" .$access_token;
 
-        echo '<html><body>';
+
         echo '<form enctype="multipart/form-data" action="'
             .$graph_url .' "method="POST">';
         echo 'Please choose a photo: ';
@@ -106,5 +106,5 @@ if(isset($_POST['submit'])){
              type="text" value=""><br/><br/>';
         echo '<input type="submit" value="Upload"/><br/>';
         echo '</form>';
-        echo '</body>&lt/html>';
+
     }
