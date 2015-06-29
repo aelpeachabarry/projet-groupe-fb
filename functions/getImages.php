@@ -5,9 +5,9 @@
  * Date: 18/06/2015
  * Time: 23:57
  */
-require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/FacebookConnect.php';
-require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
+use \App\Facebook\FacebookConnect;
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 //$user = $connect->connect(REDIRECT_URL);
