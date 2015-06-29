@@ -4,6 +4,7 @@ ini_set("display_errors", 1);
 
 
 session_start();
+//use App\Facebook\FacebookConnect;
 
 require 'vendor/autoload.php';
 require 'app/Facebook/constants.php';
@@ -12,7 +13,9 @@ require 'constants.php';
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);
 
 require 'views/header.php';
-require('controller/controller_landing.php');
+use App\Facebook\FacebookConnect;
+$connect = new FacebookConnect(APP_ID, APP_SECRET);
+$user = $connect->connect(REDIRECT_URL);
 
 //on envoi un lien de connexion
 //l'url qui permet de se connecter avec facebook (et je veux en plus récupérer l'email)
@@ -24,25 +27,13 @@ switch($page)
 
     case 'landing' :
     {
-
+        require('controller/controller_landing.php');
         require 'views/landing.php';
         break;
     }
     case 'signup' :
     {
         //require('');
-        break;
-    }
-    case 'connectFb' :
-    {
-        $connect = new FacebookConnect(APP_ID, APP_SECRET);
-        $user = $connect->connect(REDIRECT_URL);
-
-        if(is_string($user)){
-            echo $user;
-        }else{
-            var_dump($user);
-        }
         break;
     }
     case 'upload' :

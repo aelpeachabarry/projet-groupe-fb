@@ -17,7 +17,5 @@
 <script type="text/javascript" src="assets/js/template.js"></script>
 
 <!-- Custom Scripts -->
-<script type="text/javascript" src="assets/js/custom.js"></script>
-<script type="text/javascript" src="assets/js/travelagency.js"></script>
 </body>
 </html>

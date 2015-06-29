@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
     <!-- Web Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome CSS -->
     <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
@@ -36,9 +36,9 @@
                 <div class="header-left clearfix">
 
                     <!-- logo -->
-                    <div class="logo smooth-scroll">
+                    <!--<div class="logo smooth-scroll">
                         <a href="#banner"><img id="logo" src="images/logo.png" alt=""></a>
-                    </div>
+                    </div>-->
 
                     <!-- name-and-slogan -->
                     <div class="site-name-and-slogan smooth-scroll">
