@@ -20,7 +20,7 @@ if($_POST["findImg"]){
     }else{
         var_dump($connect->getSession());
         $images = new ImageManager($connect->getSession());
-        $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
+        $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
         if(!empty($tempArrayImg)){
             $output = '<select class="image-picker show-labels show-html">';
             foreach($tempArrayImg as $image){
