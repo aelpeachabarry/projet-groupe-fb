@@ -50,7 +50,6 @@ class FacebookConnect {
 
                 //si on a bien notre token de connexion on peut commencer à faire des requetes avec la classe facebookrequest
                 $request = new FacebookRequest($this->session, 'GET', '/me');
-                var_dump($request);
                 //on recupère un objet graph user
                 $response = $request->execute()->getGraphObject('Facebook\GraphUser');
                 //var_dump($response);

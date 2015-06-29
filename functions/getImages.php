@@ -10,8 +10,7 @@ use \App\Facebook\FacebookConnect;
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
-var_dump(REDIRECT_URL);
-//$user = $connect->connect(REDIRECT_URL);
+$user = $connect->connect(REDIRECT_URL);
 
 //var_dump($user);
 //
