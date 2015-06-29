@@ -19,18 +19,18 @@ if($_POST["findImg"]){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
         var_dump($connect->getSession());
-        $images = new ImageManager($connect->getSession(),$_POST['findImg']);
-
-        $output = '<select class="image-picker show-labels show-html">';
-        foreach($images->getImages() as $image){
-            /*var_dump($image);*/
-            $output .= "<option data-img-src='".$image->source."' value='".$image->id."'>".$image->name."</option>";
-            /*echo "<img src='".$image->source."'>";*/
+        $images = new ImageManager($connect->getSession());
+        $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
+        if(!empty($tempArrayImg)){
+            $output = '<select class="image-picker show-labels show-html">';
+            foreach($tempArrayImg as $image){
+                /*var_dump($image);*/
+                $output .= "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
+                /*echo "<img src='".$image->source."'>";*/
+            }
+            $output .= '</select>';
         }
-        $output .= '</select>';
-        echo $output;
     }
-    echo "probleme";
 }else{
     echo 'probleme';
 }
