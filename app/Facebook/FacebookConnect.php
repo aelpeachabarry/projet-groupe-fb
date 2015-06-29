@@ -34,7 +34,6 @@ class FacebookConnect {
         if(isset($_SESSION) && isset($_SESSION['fb_token'])){
             //on récupère la session active
             $this->session = new FacebookSession($_SESSION['fb_token']);
-            var_dump($this->session);
         }else{
 
             //on récupère le token de connexion
@@ -51,6 +50,7 @@ class FacebookConnect {
 
                 //si on a bien notre token de connexion on peut commencer à faire des requetes avec la classe facebookrequest
                 $request = new FacebookRequest($this->session, 'GET', '/me');
+                var_dump($request);
                 //on recupère un objet graph user
                 $response = $request->execute()->getGraphObject('Facebook\GraphUser');
                 //var_dump($response);
