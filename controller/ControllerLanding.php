@@ -2,7 +2,7 @@
 
 require 'model/UserModel.php';
 
-class ControllerUser{
+class ControllerLanding{
     public function __construct(){
 
     }

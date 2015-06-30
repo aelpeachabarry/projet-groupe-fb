@@ -2,7 +2,7 @@
 
 require 'model/PhotoModel.php';
 
-class ControllerImage{
+class ControllerGallery{
     public function __construct(){
 
     }

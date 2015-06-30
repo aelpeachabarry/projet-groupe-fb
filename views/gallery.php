@@ -2,7 +2,7 @@
 include 'app/Facebook/AlbumManager.php';
 include 'app/Facebook/UploadPhoto.php';
 include 'app/Facebook/imageManager.php';
-include 'controller/ControllerImage.php';
+include 'controller/ControllerGallery.php';
 ?>
 
 

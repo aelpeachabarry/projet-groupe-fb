@@ -27,7 +27,7 @@ switch($page)
 
     case 'landing' :
     {
-        require('controller/ControllerUser.php');
+        require('controller/ControllerLanding.php');
         require 'views/landing.php';
         break;
     }
@@ -66,7 +66,7 @@ switch($page)
         break;
     }
     default: {
-        require('controller/ControllerUser.php');
+        require('controller/ControllerLanding.php');
         require ('views/landing.php');
         break;
     }
