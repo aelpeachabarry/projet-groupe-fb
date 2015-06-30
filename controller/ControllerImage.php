@@ -12,8 +12,6 @@ class ControllerImage{
             'id_photo' => $idPhoto,
             'id_facebook' => $idUser,
             'id_concours' => 4,
-
-
         ];
         $escape = [
             'details' => $detail,
