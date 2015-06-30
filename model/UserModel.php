@@ -5,7 +5,7 @@
  * Date: 27/06/15
  * Time: 23:04
  */
-use \Core\Model;
+use Core\Model;
 
 class UserModel extends abstractModel{
     private $tableName = "users";
