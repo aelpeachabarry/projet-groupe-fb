@@ -31,7 +31,6 @@ include 'controller/ControllerGallery.php';
                     <option value="default"></option>
                     <?php
                     $albums = new AlbumManager($connect->getSession());
-                    var_dump($albums);
                     foreach($albums->getAlbums() as $data){
                         echo '<option value="'.$data->id.'">'.$data->name.'</option>';
                     }
@@ -48,7 +47,6 @@ if(isset($_POST['findImg'])){
     if($_POST['selectbasic']=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
-        var_dump($connect->getSession());
         $images = new ImageManager($connect->getSession());
         $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
         if(!empty($tempArrayImg)){
