@@ -7,7 +7,7 @@
  */
 require $_SERVER['DOCUMENT_ROOT'].'/core/Model.php';
 
-class UserModel extends Model{
+class UserModel extends abstractModel{
     private $tableName = "users";
     public function __construct(){
         parent::__construct($this->tableName);
