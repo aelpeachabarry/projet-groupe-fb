@@ -1,7 +1,7 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
 include 'app/Facebook/UploadPhoto.php';
-include 'app/Facebook/imageManager.php';
+use \App\Facebook\ImageManager;
 include 'controller/ControllerGallery.php';
 ?>
 
@@ -232,38 +232,38 @@ include 'controller/ControllerGallery.php';
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 
 
 <!-- le modal qui sert de lightbox -->
-    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="image-gallery-title"></h4>
+<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="image-gallery-title"></h4>
+            </div>
+            <div class="modal-body">
+                <img id="image-gallery-image" class="img-responsive" src="">
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
                 </div>
-                <div class="modal-body">
-                    <img id="image-gallery-image" class="img-responsive" src="">
+
+                <div class="col-md-8 text-justify" id="image-gallery-caption">
+                    This text will be overwritten by jQuery
                 </div>
-                <div class="modal-footer">
 
-                    <div class="col-md-2">
-                        <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                    </div>
-
-                    <div class="col-md-8 text-justify" id="image-gallery-caption">
-                        This text will be overwritten by jQuery
-                    </div>
-
-                    <div class="col-md-2">
-                        <button type="button" id="show-next-image" class="btn btn-default">Next</button>
-                    </div>
+                <div class="col-md-2">
+                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <!-- le modal pour l'upload d'image -->
 <div class="modal fade" id="upload-photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -294,46 +294,7 @@ include 'controller/ControllerGallery.php';
                 <!--affichage des images d'un album-->
                 <div class="row">
                     <div id="galerie-album" class="col-lg-12">
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-xs-3 thumb">
-                            <div class="thumbnail">
-                                <img class="lazy img-responsive" data-original="http://lorempixel.com/50/30" src="http://lorempixel.com/50/30" alt="">
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <!--end body-->
@@ -344,10 +305,27 @@ include 'controller/ControllerGallery.php';
         </div>
     </div>
 </div>
+<?php
+if(isset($_POST['submit'])){
+    if($_POST['submit'] && $_FILES){
+
+        $uploaded = new UploadPhoto($connect->getSession());
+
+        $uploaded->upload($_FILES['mon_fichier']);
+        $error = $uploaded->getError();
+        if(empty($error)){
+            $imgController = new ControllerGallery();
+            $imgController->insertImage($uploaded->getImgId(),$user->getId());
+        }
+
+        echo $uploaded->getError();
+    }else{
+        echo "probleme fichier";
+    }
+}
+?>
 
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
-<script type="text/javascript" src="assets/js/custom.js"></script>
-
 

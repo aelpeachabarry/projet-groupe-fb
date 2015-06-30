@@ -65,6 +65,21 @@ $(document).ready(function(){
     var blocUpload = '<div class="col-lg-4 col-md-4 col-xs-6 thumb"><div class="thumbnail"><a href="#" data-toggle="modal" data-target="#upload-photo"><img class="lazy img-responsive" src="./images/ajout-photo.png" alt=""></a></div></div>';
     gallery.prepend(blocUpload);
 
-
-
+    $("#upload").on('change',"#selectbasic",function(){
+        console.log($("#selectbasic").val());
+        if($("#selectbasic").val()!=null){
+            $.ajax({
+                url:"/functions/getImages.php",
+                type:'POST',
+                data : {
+                    findImg : $("#selectbasic").val()
+                },
+                success:function(data) {
+                    $("#galerie-album").children().remove();
+                    $("#galerie-album").append(data);
+                    $(".image-picker").imagepicker({show_label: true});
+                }
+            });
+        }
+    });
 });
