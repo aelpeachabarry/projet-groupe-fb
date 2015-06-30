@@ -9,7 +9,6 @@ $('document').ready(function() {
                     findImg : $("#selectbasic").val()
                 },
                 success:function(data) {
-                    console.log(data);
                     $("#resultImg").children().remove();
                     $("#resultImg").append(data);
                     $(".image-picker").imagepicker({show_label: true});

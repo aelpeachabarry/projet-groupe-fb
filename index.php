@@ -50,7 +50,6 @@ switch($page)
         break;
     }
     case 'gallery' : {
-        require 'model/db.class.php';
         require('views/gallery.php');
         break;
     }
