@@ -23,5 +23,4 @@ class ControllerUser{
             $userManager->create($nonEscape,$escape);
         }
     }
-
 }
