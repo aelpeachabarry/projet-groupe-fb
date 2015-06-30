@@ -284,7 +284,7 @@ include 'controller/ControllerGallery.php';
                     <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
                 </form>
                 <form form method="post" action="#" enctype="multipart/form-data">
-                    <div class="form-group">
+                    <div class="form-group" id="upload">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">
                             <option value="default"></option>
