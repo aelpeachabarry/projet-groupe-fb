@@ -5,7 +5,6 @@
  * Date: 27/06/15
  * Time: 22:59
  */
-require 'constants.php';
 require $_SERVER['DOCUMENT_ROOT'].'core/Model.php';
 
 class ConcoursModel extends abstractModel{

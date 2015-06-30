@@ -7,12 +7,6 @@
  */
 
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
-
-//define('HOST', 'localhost');
-//define('USER_DB', 'newwer21');
-//define('PWD_DB', '');
-//define('DB_NAME', 'concours-fb');
-
 /* HEROKU */
 
 define('HOST', 'ec2-54-225-154-5.compute-1.amazonaws.com');
