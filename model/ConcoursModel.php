@@ -5,7 +5,7 @@
  * Date: 27/06/15
  * Time: 22:59
  */
-use \Core\Model;
+require $_SERVER['DOCUMENT_ROOT'].'core/Model.php';
 
 class ConcoursModel extends abstractModel{
     public function __construct(){
