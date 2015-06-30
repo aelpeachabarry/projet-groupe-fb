@@ -53,7 +53,7 @@ if(isset($_POST['findImg'])){
             echo '<select class="image-picker show-labels show-html">';
             foreach($tempArrayImg as $image){
                 /*var_dump($image);*/
-                echo "<option data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
+                echo "<option class='col-lg-3 col-md-3 col-xs-3' data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
                 /*echo "<img src='".$image->source."'>";*/
             }
             echo '</select>';
