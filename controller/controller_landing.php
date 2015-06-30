@@ -8,7 +8,6 @@ class ControllerUser{
     }
     public function insertUser($user){
         if(empty($user)){
-            var_dump($user);
             echo 'probleme d\'insertion d\'user';
         }else{
             $userManager = new UserModel();
@@ -22,7 +21,6 @@ class ControllerUser{
                 'email' => $user->getEmail()
             ];
             $userManager->create($nonEscape,$escape);
-            echo "User insert Done";
         }
 
 
