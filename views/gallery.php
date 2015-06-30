@@ -287,6 +287,13 @@ include 'controller/ControllerGallery.php';
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">
+                            <option value="default"></option>
+                            <?php
+                            $albums = new AlbumManager($connect->getSession());
+                            foreach($albums->getAlbums() as $data){
+                                echo '<option value="'.$data->id.'">'.$data->name.'</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
