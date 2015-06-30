@@ -7,7 +7,7 @@
  */
 use \Core\Model;
 
-class UserModel extends abstractModel{
+class UserModel extends Model{
     private $tableName = "users";
     public function __construct(){
         parent::__construct($this->tableName);
