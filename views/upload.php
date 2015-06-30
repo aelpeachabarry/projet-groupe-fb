@@ -50,13 +50,18 @@ if(isset($_POST['findImg'])){
         $images = new ImageManager($connect->getSession());
         $tempArrayImg = $images->getImagesFromAlbum($_POST['selectbasic']);
         if(!empty($tempArrayImg)){
-            echo '<select class="image-picker show-labels show-html">';
+            echo '<ul class="thumbnails image_picker_selector">';
             foreach($tempArrayImg as $image){
                 /*var_dump($image);*/
-                echo "<option class='col-lg-3 col-md-3 col-xs-3' data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";
+                echo '<div class="col-lg-3 col-md-3 col-xs-3 thumb">';
+                echo '<div class="thumbnail">';
+                echo '<img class="lazy img-responsive" data-original="'.$image->source.'" src="'.$image->source.'">';
+                echo '</div>';
+                echo '</div>';
+                /*echo "<option class='col-lg-3 col-md-3 col-xs-3' data-img-src='".$image->source."' value='".$image->id."'>".$user->getName()."</option>";*/
                 /*echo "<img src='".$image->source."'>";*/
             }
-            echo '</select>';
+            echo '</ul>';
         }
     }
 }
