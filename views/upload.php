@@ -8,7 +8,7 @@
 include 'app/Facebook/AlbumManager.php';
 include 'app/Facebook/UploadPhoto.php';
 use \App\Facebook\ImageManager;
-include 'controller/controller_upload.php';
+include 'controller/ControllerImage.php';
 ?>
 <div class="row col-lg-offset-2 col-lg-8">
     <div id="upload" class="col-lg-12">
@@ -70,7 +70,7 @@ if(isset($_POST['submit'])){
         $uploaded->upload($_FILES['mon_fichier']);
         $error = $uploaded->getError();
         if(empty($error)){
-            $imgController = new ControllerUpload();
+            $imgController = new ControllerImage();
             $imgController->insertImage($uploaded->getImgId(),$user->getId());
         }
 

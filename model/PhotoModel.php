@@ -5,7 +5,7 @@
  * Date: 27/06/15
  * Time: 23:04
  */
-require $_SERVER['DOCUMENT_ROOT'].'/core/Model.php';
+use \Core\Model;
 
 class PhotoModel extends abstractModel{
     private $tableName = "photos";

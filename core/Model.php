@@ -5,6 +5,7 @@
  * Date: 27/06/15
  * Time: 19:00
  */
+namespace Core\Model;
 
 class abstractModel {
     private $tableName;

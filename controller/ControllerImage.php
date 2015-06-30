@@ -2,7 +2,7 @@
 
 require 'model/PhotoModel.php';
 
-class ControllerUpload{
+class ControllerImage{
     public function __construct(){
 
     }
