@@ -22,9 +22,9 @@
                     echo '<div class="col-md-4 col-md-offset-8 object-non-visible" style="background-color: rgba(0,0,0,0.2);padding-bottom:10px" data-animation-effect="fadeIn">';
                     echo '<h4>Bienvenue '.$user->getName().'</h4>';
                     echo '</div>';
-                    echo '<pre>';
+                    /*echo '<pre>';
                     print_r($_SESSION);
-                    echo '</pre>';
+                    echo '</pre>';*/
                 }
                 ?>
             </div>
