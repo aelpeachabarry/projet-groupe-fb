@@ -37,13 +37,14 @@ class abstractModel {
      * ];
      * ce tableau correspond au champ et valeur a inséré
      */
-    public function create($nonescapeData,$escapeData){
+    public function create($nonescapeData = null,$escapeData= null){
         $fields = "";
         $values = "";
         if(!empty($nonescapeData)){
             $fields .= implode(',',array_keys($nonescapeData));
             $values.= implode(',',array_values($nonescapeData));
         }
+
         if(!empty($escapeData)){
             if(!empty($fields)){
                 $fields .= ',';
