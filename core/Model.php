@@ -92,7 +92,7 @@ abstract class abstractModel {
                 $cpt++;
             }
         }
-        $query = "SELECT ".$realFields." FROM ".$this->table." ".$condition;
+        $query = "SELECT ".$realFields." FROM ".$this->tableName." ".$condition;
         return $this->db->query($query);
     }
 
