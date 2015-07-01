@@ -2,6 +2,7 @@
 
 require 'model/PhotoModel.php';
 require 'model/ConcoursPhotoModel.php';
+require $_SERVER['DOCUMENT_ROOT'].'core/Model.php';
 
 class ControllerGallery{
     public function __construct(){
