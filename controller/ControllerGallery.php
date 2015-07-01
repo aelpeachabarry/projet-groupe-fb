@@ -1,7 +1,7 @@
 <?php
 
-require 'model/PhotoModel.php';
-require 'model/ConcoursPhotoModel.php';
+require  $_SERVER['DOCUMENT_ROOT'].'model/PhotoModel.php';
+require  $_SERVER['DOCUMENT_ROOT'].'model/ConcoursPhotoModel.php';
 
 class ControllerGallery{
     public function __construct(){
