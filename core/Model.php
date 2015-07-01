@@ -6,7 +6,7 @@
  * Time: 19:00
  */
 
-class abstractModel {
+abstract class abstractModel {
     private $tableName;
     private $db;
 
