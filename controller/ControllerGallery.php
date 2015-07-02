@@ -14,7 +14,6 @@ class ControllerGallery{
         $nonescape = [
             'id_photo' => $idPhoto,
             'id_facebook' => $idUser,
-            'id_concours' => 4,
         ];
         $escape = [
             'details' => $detail,
@@ -27,7 +26,7 @@ class ControllerGallery{
         if($imageConcours){
             $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>$idUser,'id_concours'=>4]);
         }else{
-            unset($nonescape['id_concours']);
+            $nonescape['id_concours'] = 4;
             $userConcPhoto->create($nonescape);
         }
 
