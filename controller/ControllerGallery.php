@@ -13,9 +13,10 @@ class ControllerGallery{
 
         $nonescape = [
             'id_photo' => $idPhoto,
-            'id_facebook' => $idUser,
+
         ];
         $escape = [
+            'id_facebook' => $idUser,
             'details' => $detail,
             'last_update' => date('Y-m-d G:i:s'),
         ];
