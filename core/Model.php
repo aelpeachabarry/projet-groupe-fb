@@ -93,6 +93,7 @@ abstract class abstractModel {
             }
         }
         $query = "SELECT ".$realFields." FROM ".$this->tableName." ".$condition;
+        echo $query;
         return $this->db->query($query);
     }
 
