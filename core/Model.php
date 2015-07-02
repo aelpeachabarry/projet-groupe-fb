@@ -58,7 +58,6 @@ abstract class abstractModel {
 
         if(!empty($fields) && !empty($values)){
             $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
-            echo $query;
             $resultInsert = (bool)$this->db->exec($query);
             return $resultInsert;
         }
@@ -121,6 +120,7 @@ abstract class abstractModel {
             }
         }
         $query = "UPDATE ".$this->tableName." SET ".$setCondition.$condition;
+        echo $query;
         $this->db->exec($query);
     }
     //SUPPRIME UN ENREGISTREMEMENT
