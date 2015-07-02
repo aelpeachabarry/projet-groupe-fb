@@ -1,7 +1,7 @@
 <?php
-include_once dirname(__FILE__).'/core/Model.php';
-include_once 'model/PhotoModel.php';
-include_once 'model/ConcoursPhotoModel.php';
+require $_SERVER['DOCUMENT_ROOT'].'/core/Model.php';
+require 'model/PhotoModel.php';
+require 'model/ConcoursPhotoModel.php';
 
 class ControllerGallery{
     public function __construct(){
@@ -22,12 +22,11 @@ class ControllerGallery{
         ];
         $imgManager->create($nonescape,$escape);
         $imageConcours= $userConcPhoto->read('*',['id_facebook'=>$idUser,'id_concours'=>4]);
-        var_dump($imageConcours);
         if(count($imageConcours)>0){
-            echo $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>$idUser,'id_concours'=>4]);
+            $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>$idUser,'id_concours'=>4]);
         }else{
             unset($nonescape['id_concours']);
-            echo $userConcPhoto->create($nonescape);
+            $userConcPhoto->create($nonescape);
         }
 
     }
