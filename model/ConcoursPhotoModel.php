@@ -8,6 +8,6 @@
 
 class ConcoursPhotoModel extends abstractModel{
     public function __construct(){
-        parent::__construct('user_concours_');
+        parent::__construct('user_concours_photo');
     }
 }
