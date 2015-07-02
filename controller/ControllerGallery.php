@@ -22,7 +22,7 @@ class ControllerGallery{
         ];
         $imgManager->create($nonescape,$escape);
 
-        $imageConcours= $userConcPhoto->read('*',['id_concours'=>4,'id_facebook'=>"".$idUser.""]);
+        $imageConcours= $userConcPhoto->read('*',['id_concours'=>4,'id_facebook'=>"'".$idUser."'"]);
         if($imageConcours){
             echo "Trying update";
             $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>$idUser,'id_concours'=>4]);
