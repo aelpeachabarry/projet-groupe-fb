@@ -31,7 +31,6 @@ class ControllerGallery{
             $nonescape['id_concours'] = 4;
             $userConcPhoto->create($nonescape);
         }
-
     }
     public function getAllImages(){
         $fields = [
