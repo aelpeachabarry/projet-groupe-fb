@@ -110,19 +110,22 @@ abstract class abstractModel {
                 }
                 $cpt1++;
             }
-            $setCondition = implode(',',$sets);
-            if(empty($where)){
-                $condition = null;
+            if(empty($setCondition)){
+                echo "probleme avec le SET";
             }else{
-                $condition = "";
-                $cpt = 0;
-                foreach($where as $key=>$value){
-                    if($cpt == 0){
-                        $condition .= " WHERE ".$key." = ".$value;
-                    }else{
-                        $condition .= " AND ".$key." = ".$value;
+                if(empty($where)){
+                    $condition = null;
+                }else{
+                    $condition = "";
+                    $cpt = 0;
+                    foreach($where as $key=>$value){
+                        if($cpt == 0){
+                            $condition .= " WHERE ".$key." = ".$value;
+                        }else{
+                            $condition .= " AND ".$key." = ".$value;
+                        }
+                        $cpt++;
                     }
-                    $cpt++;
                 }
             }
 
