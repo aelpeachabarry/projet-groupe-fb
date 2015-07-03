@@ -92,7 +92,7 @@ abstract class abstractModel {
             }
         }
         $query = "SELECT ".$realFields." FROM ".$this->tableName." ".$condition;
-        echo $query;
+/*        echo $query;*/
         return $this->db->query($query);
     }
 
@@ -131,7 +131,7 @@ abstract class abstractModel {
 
         }
         $query = "UPDATE ".$this->tableName.$setCondition.$condition;
-        echo $query;
+        /*echo $query;*/
         $this->db->exec($query);
     }
     //SUPPRIME UN ENREGISTREMEMENT

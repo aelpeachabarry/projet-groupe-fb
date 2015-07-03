@@ -24,10 +24,10 @@ class ControllerGallery{
 
         $imageConcours= $userConcPhoto->read('*',['id_concours'=>4,'id_facebook'=>"'".$idUser."'"]);
         if($imageConcours){
-            echo "Trying update";
+            echo "<br>Trying update<br>";
             $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>"'".$idUser."'",'id_concours'=>4]);
         }else{
-            echo "Trying create";
+            echo "<br>Trying create<br>";
             $nonescape['id_concours'] = 4;
             $userConcPhoto->create($nonescape);
         }
