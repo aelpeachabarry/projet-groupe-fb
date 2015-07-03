@@ -130,7 +130,7 @@ abstract class abstractModel {
             }
 
         }
-        $query = "UPDATE ".$this->tableName." SET ".$setCondition.$condition;
+        $query = "UPDATE ".$this->tableName." ".$setCondition.$condition;
         echo $query;
         $this->db->exec($query);
     }
