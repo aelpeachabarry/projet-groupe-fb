@@ -94,7 +94,7 @@ abstract class abstractModel {
         }
         $query = "SELECT ".$realFields." FROM ".$this->tableName." ".$condition;
 /*        echo $query;*/
-        return $this->db->query($query);
+        return $this->db->query($query, PDO::FETCH_ASSOC);
     }
 
     //MET A JOUR UN OU PLUSIEURS ENREGISTREMENT
