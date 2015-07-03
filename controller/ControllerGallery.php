@@ -30,7 +30,7 @@ class ControllerGallery{
         }else{
             echo "<br>Trying create<br>";
             $nonescape['id_concours'] = 4;
-            $userConcPhoto->create($nonescape);
+            $userConcPhoto->create($nonescape,['id_facebook' => $idUser]);
         }
     }
     public function getAllImages(){
