@@ -98,27 +98,34 @@ abstract class abstractModel {
 
     //MET A JOUR UN OU PLUSIEURS ENREGISTREMENT
     public function update($sets,$where){
-        $keysSet = array_keys($sets);
-        $valuesSet = array_values($sets);
+        $setCondition = "";
+        $cpt1=0;
 
-        if(!empty($keysSet) && !empty($valuesSet)){
-            if(count(array_keys($keysSet)) == count($valuesSet)){
-                $setCondition = implode(',',$sets);
-                if(empty($where)){
-                    $condition = null;
+        if(!empty($sets)){
+            foreach($sets as $keyset=>$valueset){
+                if($cpt1 == 0){
+                    $setCondition .= " SET ".$keyset." = ".$valueset;
                 }else{
-                    $condition = "";
-                    $cpt = 0;
-                    foreach($where as $key=>$value){
-                        if($cpt == 0){
-                            $condition .= " WHERE ".$key." = ".$value;
-                        }else{
-                            $condition .= " AND ".$key." = ".$value;
-                        }
-                        $cpt++;
+                    $setCondition .= ", ".$keyset." = ".$valueset;
+                }
+                $cpt1++;
+            }
+            $setCondition = implode(',',$sets);
+            if(empty($where)){
+                $condition = null;
+            }else{
+                $condition = "";
+                $cpt = 0;
+                foreach($where as $key=>$value){
+                    if($cpt == 0){
+                        $condition .= " WHERE ".$key." = ".$value;
+                    }else{
+                        $condition .= " AND ".$key." = ".$value;
                     }
+                    $cpt++;
                 }
             }
+
         }
         $query = "UPDATE ".$this->tableName." SET ".$setCondition.$condition;
         echo $query;
