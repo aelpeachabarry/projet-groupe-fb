@@ -41,7 +41,7 @@ class ImageManager{
             '/'.(int)$imageId
         );
         $response = $request->execute();
-        $graphObject = $response->getGraphObject();
+        return $response->getGraphObject();
     }
 }
 
