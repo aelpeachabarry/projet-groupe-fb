@@ -11,18 +11,6 @@ include 'controller/ControllerGallery.php';
 
     <!--caroussel-->
     <div id="galerie-concours" class="carousel slide col-lg-12">
-
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
-            <div class="thumbnail">
-                <div class="caption">
-                    <h4>Thumbnail Headline</h4>
-                    <p>short thumbnail description</p>
-                    <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
-                        <a href="#" class="label label-default">Like</a></p>
-                </div>
-                <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
-            </div>
-        </div>
         <?php
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
