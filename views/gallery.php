@@ -27,9 +27,9 @@ include 'controller/ControllerGallery.php';
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
         var_dump($galController->getAllImages());
-        var_dump($ImageManager);
         foreach($galController as $imageObj){
-            var_dump($ImageManager->getImage($imageObj['id_photo']));
+            var_dump($imageObj['id_photo']);
+            //$ImageManager->getImage($imageObj['id_photo']);
         }
 
         ?>
