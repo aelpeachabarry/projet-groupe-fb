@@ -27,10 +27,10 @@ include 'controller/ControllerGallery.php';
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
         //var_dump($galController->getAllImages());
-        foreach($galController->getAllImages() as $imageObj){
+        /*foreach($galController->getAllImages() as $imageObj){
             var_dump($imageObj['id_photo']);
             $ImageManager->getImageFromUser($connect->getFacebookId(),$imageObj['id_photo']);
-        }
+        }*/
 
         ?>
         <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
@@ -327,14 +327,15 @@ if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
 
         $uploaded = new UploadPhoto($connect->getSession());
-
+        $img = new ImageManager($connect->getSession());
+        $imgObj = $img->getImage($uploaded->getImgId());
+        $source = $imgObj->getProperty('source');
         $uploaded->upload($_FILES['mon_fichier']);
         $error = $uploaded->getError();
         if(empty($error)){
             $imgController = new ControllerGallery();
-            $imgController->insertImage($uploaded->getImgId(),$user->getId(),$uploaded->getImgSource());
+            $imgController->insertImage($uploaded->getImgId(),$user->getId(),$source);
         }
-
         echo $uploaded->getError();
     }else{
         echo "probleme fichier";

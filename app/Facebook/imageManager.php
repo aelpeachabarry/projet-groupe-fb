@@ -32,21 +32,6 @@ class ImageManager{
             echo " with message: " . $e->getMessage();
         }
     }
-    public function getImageFromUser($userid,$photoid){
-        try {
-            $response = (new FacebookRequest(
-                $this->session, 'GET', '/' . $userid . '/photos'
-            )
-            )->execute()->getGraphObject();
-            $photosArray = $response->getProperty('data')->asArray();
-            echo "<pre>";
-            print_r($photosArray);
-            echo "</pre>";
-        } catch (FacebookRequestException $e) {
-            echo "Exception occured, code: " . $e->getCode();
-            echo " with message: " . $e->getMessage();
-        }
-    }
 //RECUPERE UNE IMAGE D'UN PROFILE FACEBOOK
     public function getImage($imageId)
     {
