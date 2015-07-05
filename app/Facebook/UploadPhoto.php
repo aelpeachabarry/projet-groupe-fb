@@ -47,6 +47,7 @@ class UploadPhoto {
                 if($error== UPLOAD_ERR_OK){
                     $this->imgId =  $response->getProperty('id');
                     $this->source =  $response->getProperty('source');
+                    var_dump($this->source());
                     echo "Upload Done";
                 }
 
