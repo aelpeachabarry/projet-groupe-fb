@@ -32,14 +32,21 @@ class ControllerGallery{
             $userConcPhoto->create($nonescape,['id_facebook' => $idUser]);
         }
     }
-    public function getAllImages(){
-        $imgManager = new ConcoursPhotoModel();
+    public function getAllImagesUrl(){
+        $imgSource = [];
+        $concImg = new ConcoursPhotoModel();
+        $img = new PhotoModel();
         $fields = [
             'id_photo',
             'id_facebook',
             'id_concours'
         ];
-        return $imgManager->read($fields);
+        $images = $concImg->read($fields);
+        foreach($images as $image){
+            $imageUrl = $img->read('*',['id_photo'=>$image['id_photo']]);
+            array_push($imgSource,$imageUrl['source']);
+        }
+        return $imgSource;
     }
 
 }
