@@ -13,7 +13,6 @@ class ControllerGallery{
 
         $nonescape = [
             'id_photo' => $idPhoto,
-
         ];
         $escape = [
             'id_facebook' => $idUser,
