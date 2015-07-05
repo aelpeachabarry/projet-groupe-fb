@@ -27,10 +27,10 @@ include 'controller/ControllerGallery.php';
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
         //var_dump($galController->getAllImages());
-        /*foreach($galController->getAllImages() as $imageObj){
+        foreach($galController->getAllImages() as $imageObj){
             var_dump($imageObj['id_photo']);
             $ImageManager->getImageFromUser($connect->getFacebookId(),$imageObj['id_photo']);
-        }*/
+        }
 
         ?>
         <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
@@ -325,7 +325,6 @@ include 'controller/ControllerGallery.php';
 <?php
 if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
-
         $uploaded = new UploadPhoto($connect->getSession());
         $img = new ImageManager($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
