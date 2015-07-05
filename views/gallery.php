@@ -1,5 +1,6 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
+use App\Facebook\ImageManager;
 include 'app/Facebook/UploadPhoto.php';
 include 'controller/ControllerGallery.php';
 ?>
@@ -24,7 +25,12 @@ include 'controller/ControllerGallery.php';
         </div>
         <?php
         $galController = new ControllerGallery();
-        var_dump($galController->getAllImages());
+        $ImageManager = new ImageManager($connect->getSession());
+        //var_dump($galController->getAllImages());
+        foreach($galController as $imageObj){
+            var_dump($ImageManager->getImage($imageObj['id_photo']));
+        }
+
         ?>
         <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
