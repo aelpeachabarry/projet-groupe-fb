@@ -44,7 +44,7 @@ class ControllerGallery{
         $images = $concImg->read($fields);
         foreach($images as $image){
             $imageUrl = $img->read('*',['id_photo'=>$image['id_photo']]);
-            var_dump($imageUrl);
+            //var_dump($imageUrl);
             array_push($imgSource,$imageUrl[0]['url']);
         }
         return $imgSource;
