@@ -34,7 +34,7 @@ class ControllerGallery{
         }
     }
     public function getAllImages(){
-        $imgManager = new PhotoModel();
+        $imgManager = new ConcoursPhotoModel();
         $fields = [
             'id_photo',
             'id_facebook',
