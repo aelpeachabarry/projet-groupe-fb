@@ -29,7 +29,7 @@ include 'controller/ControllerGallery.php';
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImagesUrl() as $imageUrl){
             ?>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
+            <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
                 <div class="thumbnail">
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
@@ -37,9 +37,9 @@ include 'controller/ControllerGallery.php';
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a></p>
                     </div>
-                    <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
+                    <img class="lazy img-responsive" data-original="<?php /*echo $imageUrl */?>" src="<?php /*echo $imageUrl */?>" alt="">
                 </div>
-            </div>
+            </div>-->
         <?php
         }
         ?>
