@@ -34,11 +34,13 @@ class ControllerGallery{
         }
     }
     public function getAllImages(){
+        $imgManager = new PhotoModel();
         $fields = [
             'id_photo',
             'id_facebook',
             'id_concours'
         ];
+        return $imgManager->read($fields);
     }
 
 }

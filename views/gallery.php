@@ -1,7 +1,6 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
 include 'app/Facebook/UploadPhoto.php';
-use \App\Facebook\ImageManager;
 include 'controller/ControllerGallery.php';
 ?>
 
@@ -23,7 +22,11 @@ include 'controller/ControllerGallery.php';
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
+        <?php
+        $galController = new ControllerGallery();
+        var_dump($galController->getAllImages());
+        ?>
+        <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -231,7 +234,7 @@ include 'controller/ControllerGallery.php';
                 </div>
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
