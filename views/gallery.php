@@ -332,7 +332,7 @@ if(isset($_POST['submit'])){
         $error = $uploaded->getError();
         if(empty($error)){
             $imgController = new ControllerGallery();
-            $imgController->insertImage($uploaded->getImgId(),$user->getId());
+            $imgController->insertImage($uploaded->getImgId(),$user->getId(),$uploaded->getImgSource());
         }
 
         echo $uploaded->getError();

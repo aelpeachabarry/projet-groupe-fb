@@ -16,6 +16,7 @@ class UploadPhoto {
     private $session;
     private $imgId;
     private $codeError;
+    private $source;
 
     public function __construct($session){
 
@@ -45,6 +46,7 @@ class UploadPhoto {
 
                 if($error== UPLOAD_ERR_OK){
                     $this->imgId =  $response->getProperty('id');
+                    $this->source =  $response->getProperty('source');
                     echo "Upload Done";
                 }
 
@@ -58,6 +60,9 @@ class UploadPhoto {
     }
     public function getImgId(){
         return $this->imgId;
+    }
+    public function getImgSource(){
+        return $this->source;
     }
     public function getError(){
         return $this->codeError;

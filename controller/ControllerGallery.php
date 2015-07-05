@@ -7,7 +7,7 @@ class ControllerGallery{
     public function __construct(){
 
     }
-    public function insertImage($idPhoto = null,$idUser,$detail = ''){
+    public function insertImage($idPhoto = null,$idUser,$url = 'default'){
         $imgManager = new PhotoModel();
         $userConcPhoto = new ConcoursPhotoModel();
 
@@ -17,7 +17,7 @@ class ControllerGallery{
         ];
         $escape = [
             'id_facebook' => $idUser,
-            'details' => $detail,
+            'url' => $url,
             'last_update' => date('Y-m-d G:i:s'),
         ];
         $imgManager->create($nonescape,$escape);
