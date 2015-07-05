@@ -26,10 +26,10 @@ include 'controller/ControllerGallery.php';
         <?php
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
-        var_dump($galController->getAllImages());
-        foreach($galController as $imageObj){
+        //var_dump($galController->getAllImages());
+        foreach($galController->getAllImages() as $imageObj){
             var_dump($imageObj['id_photo']);
-            //$ImageManager->getImage($imageObj['id_photo']);
+            $ImageManager->getImage($imageObj['id_photo']);
         }
 
         ?>
