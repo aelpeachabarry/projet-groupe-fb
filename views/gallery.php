@@ -29,7 +29,7 @@ include 'controller/ControllerGallery.php';
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $imageObj){
             var_dump($imageObj['id_photo']);
-            $ImageManager->getImage($imageObj['id_photo']);
+            $ImageManager->getImageFromUser($connect->getFacebookId(),$imageObj['id_photo']);
         }
 
         ?>
