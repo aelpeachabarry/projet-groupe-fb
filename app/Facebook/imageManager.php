@@ -35,7 +35,6 @@ class ImageManager{
 //RECUPERE UNE IMAGE D'UN PROFILE FACEBOOK
     public function getImage($imageId)
     {
-        echo $imageId;
         $request = new FacebookRequest(
             $this->session,
             'GET',
