@@ -330,8 +330,9 @@ if(isset($_POST['submit'])){
         $img = new ImageManager($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
         if(empty($error)){
-            var_dump($imgOb);
+
             $imgObj = $img->getImage($uploaded->getImgId());
+            var_dump($imgOb);
             $imgController = new ControllerGallery();
             $imgController->insertImage($uploaded->getImgId(),$user->getId(),$source);
         }
