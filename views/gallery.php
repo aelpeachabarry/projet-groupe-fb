@@ -24,7 +24,7 @@ include 'controller/ControllerGallery.php';
         foreach($galController->getAllImagesUrl() as $imageUrl){
 
         $title=('Title of Your iFrame Tab');
-        $url=('http://www.site-bidon.fr');
+        $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
         $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
         $image=($imageUrl);
             ?>
