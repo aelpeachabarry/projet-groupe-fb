@@ -23,7 +23,9 @@ include 'controller/ControllerGallery.php';
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
-                            <a href="" class="label label-default">Like</a></p>
+                            <a href="" class="label label-default">Like</a>
+                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                        </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
                 </div>
@@ -337,8 +339,17 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=384491318402733";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
+
 
