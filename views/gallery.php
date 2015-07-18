@@ -20,14 +20,15 @@ include 'controller/ControllerGallery.php';
             console.log($(this));
 
             var img = $(this).closest('img');
-            console.log(img);
+            var lien = img.data('original');
+            console.log(lien);
 
             FB.ui(
                 {
                     method: 'feed',
                     name: 'Facebook Dialogs',
                     link: 'http://developers.facebook.com/docs/reference/dialogs/',
-                    picture: 'http://fbrell.com/f8.jpg',
+                    picture: lien,
                     caption: 'Reference Documentation',
                     description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
                     message: 'Facebook Dialogs are easy!'
