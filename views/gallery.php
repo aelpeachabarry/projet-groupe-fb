@@ -16,7 +16,7 @@ include 'controller/ControllerGallery.php';
 <script>
     $(document).ready(function() {
         $('#button_share').click(function() {
-        {
+
             console.log($(this));
 
             var img = $(this).closest('img');
