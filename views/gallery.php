@@ -30,7 +30,7 @@ include 'controller/ControllerGallery.php';
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
-                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
