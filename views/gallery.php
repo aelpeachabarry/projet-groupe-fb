@@ -5,8 +5,54 @@ include 'app/Facebook/UploadPhoto.php';
 include 'controller/ControllerGallery.php';
 ?>
 
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '384491318402733',
+            xfbml      : true,
+            version    : 'v2.0'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=384491318402733";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    $(document).ready(function() {
+        $('#button_share').click(function() {
 
+            console.log($(this));
 
+            var img = $(this).closest('.thumbnail').find('img');
+            console.log(img);
+            var lien = img.data('original');
+            console.log(lien);
+
+            FB.ui(
+                {
+                    method: 'feed',
+                    name: 'Facebook Dialogs',
+                    link: 'http://developers.facebook.com/docs/reference/dialogs/',
+                    picture: lien,
+                    caption: 'Reference Documentation',
+                    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
+                    message: 'Facebook Dialogs are easy!'
+                },
+                function(response) {
+                    if (response && response.post_id) {
+                        alert('Post was published.');
+                    } else {
+                        alert('Post was not published.');
+                    }
+                }
+            );
+        });
+    });
+</script>
 <div class="row col-lg-offset-2 col-lg-8">
 
     <!--caroussel-->
@@ -16,6 +62,11 @@ include 'controller/ControllerGallery.php';
         $ImageManager = new ImageManager($connect->getSession());
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImagesUrl() as $imageUrl){
+
+        $title=('Title of Your iFrame Tab');
+        $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
+        $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
+        $image=($imageUrl);
             ?>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
                 <div class="thumbnail">
@@ -23,7 +74,11 @@ include 'controller/ControllerGallery.php';
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
-                            <a href="" class="label label-default">Like</a></p>
+                            <a href="" class="label label-default">Like</a>
+                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                        <input type="button" id="button_share" value="Share" />
+                        <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
+                        </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
                 </div>
@@ -341,4 +396,5 @@ if(isset($_POST['submit'])){
 <script src="./assets/node_modules/jquery-lazyload/jquery.lazyload.js"></script>
 <script src="./assets/js/gallery.js"></script>
 <script type="text/javascript" src="assets/plugins/image-picker.min.js"></script>
+
 
