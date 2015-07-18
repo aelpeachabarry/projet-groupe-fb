@@ -35,8 +35,8 @@ include 'controller/ControllerGallery.php';
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
-                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-                        <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>
+                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                        <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
