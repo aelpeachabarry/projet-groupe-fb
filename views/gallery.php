@@ -20,6 +20,7 @@ include 'controller/ControllerGallery.php';
             console.log($(this));
 
             var img = $(this).closest('img');
+            console.log(img);
             var lien = img.data('original');
             console.log(lien);
 
