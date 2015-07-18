@@ -23,10 +23,10 @@ include 'controller/ControllerGallery.php';
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImagesUrl() as $imageUrl){
 
-        $title=urlencode('Title of Your iFrame Tab');
-        $url=urlencode('http://www.site-bidon.fr');
-        $summary=urlencode('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
-        $image=urlencode($imageUrl);
+        $title=('Title of Your iFrame Tab');
+        $url=('http://www.site-bidon.fr');
+        $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
+        $image=($imageUrl);
             ?>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
                 <div class="thumbnail">
@@ -35,7 +35,7 @@ include 'controller/ControllerGallery.php';
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
-                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
                         <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>
                         </p>
                     </div>
