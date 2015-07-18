@@ -15,7 +15,7 @@ include 'controller/ControllerGallery.php';
     }(document, 'script', 'facebook-jssdk'));</script>
 <script>
     $(document).ready(function() {
-        $('#button_share').click(function({
+        $('#button_share').click(function() {
         {
             console.log($(this));
 
