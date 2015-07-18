@@ -16,6 +16,8 @@ include 'controller/ControllerGallery.php';
 <script>
     function share_prompt()
     {
+        console.log($(this));
+
         FB.ui(
             {
                 method: 'feed',
