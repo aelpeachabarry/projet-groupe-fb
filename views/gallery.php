@@ -24,9 +24,9 @@ include 'controller/ControllerGallery.php';
         foreach($galController->getAllImagesUrl() as $imageUrl){
 
         $title=urlencode('Title of Your iFrame Tab');
-        $url=urlencode('http://www.facebook.com/wordpressdesign');
+        $url=urlencode('http://www.site-bidon.fr');
         $summary=urlencode('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
-        $image=urlencode('http://www.yourdomain.com/images/share-thumbnail.jpg');
+        $image=urlencode($imageUrl);
             ?>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
                 <div class="thumbnail">
