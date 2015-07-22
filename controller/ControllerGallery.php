@@ -1,5 +1,4 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/core/Model.php';
 require 'model/PhotoModel.php';
 require 'model/ConcoursPhotoModel.php';
 
