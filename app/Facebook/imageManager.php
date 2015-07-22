@@ -70,7 +70,7 @@ class ImageManager{
             'POST',
             '/me/objects/website',
             array (
-                'object' => '{"fb:app_id":"'.APP_ID.'","og:type":"website","og:url":"https://projet-groupe-fb.herokuapp.com/photo-1","og:title":"Sample Website","og:image":"$url_image"}',
+                'object' => '{"fb:app_id":"'.APP_ID.'","og:type":"website","og:url":"https://projet-groupe-fb.herokuapp.com/photo-1","og:title":"Sample Website","og:image":"'.$url_image.'"}',
             )
         );
         $response = $request->execute();
