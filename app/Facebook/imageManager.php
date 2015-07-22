@@ -8,7 +8,7 @@
 namespace App\Facebook;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
-
+require 'app/Facebook/constants.php';
 
 class ImageManager{
 
@@ -62,6 +62,21 @@ class ImageManager{
             ]
         )
         )->execute()->getGraphObject();
+        return $graphObject;
+    }
+    public function createWebsiteObject($url_image)
+    {
+        $request = new FacebookRequest(
+            $this->session,
+            'POST',
+            '/me/objects/website',
+            array (
+                'object' => '{"fb:app_id":"'.APP_ID.'","og:type":"website","og:url":"Put your own URL to the object here","og:title":"Sample Website","og:image":"$url_image"}',
+            )
+        );
+        $response = $request->execute();
+        $graphObject = $response->getGraphObject();
+        var_dump($graphObject);
         return $graphObject;
     }
 

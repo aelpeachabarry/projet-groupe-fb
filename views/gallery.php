@@ -1,6 +1,6 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
-use App\Facebook\ImageManager;
+use app\Facebook\ImageManager;
 include 'app/Facebook/UploadPhoto.php';
 include 'controller/ControllerGallery.php';
 ?>
@@ -67,6 +67,8 @@ include 'controller/ControllerGallery.php';
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImagesUrl() as $imageUrl){
 
+        $object = $ImageManager->createWebsiteObject($imageUrl);
+            var_dump($object);
         $title=('Title of Your iFrame Tab');
         $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
         $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
@@ -79,7 +81,7 @@ include 'controller/ControllerGallery.php';
                         <p>short thumbnail description</p>
                         <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
-                        <div class="fb-like" data-href="<?php echo $imageUrl ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                        <div class="fb-like" data-href="https://projet-groupe-fb.herokuapp.com/photo-1" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
                         <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
