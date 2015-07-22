@@ -48,7 +48,7 @@ class ImageManager{
     {
         $graphObject = (
         new FacebookRequest(
-            $this->facebookSession,
+            $this->session,
             'POST',
             "/me/objects/object",
             [
