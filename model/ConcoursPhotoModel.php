@@ -6,7 +6,7 @@
  * Time: 23:04
  */
 
-require ROOT.'core/Model.php';
+//require ROOT.'core/Model.php';
 
 
 
