@@ -36,8 +36,8 @@ include 'controller/ControllerGallery.php';
                 {
                     method: 'feed',
                     name: 'Facebook Dialogs',
-                    link: 'http://developers.facebook.com/docs/reference/dialogs/',
-                    picture: lien,
+                    link: 'https://projet-groupe-fb.herokuapp.com/photo-1',
+                    //picture: lien,
                     caption: 'Reference Documentation',
                     description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
                     message: 'Facebook Dialogs are easy!'
