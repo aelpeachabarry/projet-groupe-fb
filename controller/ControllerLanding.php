@@ -1,6 +1,6 @@
 <?php
 
-require 'model/UserModel.php';
+require_once 'model/UserModel.php';
 
 class ControllerLanding{
     public function __construct(){
