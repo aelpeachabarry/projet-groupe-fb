@@ -64,6 +64,18 @@ class ImageManager{
         )->execute()->getGraphObject();
         return $graphObject;
     }
+
+    public function getAllObject()
+    {
+        $request = new FacebookRequest(
+            $this->session,
+            'GET',
+            '/me/objects/object'
+        );
+        $response = $request->execute();
+        $graphObject = $response->getGraphObject();
+        return $graphObject;
+    }
 }
 
 

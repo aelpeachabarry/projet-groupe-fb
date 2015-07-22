@@ -61,7 +61,7 @@ include 'controller/ControllerGallery.php';
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
 
-        $test = $ImageManager->getImageObject();
+        $test = $ImageManager->getAllObject();
 
         var_dump($test);
         //var_dump($galController->getAllImages());
