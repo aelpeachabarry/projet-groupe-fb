@@ -68,7 +68,7 @@ include 'controller/ControllerGallery.php';
         $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
         $image=($imageUrl);
             ?>
-            <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall"]'>
                 <div class="thumbnail">
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
