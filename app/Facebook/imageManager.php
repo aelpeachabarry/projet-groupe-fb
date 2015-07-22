@@ -43,6 +43,27 @@ class ImageManager{
         var_dump($response->getGraphObject());
         return $response->getGraphObject();
     }
+
+    public function getImageObject()
+    {
+        $graphObject = (
+        new FacebookRequest(
+            $this->facebookSession,
+            'POST',
+            "/me/objects/object",
+            [
+                'object' => json_encode([
+                    'title' => 'test',
+                    'image' => 'https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11666296_130736713926319_6506740644690119820_n.jpg?oh=6da5536a069bd098b84bb210b14c3ec3&oe=560EF713',
+                    'url' => 'https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11666296_130736713926319_6506740644690119820_n.jpg?oh=6da5536a069bd098b84bb210b14c3ec3&oe=560EF713',
+                    'description' => 'mon super test',
+                    'site_name' => 'travel_info'
+                ])
+            ]
+        )
+        )->execute()->getGraphObject();
+        return $graphObject;
+    }
 }
 
 

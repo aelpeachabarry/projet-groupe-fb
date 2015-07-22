@@ -60,6 +60,10 @@ include 'controller/ControllerGallery.php';
         <?php
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
+
+        $test = $ImageManager->getImageObject();
+
+        var_dump($test);
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImagesUrl() as $imageUrl){
 
