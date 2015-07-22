@@ -63,15 +63,13 @@ class ImageManager{
         )->execute()->getGraphObject();
         return $graphObject;
     }
-    public function createWebsiteObject($url_image)
+    public function getObject($id)
     {
         $request = new FacebookRequest(
             $this->session,
-            'POST',
-            '/me/objects/website',
-            array (
-                'object' => '{"fb:app_id":"'.APP_ID.'","og:type":"website","og:url":"https://projet-groupe-fb.herokuapp.com/photo-1","og:title":"Sample Website","og:image":"'.$url_image.'"}',
-            )
+            'GET',
+            '/{object-'.$id.'}'
+
         );
         $response = $request->execute();
         $graphObject = $response->getGraphObject();
