@@ -6,7 +6,7 @@
  * Time: 19:00
  */
 
-class abstractModel {
+abstract class abstractModel {
     private $tableName;
     private $db;
 
@@ -58,7 +58,7 @@ class abstractModel {
 
         if(!empty($fields) && !empty($values)){
             $query = "INSERT INTO ".$this->tableName."(".$fields.") VALUES (".$values.")";
-
+            //echo $query;
             $resultInsert = (bool)$this->db->exec($query);
             return $resultInsert;
         }
@@ -92,18 +92,29 @@ class abstractModel {
                 $cpt++;
             }
         }
-        $query = "SELECT ".$realFields." FROM ".$this->table." ".$condition;
-        return $this->db->query($query);
+        $query = "SELECT ".$realFields." FROM ".$this->tableName." ".$condition;
+/*        echo $query;*/
+        $stmt = $this->db->query($query);
+        return $stmt->fetchAll();
     }
 
     //MET A JOUR UN OU PLUSIEURS ENREGISTREMENT
     public function update($sets,$where){
-        $keysSet = array_keys($sets);
-        $valuesSet = array_values($sets);
+        $setCondition = "";
+        $cpt1=0;
 
-        if(!empty($keysSet) && !empty($valuesSet)){
-            if(count(array_keys($keysSet)) == count($valuesSet)){
-                $setCondition = implode(',',$sets);
+        if(!empty($sets)){
+            foreach($sets as $keyset=>$valueset){
+                if($cpt1 == 0){
+                    $setCondition .= " SET ".$keyset." = ".$valueset;
+                }else{
+                    $setCondition .= ", ".$keyset." = ".$valueset;
+                }
+                $cpt1++;
+            }
+            if(empty($setCondition)){
+                echo "probleme avec le SET";
+            }else{
                 if(empty($where)){
                     $condition = null;
                 }else{
@@ -119,8 +130,10 @@ class abstractModel {
                     }
                 }
             }
+
         }
-        $query = "UPDATE ".$this->tableName." SET ".$setCondition.$condition;
+        $query = "UPDATE ".$this->tableName.$setCondition.$condition;
+        /*echo $query;*/
         $this->db->exec($query);
     }
     //SUPPRIME UN ENREGISTREMEMENT

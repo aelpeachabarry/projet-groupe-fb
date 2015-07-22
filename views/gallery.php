@@ -1,7 +1,7 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
+use App\Facebook\ImageManager;
 include 'app/Facebook/UploadPhoto.php';
-use \App\Facebook\ImageManager;
 include 'controller/ControllerGallery.php';
 ?>
 
@@ -11,19 +11,27 @@ include 'controller/ControllerGallery.php';
 
     <!--caroussel-->
     <div id="galerie-concours" class="carousel slide col-lg-12">
-
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
-            <div class="thumbnail">
-                <div class="caption">
-                    <h4>Thumbnail Headline</h4>
-                    <p>short thumbnail description</p>
-                    <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
-                        <a href="#" class="label label-default">Like</a></p>
+        <?php
+        $galController = new ControllerGallery();
+        $ImageManager = new ImageManager($connect->getSession());
+        //var_dump($galController->getAllImages());
+        foreach($galController->getAllImagesUrl() as $imageUrl){
+            ?>
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h4>Thumbnail Headline</h4>
+                        <p>short thumbnail description</p>
+                        <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
+                            <a href="" class="label label-default">Like</a></p>
+                    </div>
+                    <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
                 </div>
-                <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
+        <?php
+        }
+        ?>
+        <!--<div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall]'>
             <div class="thumbnail">
                 <div class="caption">
                     <h4>Thumbnail Headline</h4>
@@ -231,7 +239,7 @@ include 'controller/ControllerGallery.php';
                 </div>
                 <img class="lazy img-responsive" data-original="http://lorempixel.com/400/300" src="http://lorempixel.com/400/300" alt="">
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -315,16 +323,14 @@ include 'controller/ControllerGallery.php';
 <?php
 if(isset($_POST['submit'])){
     if($_POST['submit'] && $_FILES){
-
         $uploaded = new UploadPhoto($connect->getSession());
-
+        $img = new ImageManager($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
-        $error = $uploaded->getError();
         if(empty($error)){
+            $imgObj = $img->getImage($uploaded->getImgId());
             $imgController = new ControllerGallery();
-            $imgController->insertImage($uploaded->getImgId(),$user->getId());
+            $imgController->insertImage($uploaded->getImgId(),$user->getId(),$imgObj->getProperty('source'));
         }
-
         echo $uploaded->getError();
     }else{
         echo "probleme fichier";

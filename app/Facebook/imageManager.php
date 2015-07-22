@@ -15,7 +15,6 @@ class ImageManager{
     public function __construct($session)
     {
         $this->session = $session;
-
     }
     //RETOURNE UNE COLLECTION D'IMAGES
     public function getImagesFromAlbum($albumId)
@@ -38,7 +37,7 @@ class ImageManager{
         $request = new FacebookRequest(
             $this->session,
             'GET',
-            '/'.$imageId.''
+            '/'.(int)$imageId
         );
         $response = $request->execute();
         return $response->getGraphObject();
