@@ -1,6 +1,6 @@
 <?php
 include 'app/Facebook/AlbumManager.php';
-use app\Facebook\ImageManager;
+use App\Facebook\ImageManager;
 include 'app/Facebook/UploadPhoto.php';
 include 'controller/ControllerGallery.php';
 ?>
