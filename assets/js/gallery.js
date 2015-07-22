@@ -62,7 +62,7 @@ $(document).ready(function(){
 
     /*ajout du bloc pour l'upload'*/
     var gallery = $('#galerie-concours');
-    var blocUpload = '<div class="col-lg-4 col-md-4 col-xs-6 thumb"><div class="thumbnail"><a href="#" data-toggle="modal" data-target="#upload-photo"><img class="lazy img-responsive" src="./images/ajout-photo.png" alt=""></a></div></div>';
+    var blocUpload = '<div class="col-lg-4 col-md-4 col-xs-4 thumb"><div class="thumbnail"><a href="#" data-toggle="modal" data-target="#upload-photo"><img class="lazy img-responsive" src="./images/ajout-photo.png" alt=""></a></div></div>';
     gallery.prepend(blocUpload);
 
     $("#upload").on('change',"#selectbasic",function(){

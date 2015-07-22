@@ -78,7 +78,8 @@
                                 <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="active"><a href="landing.html">Concours Travel holidays</a></li>
-                                        <li><a href="politique.html">Privacy</a></li>
+                                        <!--<li><a href="politique.html">Privacy</a></li>-->
+                                        <li><a href="galerie.html">Galerie</a></li>
                                         <li><a href="comment-jouer.html">Comment jouer</a></li>
                                     </ul>
                                 </div>
