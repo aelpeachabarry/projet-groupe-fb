@@ -23,4 +23,6 @@ class ControllerLanding{
             $userManager->create($nonEscape,$escape);
         }
     }
+
+
 }
