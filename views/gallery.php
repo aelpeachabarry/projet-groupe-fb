@@ -6,21 +6,7 @@ include 'controller/ControllerGallery.php';
 ?>
 
 <div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '384491318402733',
-            xfbml      : true,
-            version    : 'v2.0'
-        });
-    };
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=384491318402733";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+
 <script>
     $(document).ready(function() {
         $('#button_share').click(function() {
@@ -73,7 +59,7 @@ include 'controller/ControllerGallery.php';
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
                         <p><a href="index.php?page=single&id=<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
-                        <div class="fb-like" data-href="<?php echo $image['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+
                         <input type="button" id="button_share" value="Share" />
                         <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
