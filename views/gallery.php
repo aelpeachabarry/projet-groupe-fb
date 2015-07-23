@@ -82,6 +82,7 @@ include 'controller/ControllerGallery.php';
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
+                <?php echo $galController->getNbLike($imageUrl); ?>
                 </div>
             </div>
         <?php

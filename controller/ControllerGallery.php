@@ -31,6 +31,7 @@ class ControllerGallery{
             $userConcPhoto->create($nonescape,['id_facebook' => $idUser]);
         }
     }
+
     public function getAllImagesUrl(){
         $imgSource = [];
         $concImg = new ConcoursPhotoModel();
@@ -48,6 +49,16 @@ class ControllerGallery{
 
         }
         return $imgSource;
+    }
+
+    public function getNbLike($link)
+    {
+        $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($link)."&format=json";
+        $data = json_decode(file_get_contents($url));
+        // var_dump($data);
+        if(!isset($data[0]->like_count)){ return 'erreur'; }
+
+        return $data[0]->like_count;
     }
 
   /*  public function getAllImages() {
