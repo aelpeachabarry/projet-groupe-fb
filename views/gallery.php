@@ -63,7 +63,7 @@ include 'controller/ControllerGallery.php';
 
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $image){
-
+        var_dump($image);
         $title=('Title of Your iFrame Tab');
         $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
         $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
