@@ -53,6 +53,10 @@ switch($page)
         require('views/gallery.php');
         break;
     }
+    case 'single' : {
+        require('views/single.php');
+        break;
+    }
     case 'sorry' : {
         require('views/sorry.php');
         break;

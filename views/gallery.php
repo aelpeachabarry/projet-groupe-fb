@@ -74,7 +74,7 @@ include 'controller/ControllerGallery.php';
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="#" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
+                        <p><a href="single.php?url=<?php echo $imageUrl; ?>" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
                         <div class="fb-like" data-href="<?php echo $imageUrl; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
@@ -333,7 +333,7 @@ include 'controller/ControllerGallery.php';
 <!-- le modal pour l'upload d'image -->
 <div class="modal fade" id="upload-photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+        <div class="modal-content" id="modalUpload">
             <div class="modal-header">
 
                 <h4 class="modal-title" id="image-gallery-title">Uploadez votre photo</h4>
@@ -342,13 +342,19 @@ include 'controller/ControllerGallery.php';
                 <!--body-->
                 <form form method="post" action="#" enctype="multipart/form-data">
                     <div class="form-group">
+                        <select class="form-control" id="selectUpload">
+                            <option value="desktopUpload">uploader depuis le bureau</option>
+                            <option value="fbUpload">uploader depluis votre compte facebook</option>
+                        </select>
+                    </div>
+                    <div class="form-group displaynone">
                         <label for="exampleInputFile">File input</label>
                         <input type="file" name="mon_fichier" id="mon_fichier">
                         <p class="help-block"></p>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
+                    <!--<button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>-->
                 </form>
-                <form form method="post" action="#" enctype="multipart/form-data">
+                <form form method="post" action="#" class="displaynone" enctype="multipart/form-data">
                     <div class="form-group" id="upload">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">
