@@ -62,12 +62,12 @@ include 'controller/ControllerGallery.php';
         $ImageManager = new ImageManager($connect->getSession());
 
         //var_dump($galController->getAllImages());
-        foreach($galController->getAllImages() as $image){
-        var_dump($image);
-        $title=('Title of Your iFrame Tab');
-        $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
-        $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
-        $image=($image['url']);
+        foreach($galController->getAllImages() as $img){
+            $image = $img[0];
+            $title=('Title of Your iFrame Tab');
+            $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
+            $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
+            $image=($image['url']);
             ?>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall"]'>
                 <div class="thumbnail">
@@ -82,7 +82,7 @@ include 'controller/ControllerGallery.php';
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
-                <?php echo $galController->getNbLike($image['url']); ?>
+                    <?php echo $galController->getNbLike($image['url']); ?>
                 </div>
             </div>
         <?php
