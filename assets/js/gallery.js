@@ -84,7 +84,7 @@ $(document).ready(function(){
     });
 
     //gestion du bloc d'upload
-    $('#modalUpload').on('change','select.selectUpload', function(e){
+    $('#modalUpload').on('change','#selectUpload', function(e){
         e.preventDefault();
         console.log('yo');
         var typeUpload = $(this).find(':selected').val();
