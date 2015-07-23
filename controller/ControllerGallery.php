@@ -32,7 +32,7 @@ class ControllerGallery{
         }
     }
 
-    public function getAllImagesUrl(){
+    public function getAllImages(){
         $imgSource = [];
         $concImg = new ConcoursPhotoModel();
         $img = new PhotoModel();
@@ -45,7 +45,7 @@ class ControllerGallery{
         foreach($images as $image){
             $imageUrl = $img->read('*',['id_photo'=>$image['id_photo']]);
             //var_dump($imageUrl);
-            array_push($imgSource,$imageUrl[0]['url']);
+            array_push($imgSource,$imageUrl[0]);
 
         }
         return $imgSource;

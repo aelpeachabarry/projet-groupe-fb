@@ -62,27 +62,27 @@ include 'controller/ControllerGallery.php';
         $ImageManager = new ImageManager($connect->getSession());
 
         //var_dump($galController->getAllImages());
-        foreach($galController->getAllImagesUrl() as $imageUrl){
+        foreach($galController->getAllImagesUrl() as $image){
 
         $title=('Title of Your iFrame Tab');
         $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
         $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
-        $image=($imageUrl);
+        $image=($image['url']);
             ?>
             <div class="col-lg-4 col-md-4 col-xs-6 thumb" data-groups='["wall"]'>
                 <div class="thumbnail">
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="photo/<?php echo $imageUrl; ?>" class="label label-danger photo-infos" >Zoom</a>
+                        <p><a href="photo/<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
                             <a href="" class="label label-default">Like</a>
-                        <div class="fb-like" data-href="<?php echo $imageUrl; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                        <div class="fb-like" data-href="<?php echo $image['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
                         <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
                     </div>
-                    <img class="lazy img-responsive" data-original="<?php echo $imageUrl ?>" src="<?php echo $imageUrl ?>" alt="">
-                <?php echo $galController->getNbLike($imageUrl); ?>
+                    <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
+                <?php echo $galController->getNbLike($image['url']); ?>
                 </div>
             </div>
         <?php
