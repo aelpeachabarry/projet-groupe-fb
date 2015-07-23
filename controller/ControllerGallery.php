@@ -51,6 +51,13 @@ class ControllerGallery{
         return $imgSource;
     }
 
+    public function getImage($id){
+        $img = new PhotoModel();
+        $image = $img->read('*',['id_photo'=>$id]);
+
+        return $image;
+    }
+
     public function getNbLike($link)
     {
         $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($link)."&format=json";

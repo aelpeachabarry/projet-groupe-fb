@@ -63,9 +63,6 @@ include 'controller/ControllerGallery.php';
 
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $image){
-            echo "<pre>";
-            print_r($image);
-            echo "</pre>";
             $title=('Title of Your iFrame Tab');
             $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
             $summary=('Custom message that summarizes what your tab is about, or just a simple message to tell people to check out your tab.');
@@ -75,8 +72,7 @@ include 'controller/ControllerGallery.php';
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="index.php?page=single&id=<?php echo $image['id_photo']."&url=".$image['url']; ?>" class="label label-danger photo-infos" >Zoom</a>
-                            <a href="" class="label label-default">Like</a>
+                        <p><a href="index.php?page=single&id=<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
                         <div class="fb-like" data-href="<?php echo $image['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
                         <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
