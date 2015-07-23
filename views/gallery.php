@@ -74,7 +74,7 @@ include 'controller/ControllerGallery.php';
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="single.php?url=<?php echo $imageUrl; ?>" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
+                        <p><a href="photo/<?php echo $imageUrl; ?>" class="label label-danger photo-infos" data-image-id="" data-toggle="modal" data-title="This is my title" data-caption="Some lovely red flowers" data-image="http://lorempixel.com/400/300" data-target="#image-gallery">Zoom</a>
                             <a href="" class="label label-default">Like</a>
                         <div class="fb-like" data-href="<?php echo $imageUrl; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
