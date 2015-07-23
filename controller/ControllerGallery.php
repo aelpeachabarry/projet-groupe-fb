@@ -21,7 +21,7 @@ class ControllerGallery{
         $imgManager->create($nonescape,$escape);
 
         $imageConcours= $userConcPhoto->read('*',['id_concours'=>4,'id_facebook'=>"'".$idUser."'"]);
-        var_dump($imageConcours);
+
         if(!empty($imageConcours)){
             echo "<br>Trying update<br>";
             $userConcPhoto->update(['id_photo'=>$idPhoto],['id_facebook'=>"'".$idUser."'",'id_concours'=>4]);
