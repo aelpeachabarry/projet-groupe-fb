@@ -346,14 +346,14 @@ include 'controller/ControllerGallery.php';
 
                 <form form method="post" action="#" enctype="multipart/form-data">
 
-                    <div id="upladDesktop" class="form-group displaynone">
+                    <div id="upladDesktop" class="form-group ">
                         <label for="exampleInputFile">File input</label>
                         <input type="file" name="mon_fichier" id="mon_fichier">
                         <p class="help-block"></p>
                     </div>
                     <!--<button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>-->
                 </form>
-                <form id="uploadFb" form method="post" action="#" class="displaynone" enctype="multipart/form-data">
+                <form id="uploadFb" form method="post" action="#"  enctype="multipart/form-data">
                     <div class="form-group" id="upload">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">

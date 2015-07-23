@@ -83,21 +83,6 @@ $(document).ready(function(){
         }
     });
 
-    //gestion du bloc d'upload
-    $('#modalUpload').on('change','#selectUpload', function(e){
-        e.preventDefault();
-        console.log('yo');
-        var typeUpload = $(this).find(':selected').val();
-        console.log(typeUpload);
-        if(typeUpload == 'fbUpload'){
-            $('#uploadFb').removeClass('displaynone');
-            $('#upladDesktop').addClass('displaynone');
-        }else{
-            $('#upladDesktop').removeClass('displaynone');
-            $('#uploadFb').addClass('displaynone');
-        }
 
-
-    });
 
 });
