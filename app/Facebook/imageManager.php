@@ -9,7 +9,6 @@ namespace App\Facebook;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 
-
 class ImageManager{
 
     public function __construct($session)
@@ -42,6 +41,52 @@ class ImageManager{
         $response = $request->execute();
         var_dump($response->getGraphObject());
         return $response->getGraphObject();
+    }
+
+    public function getImageObject()
+    {
+        $graphObject = (
+        new FacebookRequest(
+            $this->session,
+            'POST',
+            "/me/objects/object",
+            [
+                'object' => json_encode([
+                    'title' => 'test',
+                    'image' => 'https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10985051_1608904306017786_8580743035900434070_n.jpg?oh=9b798061ef0c77814befd955708ba4b3&oe=564E7018',
+                    'url' => 'https://scontent.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10985051_1608904306017786_8580743035900434070_n.jpg?oh=9b798061ef0c77814befd955708ba4b3&oe=564E7018',
+                    'description' => 'mon super test',
+                    'site_name' => 'travel_info'
+                ])
+            ]
+        )
+        )->execute()->getGraphObject();
+        return $graphObject;
+    }
+    public function getObject($id)
+    {
+        $request = new FacebookRequest(
+            $this->session,
+            'GET',
+            '/{object-'.$id.'}'
+
+        );
+        $response = $request->execute();
+        $graphObject = $response->getGraphObject();
+        var_dump($graphObject);
+        return $graphObject;
+    }
+
+    public function getAllObject()
+    {
+        $request = new FacebookRequest(
+            $this->session,
+            'GET',
+            '/me/objects/object'
+        );
+        $response = $request->execute();
+        $graphObject = $response->getGraphObject();
+        return $graphObject;
     }
 }
 

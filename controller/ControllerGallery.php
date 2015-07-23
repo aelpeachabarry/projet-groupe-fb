@@ -49,4 +49,45 @@ class ControllerGallery{
         return $imgSource;
     }
 
+  /*  public function getAllImages() {
+        $imgSource = [];
+        $concImg = new ConcoursPhotoModel();
+        $img = new PhotoModel();
+        $fields = [
+            'id_photo',
+            'id_facebook',
+            'id_concours'
+        ];
+        $images = $concImg->read($fields);
+        foreach($images as $image){
+            $imageUrl = $img->read(['id_photo, url'],['id_photo'=>$image['id_photo']]);
+            //var_dump($imageUrl);
+            array_push($imgSource,$imageUrl[0]);
+        }
+        return $imgSource;
+    }*/
+
+    /**
+     * Récupère les urls des photos ayant le plus de like
+     * @return array
+     */
+  /*  public function getClassementUrlPhotos(){
+        $urlArray = [];
+        $concImg = new ConcoursPhotoModel();
+        $img = new PhotoModel();
+        $fields = [
+            'id_photo',
+            'id_facebook',
+            'id_concours'
+        ];
+
+        $images = $concImg->read($fields);
+        foreach($images as $image){
+            $imageUrl = $img->read('*',['id_photo'=>$image['id_photo']]);
+            //var_dump($imageUrl);
+            array_push($urlArray,$imageUrl[0]['url']);
+        }
+        return $urlArray;
+    }*/
+
 }
