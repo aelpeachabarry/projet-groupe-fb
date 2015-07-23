@@ -75,7 +75,7 @@ include 'controller/ControllerGallery.php';
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="photo/<?php echo $image['id_photo']."/".$image['url']; ?>" class="label label-danger photo-infos" >Zoom</a>
+                        <p><a href="index.php?page=single&id=<?php echo $image['id_photo']."&url=".$image['url']; ?>" class="label label-danger photo-infos" >Zoom</a>
                             <a href="" class="label label-default">Like</a>
                         <div class="fb-like" data-href="<?php echo $image['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
                         <input type="button" id="button_share" value="Share" />
