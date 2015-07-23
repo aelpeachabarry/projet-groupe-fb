@@ -12,3 +12,5 @@ require ROOT.'/model/UserModel.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
+
+echo $user;
