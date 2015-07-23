@@ -63,6 +63,9 @@ include 'controller/ControllerGallery.php';
 
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $img){
+            echo "<pre>";
+            print_r($img);
+            echo "</pre>";
             $image = $img[0];
             $title=('Title of Your iFrame Tab');
             $url=('http://www.aaarentcars.fr/sites/default/files/styles/image_article/public/field/image/image-presentation-aaa-luxury-2.png');
@@ -82,7 +85,7 @@ include 'controller/ControllerGallery.php';
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
-                    <?php echo $galController->getNbLike($image['url']); ?>
+                    <?php /*echo $galController->getNbLike($image['url']); */?>
                 </div>
             </div>
         <?php
