@@ -3,6 +3,7 @@ include 'controller/ControllerGallery.php';
 
 $gc = new ControllerGallery();
 $imageUrl = $gc->getImage($_GET['id']);
+var_dump($imageUrl);
 
 ?>
 <div class="row col-lg-offset-2 col-lg-8">
