@@ -19,3 +19,4 @@ RewriteRule ^comment-jouer.html$ 							index.php?page=regle
 RewriteRule ^galerie.html$ 									index.php?page=gallery
 RewriteRule ^photo/([0-9]+)$                                index.php?page=single&id=$1
 RewriteRule ^404.html$ 									    index.php?page=404
+RewriteRule ^test.html$ 									index.php?page=test

@@ -69,6 +69,10 @@ switch($page)
         require ('views/404.php');
         break;
     }
+    case 'test' : {
+        require ('views/test.php');
+        break;
+    }
     default: {
         require('controller/ControllerLanding.php');
         require ('views/landing.php');
