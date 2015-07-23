@@ -17,5 +17,5 @@ RewriteRule ^desole.html$ 									index.php?page=sorry
 RewriteRule ^merci.html$ 									index.php?page=thank
 RewriteRule ^comment-jouer.html$ 							index.php?page=regle
 RewriteRule ^galerie.html$ 									index.php?page=gallery
-RewriteRule ^photo.html$ 									index.php?page=single
+#RewriteRule ^photo.html$ 									index.php?page=single
 RewriteRule ^404.html$ 									    index.php?page=404

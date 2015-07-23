@@ -89,6 +89,13 @@ $(document).ready(function(){
         console.log('yo');
         var typeUpload = $(this).find(':selected').val();
         console.log(typeUpload);
+        if(typeUpload == 'fbUpload'){
+            $('#uploadFb').removeClass('displaynone');
+            $('#upladDesktop').addClass('displaynone');
+        }else{
+            $('#upladDesktop').removeClass('displaynone');
+            $('#uploadFb').addClass('displaynone');
+        }
 
 
     });
