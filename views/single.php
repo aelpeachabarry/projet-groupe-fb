@@ -2,7 +2,7 @@
 include 'controller/ControllerGallery.php';
 
 $gc = new ControllerGallery();
-$imageUrl = $gc->getImage($_GET['id']);
+$imageUrl = $gc->getImage($_GET['id'])[0];
 var_dump($imageUrl);
 
 ?>
