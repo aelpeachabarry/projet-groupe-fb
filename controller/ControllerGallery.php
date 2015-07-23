@@ -49,7 +49,7 @@ class ControllerGallery{
         return $imgSource;
     }
 
-    public function getAllImages() {
+  /*  public function getAllImages() {
         $imgSource = [];
         $concImg = new ConcoursPhotoModel();
         $img = new PhotoModel();
@@ -65,7 +65,7 @@ class ControllerGallery{
             array_push($imgSource,$imageUrl[0]);
         }
         return $imgSource;
-    }
+    }*/
 
     /**
      * Récupère les urls des photos ayant le plus de like
