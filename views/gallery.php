@@ -107,30 +107,22 @@ include 'controller/ControllerGallery.php';
 <!-- le modal pour l'upload d'image -->
 <div class="modal fade" id="upload-photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content" id="modalUpload">
+        <div class="modal-content">
             <div class="modal-header">
 
                 <h4 class="modal-title" id="image-gallery-title">Uploadez votre photo</h4>
             </div>
             <div class="modal-body">
                 <!--body-->
-                <div class="form-group">
-                    <select class="form-control" id="selectUpload">
-                        <option value="desktopUpload">uploader depuis le bureau</option>
-                        <option value="fbUpload">uploader depluis votre compte facebook</option>
-                    </select>
-                </div>
-
                 <form form method="post" action="#" enctype="multipart/form-data">
-
-                    <div id="upladDesktop" class="form-group ">
+                    <div class="form-group">
                         <label for="exampleInputFile">File input</label>
                         <input type="file" name="mon_fichier" id="mon_fichier">
                         <p class="help-block"></p>
                     </div>
-                    <!--<button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>-->
+                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
                 </form>
-                <form id="uploadFb" form method="post" action="#"  enctype="multipart/form-data">
+                <form form method="post" action="#" enctype="multipart/form-data">
                     <div class="form-group" id="upload">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">
