@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: guizmo
- * Date: 18/06/2015
- * Time: 23:57
- */
+
 session_start();
 require $_SERVER['DOCUMENT_ROOT'].'constants.php';
 use \App\Facebook\FacebookConnect;
