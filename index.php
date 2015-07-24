@@ -53,6 +53,10 @@ switch($page)
         require('views/gallery.php');
         break;
     }
+    case 'single' : {
+        require('views/single.php');
+        break;
+    }
     case 'sorry' : {
         require('views/sorry.php');
         break;
@@ -63,6 +67,10 @@ switch($page)
     }
     case '404' : {
         require ('views/404.php');
+        break;
+    }
+    case 'test' : {
+        require ('views/test.php');
         break;
     }
     default: {
