@@ -22,7 +22,8 @@ if($_POST["findImg"]){
     }else{
         $images = new ImageManager($connect->getSession());
         $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
-
+        var_dump($tempArrayImg);
+        exit;
         if(!empty($tempArrayImg)){
             $output = '<ul class="thumbnails image_picker_selector">';
             foreach($tempArrayImg as $image){
