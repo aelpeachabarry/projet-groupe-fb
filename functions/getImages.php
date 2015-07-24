@@ -4,7 +4,7 @@ session_start();
 require $_SERVER['DOCUMENT_ROOT'].'constants.php';
 use \App\Facebook\FacebookConnect;
 use \App\Facebook\ImageManager;
-require ROOT.'/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
