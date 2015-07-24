@@ -5,7 +5,6 @@
  * Date: 27/06/15
  * Time: 23:04
  * */
-require '../constants.php';
 require_once ROOT.'/core/Model.php';
 //require $_SERVER['DOCUMENT_ROOT'].'./core/Model.php';
 
