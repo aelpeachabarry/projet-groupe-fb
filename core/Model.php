@@ -14,7 +14,7 @@ abstract class abstractModel {
     public function __construct($tableName){
         $this->tableName = $tableName;
         try {
-            $this->db = new PDO("pgsql:host=".HOST.";dbname=".DB_NAME, USER_DB, PWD_DB);
+            $this->db = new PDO(DRIVER.":host=".HOST.";dbname=".DB_NAME, USER_DB, PWD_DB);
         }
         catch(PDOException $e) {
             $db = null;
