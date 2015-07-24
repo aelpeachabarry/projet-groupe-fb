@@ -20,8 +20,9 @@ if($_POST["findImg"]){
     if($_POST["findImg"]=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
+        echo "trying getimage";
         $images = new ImageManager($connect->getSession());
-        var_dump($tempArrayImg);
+
         $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
 
         if(!empty($tempArrayImg)){
