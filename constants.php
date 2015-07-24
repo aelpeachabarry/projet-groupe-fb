@@ -8,6 +8,7 @@
 define('ENV','prod');
 if(ENV=='prod'){
     define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+    define('BASE_URL',$_SERVER['DOCUMENT_ROOT']);
     define('DRIVER', 'pgsql');
     define('HOST', 'ec2-54-225-154-5.compute-1.amazonaws.com');
     define('USER_DB', 'xbhzyyoziowdlx');
