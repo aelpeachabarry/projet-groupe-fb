@@ -6,15 +6,16 @@
  * Time: 23:57
  */
 session_start();
-require $_SERVER['DOCUMENT_ROOT'].'/app/Facebook/constants.php';
+require $_SERVER['DOCUMENT_ROOT'].'constants.php';
 use \App\Facebook\FacebookConnect;
 use \App\Facebook\ImageManager;
-require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+require ROOT.'/vendor/autoload.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);
 $user = $connect->connect(REDIRECT_URL);
 
 if($_POST["findImg"]){
+    echo "here";
     $output = "";
     if($_POST["findImg"]=="default"){
         echo "<p>Veuillez Selectionnez un album</p>";
