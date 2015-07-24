@@ -31,7 +31,6 @@ include 'controller/ControllerGallery.php';
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
-                    <?php /*echo $galController->getNbLike($image['url']); */?>
                 </div>
             </div>
         <?php
@@ -93,7 +92,6 @@ if(isset($_POST['submit'])){
         $img = new ImageManager($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
         if(empty($error)){
-            var_dump($uploaded->getImgId());
             $imgObj = $img->getImage($uploaded->getImgId());
             $imgController = new ControllerGallery();
             echo $imgController->insertImage($uploaded->getImgId(),$user->getId(),$imgObj->getProperty('source'));
