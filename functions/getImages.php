@@ -22,7 +22,6 @@ if($_POST["findImg"]){
     }else{
         $images = new ImageManager($connect->getSession());
         var_dump($tempArrayImg);
-        exit;
         $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
 
         if(!empty($tempArrayImg)){
