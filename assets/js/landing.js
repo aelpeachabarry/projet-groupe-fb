@@ -19,7 +19,7 @@ $(document).ready(function(){
             url : '/functions/connectFb.php', // La ressource ciblée
             type:'get',
             success : function(url){
-                document.location.href=url;
+                document.location.href='/'+url;
             }
         });
     });
