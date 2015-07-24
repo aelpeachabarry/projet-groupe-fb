@@ -75,6 +75,7 @@ $(document).ready(function(){
                     findImg : $("#selectbasic").val()
                 },
                 success:function(data) {
+                    console.log(data);
                     $("#galerie-album").children().remove();
                     $("#galerie-album").append(data);
                     $(".image-picker").imagepicker({show_label: true});

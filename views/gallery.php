@@ -47,6 +47,9 @@ include 'controller/ControllerGallery.php';
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
 
+        $test = $ImageManager->getAllObject();
+
+        var_dump($test);
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $image){
             $title=('Title of Your iFrame Tab');
