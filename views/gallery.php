@@ -6,39 +6,6 @@ include 'controller/ControllerGallery.php';
 ?>
 
 <div id="fb-root"></div>
-
-<script>
-    $(document).ready(function() {
-        $('#button_share').click(function() {
-
-            console.log($(this));
-
-            var img = $(this).closest('.thumbnail').find('img');
-            console.log(img);
-            var lien = img.data('original');
-            console.log(lien);
-
-            FB.ui(
-                {
-                    method: 'feed',
-                    name: 'Facebook Dialogs',
-                    link: 'https://projet-groupe-fb.herokuapp.com/photo-1',
-                    //picture: lien,
-                    caption: 'Reference Documentation',
-                    description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
-                    message: 'Facebook Dialogs are easy!'
-                },
-                function(response) {
-                    if (response && response.post_id) {
-                        alert('Post was published.');
-                    } else {
-                        alert('Post was not published.');
-                    }
-                }
-            );
-        });
-    });
-</script>
 <div class="row col-lg-offset-2 col-lg-8">
 
     <!--caroussel-->
@@ -46,7 +13,7 @@ include 'controller/ControllerGallery.php';
         <?php
         $galController = new ControllerGallery();
         $ImageManager = new ImageManager($connect->getSession());
-        
+
         //var_dump($galController->getAllImages());
         foreach($galController->getAllImages() as $image){
             $title=('Title of Your iFrame Tab');
@@ -58,10 +25,9 @@ include 'controller/ControllerGallery.php';
                     <div class="caption">
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
-                        <p><a href="index.php?page=single&id=<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
+                        <p><a href="/projet-groupe-fb/photo/<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
 
-                        <input type="button" id="button_share" value="Share" />
-                        <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
+                            <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
@@ -74,35 +40,6 @@ include 'controller/ControllerGallery.php';
     </div>
 </div>
 
-
-<!-- le modal qui sert de lightbox -->
-<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="image-gallery-title"></h4>
-            </div>
-            <div class="modal-body">
-                <img id="image-gallery-image" class="img-responsive" src="">
-            </div>
-            <div class="modal-footer">
-
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                </div>
-
-                <div class="col-md-8 text-justify" id="image-gallery-caption">
-                    This text will be overwritten by jQuery
-                </div>
-
-                <div class="col-md-2">
-                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- le modal pour l'upload d'image -->
 <div class="modal fade" id="upload-photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -120,9 +57,6 @@ include 'controller/ControllerGallery.php';
                         <input type="file" name="mon_fichier" id="mon_fichier">
                         <p class="help-block"></p>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
-                </form>
-                <form form method="post" action="#" enctype="multipart/form-data">
                     <div class="form-group" id="upload">
                         <label class="col-md-4 control-label" for="selectbasic">Albums</label>
                         <select id="selectbasic" name="selectbasic" class="form-control">
@@ -135,18 +69,19 @@ include 'controller/ControllerGallery.php';
                             ?>
                         </select>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
-                </form>
-                <!--affichage des images d'un album-->
-                <div class="row">
-                    <div id="galerie-album" class="col-lg-12">
 
+
+                    <!--affichage des images d'un album-->
+                    <div class="row">
+                        <div id="galerie-album" class="col-lg-12">
+
+                        </div>
                     </div>
-                </div>
-                <!--end body-->
+                    <!--end body-->
             </div>
             <div class="modal-footer">
-
+                <button type="submit" name="submit" class="btn btn-default" value="envoyer">Envoyer</button>
+                </form>
             </div>
         </div>
     </div>
@@ -158,9 +93,10 @@ if(isset($_POST['submit'])){
         $img = new ImageManager($connect->getSession());
         $uploaded->upload($_FILES['mon_fichier']);
         if(empty($error)){
+            var_dump($uploaded->getImgId());
             $imgObj = $img->getImage($uploaded->getImgId());
             $imgController = new ControllerGallery();
-            $imgController->insertImage($uploaded->getImgId(),$user->getId(),$imgObj->getProperty('source'));
+            echo $imgController->insertImage($uploaded->getImgId(),$user->getId(),$imgObj->getProperty('source'));
         }
         echo $uploaded->getError();
     }else{

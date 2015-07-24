@@ -8,16 +8,16 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
     <!-- Font Awesome CSS -->
-    <link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/image-picker.css">
-    <script src="./assets/js/jquery.js"></script>
+    <link href="<?php echo BASE_URL?>assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL?>assets/css/style.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL?>assets/css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo BASE_URL?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL?>assets/css/image-picker.css">
+    <script src="<?php echo BASE_URL?>assets/js/jquery.js"></script>
     <!--imagePicker javascript-->
     <!--Fin ImagePicker -->
     <!-- Backstretch javascript -->
-    <script type="text/javascript" src="assets/plugins/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="<?php echo BASE_URL?>assets/plugins/jquery.backstretch.min.js"></script>
     <?php
         /*if($_GET['page'] == 'gallery'){
             echo '<link rel="stylesheet" href="./assets/css/full-slider.css">';
@@ -77,10 +77,10 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li class="active"><a href="landing.html">Concours Travel holidays</a></li>
+                                        <li class="active"><a href="<?php echo BASE_URL; ?>landing.html">Concours Travel holidays</a></li>
                                         <!--<li><a href="politique.html">Privacy</a></li>-->
-                                        <li><a href="galerie.html">Galerie</a></li>
-                                        <li><a href="comment-jouer.html">Comment jouer</a></li>
+                                        <li><a href="<?php echo BASE_URL; ?>galerie.html">Galerie</a></li>
+                                        <li><a href="<?php echo BASE_URL; ?>comment-jouer.html">Comment jouer</a></li>
                                     </ul>
                                 </div>
 

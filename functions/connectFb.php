@@ -4,10 +4,9 @@ ini_set("display_errors", 1);
 
 
 session_start();
-use \App\Facebook\FacebookConnect;
 require '../constants.php';
+use \App\Facebook\FacebookConnect;
 require ROOT.'/vendor/autoload.php';
-require ROOT.'/app/Facebook/constants.php';
 require ROOT.'/model/UserModel.php';
 
 $connect = new FacebookConnect(APP_ID, APP_SECRET);

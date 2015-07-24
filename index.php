@@ -7,7 +7,6 @@ session_start();
 //use App\Facebook\FacebookConnect;
 
 require 'vendor/autoload.php';
-require 'app/Facebook/constants.php';
 require 'constants.php';
 
 $page = (!isset($_GET['page'])) ? 'landing' : htmlentities($_GET['page']);

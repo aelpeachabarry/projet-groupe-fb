@@ -726,4 +726,6 @@ footer{
 body{
 	background-color: #e6e6e6 !important;
 }
-
+#p_single{
+    margin-top : 120px;
+}

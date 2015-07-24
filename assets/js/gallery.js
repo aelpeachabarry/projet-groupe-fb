@@ -69,7 +69,7 @@ $(document).ready(function(){
         console.log($("#selectbasic").val());
         if($("#selectbasic").val()!=null){
             $.ajax({
-                url:"/functions/getImages.php",
+                url:"/projet-groupe-fb/functions/getImages.php",
                 type:'POST',
                 data : {
                     findImg : $("#selectbasic").val()

@@ -36,7 +36,7 @@ class ImageManager{
         $request = new FacebookRequest(
             $this->session,
             'GET',
-            '/'.(int)$imageId
+            '/'.$imageId
         );
         $response = $request->execute();
         return $response->getGraphObject();
