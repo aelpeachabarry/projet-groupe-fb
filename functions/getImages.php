@@ -21,9 +21,10 @@ if($_POST["findImg"]){
         echo "<p>Veuillez Selectionnez un album</p>";
     }else{
         $images = new ImageManager($connect->getSession());
-        $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
         var_dump($tempArrayImg);
         exit;
+        $tempArrayImg = $images->getImagesFromAlbum($_POST['findImg']);
+
         if(!empty($tempArrayImg)){
             $output = '<ul class="thumbnails image_picker_selector">';
             foreach($tempArrayImg as $image){
