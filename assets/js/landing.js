@@ -16,7 +16,7 @@ $(document).ready(function(){
         e.preventDefault();
         console.log('here');
         $.ajax({
-            url : '/projet-groupe-fb/functions/connectFb.php', // La ressource ciblée
+            url : '/functions/connectFb.php', // La ressource ciblée
             type:'get',
             success : function(url){
                 document.location.href=url;
