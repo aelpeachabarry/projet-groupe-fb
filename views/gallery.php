@@ -26,8 +26,6 @@ include 'controller/ControllerGallery.php';
                         <h4>Thumbnail Headline</h4>
                         <p>short thumbnail description</p>
                         <p><a href="photo/<?php echo $image['id_photo']; ?>" class="label label-danger photo-infos" >Zoom</a>
-
-                            <!--<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">Insert text or an image here.</a>-->
                         </p>
                     </div>
                     <img class="lazy img-responsive" data-original="<?php echo $image['url'] ?>" src="<?php echo $image['url'] ?>" alt="">
