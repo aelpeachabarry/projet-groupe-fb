@@ -28,10 +28,8 @@ class ControllerLanding{
 
     public function getNbLike($link)
     {
-        echo $link;
         $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($link)."&format=json";
         $data = json_decode(file_get_contents($url));
-        var_dump($data);
         if(!isset($data[0]->like_count)){ return 'erreur'; }
 
         return $data[0]->like_count;
