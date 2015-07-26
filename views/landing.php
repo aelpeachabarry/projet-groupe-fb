@@ -38,7 +38,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $user['nom']." ".$user['prenom'];?></td>
-                                <td><?php echo $userController->getCountLikeFacebook($page.$image['id_photo']);?></td>
+                                <td><?php echo $userController->getNbLike($page.$image['id_photo']);?></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>

@@ -62,7 +62,8 @@ class ControllerGallery{
     {
         $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($link)."&format=json";
         $data = json_decode(file_get_contents($url));
-        // var_dump($data);
+        var_dump($data);
+        exit;
         if(!isset($data[0]->like_count)){ return 'erreur'; }
 
         return $data[0]->like_count;

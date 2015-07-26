@@ -26,14 +26,15 @@ class ControllerLanding{
         }
     }
 
-    public function getCountLikeFacebook($page)
+    public function getNbLike($link)
     {
-        $url = 'http://api.facebook.com/restserver.php?method=links.getStats&urls="'.urlencode($page).'"&format=json';
+        echo $link;
+        $url = "https://api.facebook.com/method/links.getStats?urls=".urlencode($link)."&format=json";
         $data = json_decode(file_get_contents($url));
+        var_dump($data);
+        if(!isset($data[0]->like_count)){ return 'erreur'; }
 
-        if(!isset($data->like_count)){ return "erreur"; }
-
-        return $data->like_count;
+        return $data[0]->like_count;
     }
 
     public function getAllImages()
