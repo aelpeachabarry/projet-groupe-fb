@@ -32,7 +32,7 @@
                         <tbody>
                         <?php
                         $images = $userController->getAllImages();
-                        $page = 'http://localhost/projet-groupe-fb/photo/';
+                        $page = BASE_URL.'/photo/';
                         foreach($images as $image):
                             $user = $userController->getUserForImage($image['id_photo'])[0];
                             ?>

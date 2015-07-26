@@ -16,7 +16,7 @@ if(ENV=='prod'){
     define('DB_NAME', 'dagidi42jnneae');
     define('REDIRECT_URL','https://projet-groupe-fb.herokuapp.com/');
 }else{
-    define('ROOT',  $_SERVER['DOCUMENT_ROOT']."/projet-groupe-fb/");
+    define('ROOT',  $_SERVER['DOCUMENT_ROOT']."projet-groupe-fb/");
     define('BASE_URL',"http://localhost/projet-groupe-fb/");
     define('DRIVER', 'mysql');
     define('HOST', 'localhost');
