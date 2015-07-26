@@ -31,7 +31,7 @@ $imageUrl = $gc->getImage($_GET['id'])[0];
                 </div>
             </div>
             <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-xs-6 thumb" data-groups='["wall"]'>
-                <div class="fb-like" data-href="https://projet-groupe-fb.herokuapp.com/index.php?page=single&id=<?php echo $imageUrl['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                <div class="fb-like" data-href="https://projet-groupe-fb.herokuapp.com/photo/<?php echo $imageUrl['id_photo']; ?>" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
             </div>
         </div>
 
