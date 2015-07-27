@@ -30,13 +30,12 @@
                         </thead>
                         <tbody>
                         <?php
-                        $images = $userController->getRanking();
-                        foreach($images as $image):
-                            var_dump($image);
+                        $ranking = $userController->getRanking();
+                        foreach($ranking as $key => $like):
                             ?>
                             <tr>
-                                <td><?php echo $image['name'];?></td>
-                                <td><?php echo $image['like'];?></td>
+                                <td><?php echo $key;?></td>
+                                <td><?php echo $like;?></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
