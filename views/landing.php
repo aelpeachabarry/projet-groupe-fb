@@ -27,18 +27,16 @@
                                 <td>Nom</td>
                                 <td>Nombre de like</td>
                             </tr>
-
                         </thead>
                         <tbody>
                         <?php
-                        $images = $userController->getAllImages();
-                        $page = BASE_URL.'/photo/';
+                        $images = $userController->getRanking();
                         foreach($images as $image):
-                            $user = $userController->getUserForImage($image['id_photo'])[0];
+                            var_dump($image);
                             ?>
                             <tr>
-                                <td><?php echo $user['nom']." ".$user['prenom'];?></td>
-                                <td><?php echo $userController->getNbLike($page.$image['id_photo']);?></td>
+                                <td><?php echo $image['name'];?></td>
+                                <td><?php echo $image['like'];?></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>

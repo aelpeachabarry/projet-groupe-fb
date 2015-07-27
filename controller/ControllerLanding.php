@@ -35,6 +35,21 @@ class ControllerLanding{
         return $data[0]->like_count;
     }
 
+    public function getRanking()
+    {
+        $userstat = [];
+        $rank = [];
+        $page = BASE_URL.'/photo/';
+        $images = $this->getAllImages();
+        foreach($images as $image){
+            $user = $this->getUserForImage($image['id_photo'])[0];
+            $userstat['name'] = $user['nom']." ".$user['prenom'];
+            $userstat['like'] = $this->getNbLike($page.$image['id_photo']);
+            array_push($rank,$userstat);
+        }
+        return $rank;
+    }
+
     public function getAllImages()
     {
         $imgSource = [];
