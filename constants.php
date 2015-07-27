@@ -5,7 +5,7 @@
  * Date: 19/06/15
  * Time: 12:07
  */
-define('ENV','dev');
+define('ENV','prod');
 if(ENV=='prod'){
     define('ROOT', $_SERVER['DOCUMENT_ROOT']);
     define('BASE_URL','https://projet-groupe-fb.herokuapp.com/');
