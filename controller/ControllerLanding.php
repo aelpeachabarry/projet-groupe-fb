@@ -46,7 +46,7 @@ class ControllerLanding{
             $rank[$username] = [];
             $rank[$username] = $this->getNbLike($page.$image['id_photo']);
         }
-        asort($rank);
+        arsort($rank);
         return $rank;
     }
 
